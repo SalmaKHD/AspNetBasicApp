@@ -17,6 +17,9 @@ builder.Services.AddRouting(options =>
 
 var app = builder.Build(); // creates an instance of a web app
 
+// add static files middleware
+app.UseStaticFiles();
+
 app.UseMiddleware<CustomMiddleware>();
 
 // method 2 add a custom middleware
