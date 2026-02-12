@@ -1,25 +1,55 @@
 using FirstWebApplication;
 using FirstWebApplication.CustomMiddleware;
+using FirstWebApplication.MiddleWare;
 using Microsoft.AspNetCore.Builder;
+using System;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
-var app = builder.Build(); // creates an instance of a web app
-// add a custom middleware
+// method 1 add a custom middleware
 builder.Services.AddTransient<CustomMiddleware>();
 
-// create a middleware
+var app = builder.Build(); // creates an instance of a web app
+
+app.UseMiddleware<CustomMiddleware>();
+
+// method 2 add a custom middleware
 app.Use(async (HttpContext context, RequestDelegate next) =>
 {
 
-    await context.Response.WriteAsync("Hello ");
+    await context.Response.WriteAsync("Hello from middleware 2");
     await next(context); // pass to next middleware
-    await context.Response.WriteAsync("coming back");
+    await context.Response.WriteAsync("coming back from middleware 2");
 });
 
+// method 3 add a custom middleware
+app.ConfigureCustomMiddlewares();
+
+// method 4 add a custom middleware
+app.UseMiddleware<Middleware>();
+
+// method 5 add a custom middleware: executed only under ceratin conditions
+app.UseWhen(context => context.Request.Method == "GET",
+    app =>
+    {
+        app.Use((async (HttpContext context, RequestDelegate next) =>
+        {
+
+            await context.Response.WriteAsync("Hello from middleware 5");
+            await next(context); // pass to next middleware
+            await context.Response.WriteAsync("coming back from middleware 5");
+        }));
+    });
+
+// method 6 add a custom middleware
 // executed for every single request -> a way to create a middleware
 // Run() does not forward requests to any other middlewares
 app.Run(async (HttpContext context) =>
 {   // terminating middleware
+    await context.Response.WriteAsync("Hello from middleware 6");
+});
+
+app.MapGet("/", async (HttpContext context) =>
+{
     // add a status code to response
     context.Response.StatusCode = 400;
     // add headers
@@ -28,16 +58,16 @@ app.Run(async (HttpContext context) =>
     Util.printValue(context.Request.Path);
     Util.printValue(context.Request.Method);
 
-    if(context.Request.Method == "GET")
+    if (context.Request.Method == "GET")
     {
-        if(context.Request.Query.ContainsKey("id"))
+        if (context.Request.Query.ContainsKey("id"))
         {
             Util.printValue(context.Request.Query["id"]);
         }
     }
 
     // check for requests headers
-    if(context.Request.Headers.ContainsKey("User-Agent"))
+    if (context.Request.Headers.ContainsKey("User-Agent"))
     {
         Util.printValue(context.Request.Headers["User-Agent"]);
     }
@@ -46,7 +76,12 @@ app.Run(async (HttpContext context) =>
     StreamReader sr = new StreamReader(context.Request.Body);
     Util.printValue(await sr.ReadToEndAsync());
 
+    /**
+     * output
+     * 
+     */
+
     await context.Response.WriteAsync("Hello");
-});
+}); // when getting a request to root, return "Hello World!"
 
 app.Run();
