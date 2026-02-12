@@ -16,9 +16,9 @@ app.UseMiddleware<CustomMiddleware>();
 app.Use(async (HttpContext context, RequestDelegate next) =>
 {
 
-    await context.Response.WriteAsync("Hello from middleware 2");
+    await context.Response.WriteAsync(" Hello from middleware 2 ");
     await next(context); // pass to next middleware
-    await context.Response.WriteAsync("coming back from middleware 2");
+    await context.Response.WriteAsync(" coming back from middleware 2 ");
 });
 
 // method 3 add a custom middleware
@@ -34,9 +34,9 @@ app.UseWhen(context => context.Request.Method == "GET",
         app.Use((async (HttpContext context, RequestDelegate next) =>
         {
 
-            await context.Response.WriteAsync("Hello from middleware 5");
+            await context.Response.WriteAsync(" Hello from middleware 5 ");
             await next(context); // pass to next middleware
-            await context.Response.WriteAsync("coming back from middleware 5");
+            await context.Response.WriteAsync(" coming back from middleware 5 ");
         }));
     });
 
@@ -45,10 +45,10 @@ app.UseWhen(context => context.Request.Method == "GET",
 // Run() does not forward requests to any other middlewares
 app.Run(async (HttpContext context) =>
 {   // terminating middleware
-    await context.Response.WriteAsync("Hello from middleware 6");
+    await context.Response.WriteAsync(" Hello from middleware 6 ");
 });
 
-app.MapGet("/", async (HttpContext context) =>
+app.MapGet("/salma", async (HttpContext context) =>
 {
     // add a status code to response
     context.Response.StatusCode = 400;
@@ -78,10 +78,10 @@ app.MapGet("/", async (HttpContext context) =>
 
     /**
      * output
-     * 
+     *  Hello from middleware 1  Hello from middleware 2  Hello middlewre 3  Hello from middleware 4  Hello from middleware 5  Hello from middleware 6  coming back from middleware 5  coming back from middleware 4  coming back from middleware 3  coming back from middleware 2  coming back from middleware 1 Hello Salma
      */
 
-    await context.Response.WriteAsync("Hello");
+    await context.Response.WriteAsync("Hello Salma");
 }); // when getting a request to root, return "Hello World!"
 
 app.Run();
