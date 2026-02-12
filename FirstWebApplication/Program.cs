@@ -92,8 +92,21 @@ app.UseRouting(); // enable routing middleware
 app.UseEndpoints(endpoints =>
 {
     // an endpoint
-    endpoints.MapGet("/hello", (HttpContext context) => context.Response.WriteAsync("Hello Salma"));
+    endpoints.MapGet("/hello", (HttpContext context) =>
+    context.Response.WriteAsync("Hello Salma")
+    );
 });
+
+// add a route parameter
+app.MapGet("/salma/{lastname=Khodaei}", (HttpContext context) =>
+{
+    context.Response.WriteAsync($"Hello Salma {context.Request.RouteValues["lastname"] ?? ""}");
+    /**
+     * output
+     * Hello Salma khodaei
+     */
+});
+
 
 
 app.Run();
