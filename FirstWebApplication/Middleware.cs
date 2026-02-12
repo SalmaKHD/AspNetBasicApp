@@ -16,9 +16,9 @@ namespace FirstWebApplication.MiddleWare
 
         public async Task Invoke(HttpContext httpContext)
         {
-            await httpContext.Response.WriteAsync(" Hello from middleware 4 ");
+            Util.printValue("From Middleware: Hello from middleware 4 ");
             await _next(httpContext); // pass to next middleware
-            await httpContext.Response.WriteAsync(" coming back from middleware 4 ");
+            Util.printValue("From Middleware: coming back from middleware 4 ");
         }
     }
 }

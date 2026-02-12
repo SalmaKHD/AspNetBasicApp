@@ -4,9 +4,9 @@
     {
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
-            await context.Response.WriteAsync(" Hello from middleware 1 ");
+            Util.printValue("From Middleware: Hello from middleware 1 ");
             await next(context);
-            await context.Response.WriteAsync(" coming back from middleware 1 ");
+            Util.printValue("From Middleware: coming back from middleware 1 ");
         }
     }
 
@@ -17,9 +17,9 @@
             return app.Use(async (HttpContext context, RequestDelegate next) =>
             {
 
-                await context.Response.WriteAsync(" Hello middlewre 3 ");
+                Util.printValue("From Middleware: Hello middlewre 3 ");
                 await next(context); // pass to next middleware
-                await context.Response.WriteAsync(" coming back from middleware 3 ");
+                Util.printValue("From Middleware: coming back from middleware 3 ");
             });
         }
     }

@@ -16,9 +16,9 @@ app.UseMiddleware<CustomMiddleware>();
 app.Use(async (HttpContext context, RequestDelegate next) =>
 {
 
-    await context.Response.WriteAsync(" Hello from middleware 2 ");
+    Util.printValue("From Middleware: Hello from middleware 2 ");
     await next(context); // pass to next middleware
-    await context.Response.WriteAsync(" coming back from middleware 2 ");
+    Util.printValue("From Middleware: coming back from middleware 2 ");
 });
 
 // method 3 add a custom middleware
@@ -34,19 +34,23 @@ app.UseWhen(context => context.Request.Method == "GET",
         app.Use((async (HttpContext context, RequestDelegate next) =>
         {
 
-            await context.Response.WriteAsync(" Hello from middleware 5 ");
+            Util.printValue("From Middleware: Hello from middleware 5 ");
             await next(context); // pass to next middleware
-            await context.Response.WriteAsync(" coming back from middleware 5 ");
+            Util.printValue("From Middleware: coming back from middleware 5 ");
         }));
     });
 
 // method 6 add a custom middleware
 // executed for every single request -> a way to create a middleware
 // Run() does not forward requests to any other middlewares
-app.Run(async (HttpContext context) =>
-{   // terminating middleware
-    await context.Response.WriteAsync(" Hello from middleware 6 ");
-});
+//app.Run(async (HttpContext context) =>
+//{   // terminating middleware, endpoints won't work if this set
+
+//    // endpoint returns info endpoint -> if run before routing middleware -> null will be returned
+//    Util.printValue($"Display name is: {context.GetEndpoint()?.DisplayName ?? ""}");
+
+//    await context.Response.WriteAsync(" Hello from middleware 6 ");
+//});
 
 app.MapGet("/salma", async (HttpContext context) =>
 {
@@ -83,5 +87,13 @@ app.MapGet("/salma", async (HttpContext context) =>
 
     await context.Response.WriteAsync("Hello Salma");
 }); // when getting a request to root, return "Hello World!"
+
+app.UseRouting(); // enable routing middleware
+app.UseEndpoints(endpoints =>
+{
+    // an endpoint
+    endpoints.MapGet("/hello", (HttpContext context) => context.Response.WriteAsync("Hello Salma"));
+});
+
 
 app.Run();
