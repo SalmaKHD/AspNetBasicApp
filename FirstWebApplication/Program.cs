@@ -1,12 +1,19 @@
 using FirstWebApplication;
 using FirstWebApplication.CustomMiddleware;
 using FirstWebApplication.MiddleWare;
+using FirstWebApplication.MonthCustomConstraint;
 using Microsoft.AspNetCore.Builder;
 using System;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
 builder.Services.AddTransient<CustomMiddleware>();
+
+// add a custom constraint
+builder.Services.AddRouting(options =>
+{
+    options.ConstraintMap.Add("months", typeof(MonthCustomConstraint));
+});
 
 var app = builder.Build(); // creates an instance of a web app
 
@@ -98,15 +105,18 @@ app.UseEndpoints(endpoints =>
 });
 
 // add a route parameter
-app.MapGet("/salma/{lastname=Khodaei}", (HttpContext context) =>
+// add a default value for route param, add an optional param, add param constraint
+app.MapGet("/salma/{lastname=Khodaei}/{age:int?}/{date-of-birth:months}", (HttpContext context) =>
 {
     context.Response.WriteAsync($"Hello Salma {context.Request.RouteValues["lastname"] ?? ""}");
+    if (context.Request.RouteValues.ContainsKey("date-of-borth"))
+    {
+        context.Response.WriteAsync($"Month is: {context.Request.RouteValues["date-of-borth"]}");
+    }
     /**
      * output
      * Hello Salma khodaei
      */
 });
-
-
 
 app.Run();
