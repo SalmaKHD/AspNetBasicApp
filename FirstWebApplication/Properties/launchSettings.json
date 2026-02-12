@@ -1,11 +1,8 @@
 {
-  // like flavors in Android
   "profiles": {
     "http": {
-      // Kestrel server
       "commandName": "Project",
       "launchBrowser": true,
-      // like build types in Android
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
@@ -22,16 +19,22 @@
       "applicationUrl": "https://localhost:7232;http://localhost:5257"
     },
     "IISExpress": {
-      // IIS Exxpress server
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      // should show messages upon executing .Net commands
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7233"
     }
   },
-  "$schema": "https://json.schemastore.org/launchsettings.json"
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:59017/",
+      "sslPort": 44361
+    }
+  }
 }
