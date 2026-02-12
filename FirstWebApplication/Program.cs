@@ -4,5 +4,3 @@ var app = builder.Build(); // creates an instance of a web app
 app.MapGet("/", () => "Hello World!"); // when getting a request to root, return "Hello World!"
 
 app.Run();
-
-//ghghgh

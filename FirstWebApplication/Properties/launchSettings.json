@@ -1,37 +1,35 @@
 {
-  "$schema": "https://json.schemastore.org/launchsettings.json",
   // like flavors in Android
   "profiles": {
     "http": {
-      // Kestrel server
       "commandName": "Project",
-      // show messagges when .net commands are executed
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5257",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "https": {
-      "commandName": "Project",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "applicationUrl": "https://localhost:7232;http://localhost:5257",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    },
-    "IIS Express": {
-      // IIS Exxpress server
-      "commandName": "IISExpress",
-      "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "applicationUrl": "https://localhost:5258",
       // like build types in Android
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "http://localhost:5257"
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7232;http://localhost:5257"
+    },
+    "IISExpress": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      // should show messages upon executing .Net commands
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7233"
     }
-  }
+  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"
 }
