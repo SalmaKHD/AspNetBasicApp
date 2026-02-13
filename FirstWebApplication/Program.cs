@@ -15,7 +15,13 @@ builder.Services.AddRouting(options =>
     options.ConstraintMap.Add("months", typeof(MonthCustomConstraint));
 });
 
+// add controllers
+builder.Services.AddControllers();
+
 var app = builder.Build(); // creates an instance of a web app
+
+// add controller mappings
+app.MapControllers();
 
 // add static files middleware
 app.UseStaticFiles();

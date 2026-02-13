@@ -4,9 +4,11 @@ namespace FirstWebApplication.NewFolder4
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        // add attribute routing
+        [Route("home")]
+        public string Index()
         {
-            return View();
+            return "Hello from home";
         }
     }
 }
