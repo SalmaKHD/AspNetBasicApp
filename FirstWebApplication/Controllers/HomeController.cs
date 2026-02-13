@@ -2,14 +2,29 @@
 
 namespace FirstWebApplication.NewFolder4
 {
+    [Controller]
     public class HomeController : Controller
     {
         // add attribute routing
         [Route("/")]
         [Route("home")]
-        public string Index()
+        public ContentResult Index()
         {
-            return "Hello from home";
+            // there are shortcut methods for all types
+            return Content("Hello from home", "text/plain"); // a method provided by the Controller method
         }
+
+        [Route("about-user/{id:int}")]
+        public string AboutUser()
+        {
+            return $"this is user with id ";
+        }
+
+        [Route("get-image")]
+        public VirtualFileResult ImageDownload()
+        {
+            return File("/sample.jpg", "image/jpeg"); // File is a shortcut for new VirtualFileResult()
+        }
+
     }
 }
