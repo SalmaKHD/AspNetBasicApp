@@ -34,12 +34,17 @@ namespace FirstWebApplication.NewFolder4
             {
                 // a shortcut method in Controller
                 return RedirectToAction(nameof(ImageDownload), new { }); // second argument is for forwarding values from request
-                // 302 status code: permenant redirection
-               //return RedirectToActionPermanent(nameof(ImageDownload), new { });
 
-                // redirect to a url
-                //return LocalRedirectPermanent(""); // 301
-                //return LocalRedirect(""); // 302
+                // 302 status code: permenant redirection
+                //return RedirectToActionPermanent(nameof(ImageDownload), new { });
+
+                // redirect to a url that is local to app
+                //return LocalRedirect("/get-image"); // 302, found
+                //return LocalRedirectPermanent("/get-image"); // 301, moved permanently
+
+                // redirect to a url outside application
+                //return Redirect("https://google.com"); // 302
+                //return RedirectPermanent("https://google.com"); //301
             }
             else
             {
