@@ -17,7 +17,7 @@ namespace FirstWebApplication.NewFolder4
         [Route("about-user/{id:int}")]
         public string AboutUser()
         {
-            return $"this is user with id ";
+            return $"this is user with id {ControllerContext.HttpContext.Request.RouteValues["id"]}";
         }
 
         [Route("get-image")]
@@ -26,5 +26,17 @@ namespace FirstWebApplication.NewFolder4
             return File("/sample.jpg", "image/jpeg"); // File is a shortcut for new VirtualFileResult()
         }
 
+        // alternative return type: can return more than one type
+        [Route("get-image/{id:int}")]
+        public IActionResult ImageDownloadWithId()
+        {
+            if (Convert.ToInt32(ControllerContext.HttpContext.Request.RouteValues["id"]) == 1)
+            {
+                return File("/sample.jpg", "image/jpeg");
+            } else
+            {
+                return BadRequest();
+            }
+        }
     }
 }
