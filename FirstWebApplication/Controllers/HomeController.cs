@@ -28,12 +28,20 @@ namespace FirstWebApplication.NewFolder4
 
         // alternative return type: can return more than one type
         [Route("get-image/{id:int}")]
-        public IActionResult ImageDownloadWithId()
+        public IActionResult ImageDownloadWithId() // represents an action
         {
             if (Convert.ToInt32(ControllerContext.HttpContext.Request.RouteValues["id"]) == 1)
             {
-                return File("/sample.jpg", "image/jpeg");
-            } else
+                // a shortcut method in Controller
+                return RedirectToAction(nameof(ImageDownload), new { }); // second argument is for forwarding values from request
+                // 302 status code: permenant redirection
+               //return RedirectToActionPermanent(nameof(ImageDownload), new { });
+
+                // redirect to a url
+                //return new LocalRedirectResult(""); // 301
+                //return LocalRedirect(""); // 302
+            }
+            else
             {
                 return BadRequest();
             }
