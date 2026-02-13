@@ -38,7 +38,7 @@ namespace FirstWebApplication.NewFolder4
                //return RedirectToActionPermanent(nameof(ImageDownload), new { });
 
                 // redirect to a url
-                //return new LocalRedirectResult(""); // 301
+                //return LocalRedirectPermanent(""); // 301
                 //return LocalRedirect(""); // 302
             }
             else
