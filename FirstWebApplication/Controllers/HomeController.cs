@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FirstWebApplication.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace FirstWebApplication.NewFolder4
 {
@@ -51,6 +54,23 @@ namespace FirstWebApplication.NewFolder4
             {
                 return BadRequest();
             }
+        }
+
+        [Route("user")]
+        [HttpPost]
+        // if we recieve object as query data, individual fields for the object will be received as keys
+        public IActionResult getUserWithName([FromQuery] string? name, [FromBody] Book? book) // name may be passed in any form, higher priority data will be picked
+        {
+            // act on model errors
+            if(!ModelState.IsValid)
+            {
+                var errorMessages = ModelState.Values.SelectMany(value => value.Errors).Select(err => err.ErrorMessage);
+                string errors = string.Join("\n", errorMessages);
+
+                return BadRequest(errors);
+            }
+
+            return Content($"name of this user is {name} with book {book}");
         }
     }
 }
