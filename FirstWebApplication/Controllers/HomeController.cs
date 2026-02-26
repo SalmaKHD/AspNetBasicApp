@@ -63,9 +63,13 @@ namespace FirstWebApplication.NewFolder4
         public IActionResult getUserWithName([FromQuery] string? name,
             [FromBody]
         [Bind(nameof(Book.Author), nameof(Book.ProductionDateTime), nameof(Book.NumberInStock), nameof(Book.Author), nameof(Book.BookId))]
-        Book? book
-            ) // name may be passed in any form, higher priority data will be picked
+        Book? book, // name may be passed in any form, higher priority data will be picked 
+            [FromHeader(Name = "User-Agent")] string? userAgent
+            )
         {
+            // print header value
+            Util.printValue($"user agent value is {userAgent}");
+
             // act on model errors
             if (!ModelState.IsValid)
             {
