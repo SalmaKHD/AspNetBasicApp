@@ -1,4 +1,5 @@
-﻿using FirstWebApplication.Models;
+﻿using FirstWebApplication.Binders;
+using FirstWebApplication.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -90,5 +91,11 @@ namespace FirstWebApplication.NewFolder4
         Number in stock must be between 0 and 100
         year must be at least 2000
         */
+
+        [Route("custom-binder")]
+        public IActionResult customBinder([ModelBinder(BinderType = typeof(BookBinder))] Book? book)
+        {
+            return Content("using custom binder");
+        }
     }
 }

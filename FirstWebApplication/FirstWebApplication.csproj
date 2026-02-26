@@ -7,18 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="NewFolder2\**" />
     <Compile Remove="NewFolder3\**" />
-    <Content Remove="NewFolder2\**" />
     <Content Remove="NewFolder3\**" />
-    <EmbeddedResource Remove="NewFolder2\**" />
     <EmbeddedResource Remove="NewFolder3\**" />
-    <None Remove="NewFolder2\**" />
     <None Remove="NewFolder3\**" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="NewFolder1\" />
+    <Folder Include="NewFolder2\" />
     <Folder Include="NewFolder\" />
   </ItemGroup>
 
