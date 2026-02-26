@@ -8,6 +8,7 @@ using System;
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
 builder.Services.AddTransient<CustomMiddleware>();
+builder.Services.AddControllersWithViews();
 
 // add a custom constraint
 builder.Services.AddRouting(options =>
