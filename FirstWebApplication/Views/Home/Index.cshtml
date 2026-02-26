@@ -1,0 +1,28 @@
+﻿@* razor code block
+@{
+
+} // for all types of building blocks such as if and for
+razor expressions
+@Expression
+@(Expression) 
+
+*@
+
+@using FirstWebApplication.Models
+@{
+    string appTitle = "ASP.NET Core Demo app";
+    Book book = new Book();
+}
+<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>@appTitle</title>
+        <meta charset="utf-8" />
+        </head>
+    <body>
+    @{
+        book.Author = "Salma";
+        <div>Changing author name</div>
+    }
+        Welcome @book.Author
+    </body>
+</html>

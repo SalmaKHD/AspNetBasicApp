@@ -3,6 +3,7 @@ using FirstWebApplication.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace FirstWebApplication.NewFolder4
 {
@@ -100,6 +101,12 @@ namespace FirstWebApplication.NewFolder4
         public IActionResult customBinder([ModelBinder(BinderType = typeof(BookBinder))] Book? book)
         {
             return Content("using custom binder");
+        }
+
+        [Route("get-view")]
+        public IActionResult ViewDataDictionaryControllerPropertyActivator()
+        {
+            return View();
         }
     }
 }
