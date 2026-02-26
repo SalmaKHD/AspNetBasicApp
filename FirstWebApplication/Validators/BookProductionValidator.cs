@@ -2,6 +2,7 @@
 
 namespace FirstWebApplication.Validators
 {
+    // geeral validator: may be used by any class
     public class BookProductionValidator: ValidationAttribute
     {
         // we may add all  functionalities like {0} attributes or supplying values to validator in custom validators also
