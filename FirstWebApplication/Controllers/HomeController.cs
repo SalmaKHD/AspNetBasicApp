@@ -59,10 +59,14 @@ namespace FirstWebApplication.NewFolder4
         [Route("user")]
         [HttpPost]
         // if we recieve object as query data, individual fields for the object will be received as keys
-        public IActionResult getUserWithName([FromQuery] string? name, [FromBody] Book? book) // name may be passed in any form, higher priority data will be picked
+        public IActionResult getUserWithName([FromQuery] string? name,
+            [FromBody]
+        [Bind(nameof(Book.Author), nameof(Book.ProductionDateTime), nameof(Book.NumberInStock), nameof(Book.Author), nameof(Book.BookId))]
+        Book? book
+            ) // name may be passed in any form, higher priority data will be picked
         {
             // act on model errors
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 var errorMessages = ModelState.Values.SelectMany(value => value.Errors).Select(err => err.ErrorMessage);
                 string errors = string.Join("\n", errorMessages);
@@ -72,5 +76,19 @@ namespace FirstWebApplication.NewFolder4
 
             return Content($"name of this user is {name} with book {book}");
         }
+        /**
+         * example output
+         * {
+        "bookId": 34,
+        "author": "S",
+        "numberInStock": -1,
+        "productionDateTime": "1999-06-01"
+            }
+
+        Author must be at least 2 chars length
+        Book ID must be supplied
+        Number in stock must be between 0 and 100
+        year must be at least 2000
+        */
     }
 }
