@@ -33,6 +33,7 @@ namespace FirstWebApplication.NewFolder4
             if (Convert.ToInt32(ControllerContext.HttpContext.Request.RouteValues["id"]) == 1)
             {
                 // a shortcut method in Controller
+                // ImageDownload is a reference to the method
                 return RedirectToAction(nameof(ImageDownload), new { }); // second argument is for forwarding values from request
 
                 // 302 status code: permenant redirection
