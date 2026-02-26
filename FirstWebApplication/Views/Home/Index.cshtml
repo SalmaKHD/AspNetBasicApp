@@ -12,17 +12,22 @@ razor expressions
 @{
     string appTitle = "ASP.NET Core Demo app";
     Book book = new Book();
+    string alertMessage = $"<script>alert('Someone here!')</script>";
 }
-<!DOCTYPE <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>@appTitle</title>
-        <meta charset="utf-8" />
-        </head>
-    <body>
+
+<!DOCTYPE
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@appTitle</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    @* for treating string as HTML code *@
+    @Html.Raw(alertMessage)
     @{
         book.Author = "Salma";
         <div>Changing author name</div>
     }
-        Welcome @book.Author
-    </body>
+    Welcome @book.Author
+</body>
 </html>
