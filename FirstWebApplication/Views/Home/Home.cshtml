@@ -9,6 +9,7 @@ razor expressions
 *@
 
 @model List<Book>
+
 @{
     string appTitle = "ASP.NET Core Demo app";
     Book book = new Book();
@@ -35,7 +36,7 @@ razor expressions
     }
     @foreach(Book book1 in Model) // strongly typed view
     {
-        <text>book1.Author</text>
+        <text>@book1.Author</text>
     }
     Welcome @book.Author
 </body>
