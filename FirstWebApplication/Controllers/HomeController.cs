@@ -108,7 +108,11 @@ namespace FirstWebApplication.NewFolder4
         {
             ViewData["appTitle"] = "Asp.Net Core"; // a dictionary that is available automatically in controllers and views
             ViewBag.appTitleTwo = "Asp.Net App";
-            return View();
+            List<Book> books = new List<Book>
+            {
+                new Book(0, "Salma", 2, null, null)
+            };
+            return View(books);
         }
     }
 }

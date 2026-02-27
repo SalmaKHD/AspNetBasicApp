@@ -13,6 +13,20 @@ namespace FirstWebApplication.Models
         [StringLength(40, MinimumLength = 2, ErrorMessage = "{0} must be at least {2} chars length")] // {2} represents min length
         public string? Author { get; set; }
 
+        public Book()
+        {
+
+        }
+
+        public Book(int? bookId, string? author, int? numberInStock, DateTime? productionDateTime, string? neverBindField)
+        {
+            BookId = bookId;
+            Author = author;
+            NumberInStock = numberInStock;
+            ProductionDateTime = productionDateTime;
+            this.neverBindField = neverBindField;
+        }
+
         public override string ToString()
         {
             return $"Book object: {BookId} {Author}";
