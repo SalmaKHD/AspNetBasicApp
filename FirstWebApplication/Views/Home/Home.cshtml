@@ -18,10 +18,15 @@ razor expressions
 <!DOCTYPE
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>@appTitle</title>
+    <title>@ViewData["appTitle"]</title>
+     @* no need to type case + returns null if not found + member access format *@
+    <title>@ViewBag.appTitleTwo</title>
     <meta charset="utf-8" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
 <body>
+    <header>App</header>
+
     @* for treating string as HTML code *@
     @Html.Raw(alertMessage)
     @{
