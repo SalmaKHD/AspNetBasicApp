@@ -104,7 +104,7 @@ namespace FirstWebApplication.NewFolder4
         }
 
         [Route("get-view")]
-        public IActionResult ViewDataDictionaryControllerPropertyActivator()
+        public IActionResult Home()
         {
             return View();
         }
