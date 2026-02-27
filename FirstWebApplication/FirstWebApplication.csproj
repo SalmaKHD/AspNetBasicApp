@@ -11,6 +11,7 @@
     <Folder Include="NewFolder2\" />
     <Folder Include="NewFolder3\" />
     <Folder Include="NewFolder\" />
+    <Folder Include="Views\NewFolder\" />
   </ItemGroup>
 
 </Project>
