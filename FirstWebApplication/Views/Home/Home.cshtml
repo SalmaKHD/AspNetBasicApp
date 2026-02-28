@@ -39,6 +39,10 @@ razor expressions
     {
         <text>Welcome @book1.Author</text>
     }
+
+    @* apply partial tag helper (a c# class by default) and add a partial view to layout *@
+    <partial name="_ListPartialView"></partial>
+
 </body>
 
 @section footer_section {
