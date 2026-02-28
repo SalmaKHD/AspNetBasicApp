@@ -18,5 +18,10 @@
         *@
         @RenderBody()
     </div>
+
+    @* may be specified in other controller views *@
+    <footer>
+        @RenderSection("footer_section", false)
+    </footer>
 </body>
 </html>

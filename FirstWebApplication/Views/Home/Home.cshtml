@@ -20,11 +20,12 @@ razor expressions
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>@ViewData["appTitle"]</title>
-     @* no need to type case + returns null if not found + member access format *@
+    @* no need to type case + returns null if not found + member access format *@
     <title>@ViewBag.appTitleTwo</title>
     <meta charset="utf-8" />
     <link href="~/StyleSheet.css" rel="stylesheet" />
 </head>
+
 <body>
     <header>App</header>
 
@@ -34,9 +35,15 @@ razor expressions
         book.Author = "Salma";
         <div>Changing author name</div>
     }
-    @foreach(Book book1 in Model) // strongly typed view
+    @foreach (Book book1 in Model) // strongly typed view
     {
         <text>Welcome @book1.Author</text>
     }
 </body>
+
+@section footer_section {
+    <p>Contact Us at 092212242</p>
+    @* may contain code that is specific to this section only *@
+}
+
 </html>
