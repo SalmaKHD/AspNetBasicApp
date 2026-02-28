@@ -7,6 +7,10 @@ razor expressions
 @(Expression) 
 
 *@
+{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["appTitle"] = "Home"
+}
 
 @model List<Book>
 

@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @* will be substituted by value supplied in each view *@
+    <title>ViewData["appTitle"]</title>
+</head>
+<body>
+    <div>
+        <button href="/">HOME</button>
+        @* a special function in the layout view
+            will be substituted with actual content for the actual view
+        *@
+        @RenderBody()
+    </div>
+</body>
+</html>
