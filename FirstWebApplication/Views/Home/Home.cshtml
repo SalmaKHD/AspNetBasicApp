@@ -43,6 +43,15 @@ razor expressions
     @* apply partial tag helper (a c# class by default) and add a partial view to layout *@
     <partial name="_ListPartialView"></partial>
 
+    @*  
+    * alternative ways, last one -> most performent
+
+    @await Html.PartialAsync("_ListPartialView")
+    @{
+        await Html.RenderPartialAsync("_ListPartialView");
+    }
+    *@
+
 </body>
 
 @section footer_section {
