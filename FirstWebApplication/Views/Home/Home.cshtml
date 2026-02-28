@@ -40,17 +40,23 @@ razor expressions
         <text>Welcome @book1.Author</text>
     }
 
-    @* apply partial tag helper (a c# class by default) and add a partial view to layout *@
-    <partial name="_ListPartialView"></partial>
-
-    @*  
+    @{
+        // apply partial tag helper (a c# class by default) and add a partial view to layout
+        var citiesViewData = new ViewDataDictionary(ViewData);
+        citiesViewData["listTitle"] = "Cities";
+        <div>
+            <partial name="_ListPartialView" view-data="citiesViewData"></partial>
+        </div>
+        @*  
     * alternative ways, last one -> most performent
 
     @await Html.PartialAsync("_ListPartialView")
     @{
         await Html.RenderPartialAsync("_ListPartialView");
     }
+    }
     *@
+    }
 
 </body>
 
