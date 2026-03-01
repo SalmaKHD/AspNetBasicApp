@@ -1,4 +1,8 @@
-﻿@model List<string>
+﻿@using ServiceContracts
+
+@* inject service directly into view -> useful for occasional situations + injecting config *@
+@inject IUsersService iuserService;
+@model List<string>
 
 <ul>
     @foreach(string user in Model)

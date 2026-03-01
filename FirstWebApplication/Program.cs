@@ -39,6 +39,11 @@ builder.Services.AddControllers();
 
 var app = builder.Build(); // creates an instance of a web app
 
+if(app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
 // add controller mappings
 app.MapControllers();
 
