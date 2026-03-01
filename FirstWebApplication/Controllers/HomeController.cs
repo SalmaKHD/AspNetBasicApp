@@ -13,9 +13,13 @@ namespace FirstWebApplication.NewFolder4
         // inject current working environment object
         private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public HomeController(IWebHostEnvironment webHostEnvironment)
+        // inject configuration settings objects
+        private readonly IConfiguration _configuration;
+
+        public HomeController(IWebHostEnvironment webHostEnvironment, IConfiguration configuration)
         {
             _webHostEnvironment = webHostEnvironment;
+            _configuration = configuration;
         }
 
 
@@ -131,6 +135,14 @@ namespace FirstWebApplication.NewFolder4
             {
                 mainTitle = "main title from get call"
             });
+        }
+
+        [Route("config")]
+        public IActionResult Config()
+        {
+            string keyValue = _configuration.GetValue<string>("MyKey", "");
+            string keyValue2 = _configuration["MyKey"];
+            return Content($"{keyValue} {keyValue2}");
         }
     }
 }
