@@ -10,13 +10,22 @@ namespace FirstWebApplication.NewFolder4
     [Controller]
     public class HomeController : Controller
     {
+        // inject current working environment object
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public HomeController(IWebHostEnvironment webHostEnvironment)
+        {
+            _webHostEnvironment = webHostEnvironment;
+        }
+
+
         // add attribute routing
         [Route("/")]
         [Route("home")]
         public ContentResult Index()
         {
             // there are shortcut methods for all types
-            return Content("Hello from home", "text/plain"); // a method provided by the Controller method
+            return Content($"Hello from home, current environment: {_webHostEnvironment.EnvironmentName}", "text/plain"); // a method provided by the Controller method
         }
 
         [Route("about-user/{id:int}")]
