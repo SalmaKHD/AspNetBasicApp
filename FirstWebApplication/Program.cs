@@ -23,6 +23,10 @@ builder.Services.Add(new ServiceDescriptor(
      */
     ServiceLifetime.Scoped) // lifetime of service
     ); // inversion of control -> when IUsersService is asked, provide UsersService object
+/*
+ * alternatice way
+ * builder.Services.AddTransient<IUsersService, UsersService>();
+ */
 
 // add a custom constraint
 builder.Services.AddRouting(options =>
