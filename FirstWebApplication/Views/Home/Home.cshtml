@@ -60,6 +60,9 @@ razor expressions
     *@
     }
 
+    @* invoke a component -> async meaning the result will be returned once ready *@
+    @await Component.InvokeAsync("Grid")
+
 </body>
 
 @section footer_section {
