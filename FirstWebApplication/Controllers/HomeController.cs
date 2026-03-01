@@ -1,5 +1,6 @@
 ﻿using FirstWebApplication.Binders;
 using FirstWebApplication.Models;
+using FirstWebApplication.Properties;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -141,9 +142,19 @@ namespace FirstWebApplication.NewFolder4
         public IActionResult Config()
         {
             string keyValue = _configuration.GetValue<string>("MyKey", "");
+            // method 2
             string keyValue2 = _configuration["MyKey"];
+
             var apiConfigSection = _configuration.GetSection("ApiConfig");
-            return Content($"{keyValue} {keyValue2} {apiConfigSection.GetValue<string>("url", "")} {apiConfigSection.GetValue<string>("SecretId", "")}");
+            string url = apiConfigSection.GetValue<string>("url", "");
+            string secretId = apiConfigSection.GetValue<string>("SecretId", "");
+
+            // method 2
+            var apiConfigOptions = _configuration.GetSection("ApiConfig").Get<ApiConfigOptions>();
+            string url2 = apiConfigOptions.Url;
+            string secretId2 = apiConfigOptions.SecretId;
+
+            return Content($"{keyValue} {keyValue2} {url} {secretId} {url2} {secretId2}");
         }
     }
 }
