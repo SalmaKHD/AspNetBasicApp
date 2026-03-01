@@ -16,7 +16,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.Add(new ServiceDescriptor(
     typeof(IUsersService),
     typeof(UsersService),
-    ServiceLifetime.Transient) // lifetime of service
+    /**
+     * Transient: an object will be created every time, destructed at the end of browser request -> for every injection
+     * scoped: once the browser requests till the end
+     * singleton: for entire app runtime
+     */
+    ServiceLifetime.Scoped) // lifetime of service
     ); // inversion of control -> when IUsersService is asked, provide UsersService object
 
 // add a custom constraint
