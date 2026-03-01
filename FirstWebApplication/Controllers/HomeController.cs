@@ -114,5 +114,14 @@ namespace FirstWebApplication.NewFolder4
             };
             return View(books);
         }
+
+        [Route("cities-list")]
+        public IActionResult LoadCitiesList()
+        {
+            return ViewComponent("Grid", new
+            {
+                mainTitle = "main title from get call"
+            });
+        }
     }
 }
