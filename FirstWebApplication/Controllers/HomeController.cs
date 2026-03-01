@@ -143,7 +143,7 @@ namespace FirstWebApplication.NewFolder4
         {
             string keyValue = _configuration.GetValue<string>("MyKey", "");
             // method 2
-            string keyValue2 = _configuration["MyKey"];
+            string? keyValue2 = _configuration["MyKey"];
 
             var apiConfigSection = _configuration.GetSection("ApiConfig");
             string url = apiConfigSection.GetValue<string>("url", "");
@@ -151,8 +151,8 @@ namespace FirstWebApplication.NewFolder4
 
             // method 2
             var apiConfigOptions = _configuration.GetSection("ApiConfig").Get<ApiConfigOptions>();
-            string url2 = apiConfigOptions.Url;
-            string secretId2 = apiConfigOptions.SecretId;
+            string? url2 = apiConfigOptions?.Url;
+            string? secretId2 = apiConfigOptions?.SecretId;
 
             return Content($"{keyValue} {keyValue2} {url} {secretId} {url2} {secretId2}");
         }
