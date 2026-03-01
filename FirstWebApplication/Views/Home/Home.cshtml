@@ -44,8 +44,10 @@ razor expressions
         // apply partial tag helper (a c# class by default) and add a partial view to layout
         var citiesViewData = new ViewDataDictionary(ViewData);
         citiesViewData["listTitle"] = "Cities";
+        Cities cities = new Cities("Euorpe Cities");
+
         <div>
-            <partial name="_ListPartialView" view-data="citiesViewData"></partial>
+            <partial name="_ListPartialView" view-data="citiesViewData" model="cities"></partial>
         </div>
         @*  
     * alternative ways, last one -> most performent
