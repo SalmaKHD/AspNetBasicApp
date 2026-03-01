@@ -3,12 +3,21 @@ using FirstWebApplication.CustomMiddleware;
 using FirstWebApplication.MiddleWare;
 using FirstWebApplication.MonthCustomConstraint;
 using Microsoft.AspNetCore.Builder;
+using ServiceContracts;
+using Services;
 using System;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
 builder.Services.AddTransient<CustomMiddleware>();
 builder.Services.AddControllersWithViews();
+
+// add services
+builder.Services.Add(new ServiceDescriptor(
+    typeof(IUsersService),
+    typeof(UsersService),
+    ServiceLifetime.Transient) // lifetime of service
+    ); // inversion of control -> when IUsersService is asked, provide UsersService object
 
 // add a custom constraint
 builder.Services.AddRouting(options =>

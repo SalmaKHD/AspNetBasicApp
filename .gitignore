@@ -1,3 +1,7 @@
 /.vs
 /FirstWebApplication/bin
 /FirstWebApplication/obj
+/Services/bin
+/Services/obj
+/ServiceContracts/bin
+/ServiceContracts/obj
