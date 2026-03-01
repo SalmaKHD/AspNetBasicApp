@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.Extensions.Options;
 
 namespace FirstWebApplication.NewFolder4
 {
@@ -17,10 +18,14 @@ namespace FirstWebApplication.NewFolder4
         // inject configuration settings objects
         private readonly IConfiguration _configuration;
 
-        public HomeController(IWebHostEnvironment webHostEnvironment, IConfiguration configuration)
+        // inject ApiConfigOptions obj
+        private readonly ApiConfigOptions _config;
+
+        public HomeController(IWebHostEnvironment webHostEnvironment, IConfiguration configuration, IOptions<ApiConfigOptions> config)
         {
             _webHostEnvironment = webHostEnvironment;
             _configuration = configuration;
+            _config = config.Value;
         }
 
 
@@ -154,7 +159,7 @@ namespace FirstWebApplication.NewFolder4
             string? url2 = apiConfigOptions?.Url;
             string? secretId2 = apiConfigOptions?.SecretId;
 
-            return Content($"{keyValue} {keyValue2} {url} {secretId} {url2} {secretId2}");
+            return Content($"{keyValue} {keyValue2} {url} {secretId} {url2} {secretId2} {_config.Url} {_config.SecretId}");
         }
     }
 }

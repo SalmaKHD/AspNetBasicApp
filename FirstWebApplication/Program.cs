@@ -2,6 +2,7 @@ using FirstWebApplication;
 using FirstWebApplication.CustomMiddleware;
 using FirstWebApplication.MiddleWare;
 using FirstWebApplication.MonthCustomConstraint;
+using FirstWebApplication.Properties;
 using Microsoft.AspNetCore.Builder;
 using ServiceContracts;
 using Services;
@@ -27,6 +28,9 @@ builder.Services.Add(new ServiceDescriptor(
  * alternatice way
  * builder.Services.AddTransient<IUsersService, UsersService>();
  */
+
+// add config options to IOC
+builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));
 
 // add a custom constraint
 builder.Services.AddRouting(options =>
