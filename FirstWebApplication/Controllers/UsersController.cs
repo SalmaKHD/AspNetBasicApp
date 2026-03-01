@@ -15,9 +15,9 @@ namespace FirstWebApplication.Controllers
         }
 
         [Route("users")]
-        public IActionResult Index()
+        public IActionResult Index([FromServices] IUsersService usersServiceFromMethod)
         {
-            List<string> users = _usersService.GetUsers();
+            List<string> users = usersServiceFromMethod.GetUsers();
             return View("Users", users);
         }
     }
