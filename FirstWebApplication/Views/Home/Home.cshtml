@@ -60,8 +60,14 @@ razor expressions
     *@
     }
 
-    @* invoke a component -> async meaning the result will be returned once ready *@
-    @await Component.InvokeAsync("Grid")
+    @* invoke a component -> async meaning the result will be returned once ready
+    alternative way of invoking component view
+    <vc:grid-view-componenet mainTitle"GridView" />
+    *@
+    @await Component.InvokeAsync("Grid", new
+    {
+        mainTitle = "Grid View"
+        })
 
 </body>
 

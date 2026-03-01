@@ -6,10 +6,11 @@ namespace FirstWebApplication.ViewComponents
     [ViewComponent]
     public class GridViewComponent: ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(string? mainTitle)
         {
             // independent from ViewData of each layout
             ViewData["title"] = "Grid View Component";
+            ViewData["mainTitle"] = mainTitle;
             return View(); // -> fills data for a partial view
         }
     }
