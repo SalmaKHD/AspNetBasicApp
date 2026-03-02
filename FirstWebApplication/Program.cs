@@ -32,6 +32,12 @@ builder.Services.Add(new ServiceDescriptor(
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));
 
+// add seperate settings file
+builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+{
+    config.AddJsonFile("apiconfigsettings.json", optional: true, reloadOnChange: true);
+});
+
 // add a custom constraint
 builder.Services.AddRouting(options =>
 {
