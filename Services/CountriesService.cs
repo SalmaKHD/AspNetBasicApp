@@ -1,8 +1,10 @@
 ﻿using Entities;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using Services.Helpers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Services
@@ -17,19 +19,21 @@ namespace Services
         }
 
         #region AddCountry
-        public CountryResonse AddCountry(CountryAddRequest? response)
+        public CountryResonse AddCountry(CountryAddRequest? request)
         {
-            if(response == null)
+            if(request == null)
             {
                 throw new ArgumentNullException(nameof(CountryAddRequest));
             }
 
-            if (response.Name == null)
-            {
-                throw new ArgumentException(nameof(response.Name));
-            }
+            // check validation rules
+            ValidationContext validationContext = new ValidationContext(request);
+            var validationResults = new List<ValidationResult>();
 
-            Country country = response.toCountry();
+            // validate DTO
+            ValidationHelper.ValidateDto(request);
+
+            Country country = request.toCountry();
             _countries.Add(country);
 
             return country.toCountryResponse();
