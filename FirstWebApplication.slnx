@@ -3,7 +3,9 @@
     <File Path=".editorconfig" />
   </Folder>
   <Project Path="Common/Common.csproj" Id="5da1ad97-08cf-4e77-8093-28d291a43f15" />
+  <Project Path="Entities/Entities.csproj" Id="da7013d5-0e46-4438-944d-d51412cd6fb2" />
   <Project Path="FirstWebApplication/FirstWebApplication.csproj" />
   <Project Path="ServiceContracts/ServiceContracts.csproj" Id="0eea7f2a-f89c-4de2-ba09-0857f2cd6523" />
   <Project Path="Services/Services.csproj" Id="d2c92e1a-bf3e-4ec0-be29-af69bc8cb661" />
+  <Project Path="Tests/Tests.csproj" Id="b00b5706-7fc5-4723-9567-1df6503f163a" />
 </Solution>
