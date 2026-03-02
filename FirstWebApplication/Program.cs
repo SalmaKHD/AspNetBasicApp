@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using ServiceContracts;
 using Services;
 using System;
+using Microsoft.Extensions;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
@@ -29,6 +30,8 @@ builder.Services.Add(new ServiceDescriptor(
  * builder.Services.AddTransient<IUsersService, UsersService>();
  */
 
+builder.Services.AddScoped<IStockService, StockService>();
+
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));
 
@@ -37,6 +40,8 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
 {
     config.AddJsonFile("apiconfigsettings.json", optional: true, reloadOnChange: true);
 });
+// add HttpClient service
+builder.Services.AddHttpClient();
 
 // add a custom constraint
 builder.Services.AddRouting(options =>
