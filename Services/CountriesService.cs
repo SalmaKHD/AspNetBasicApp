@@ -26,10 +26,6 @@ namespace Services
                 throw new ArgumentNullException(nameof(CountryAddRequest));
             }
 
-            // check validation rules
-            ValidationContext validationContext = new ValidationContext(request);
-            var validationResults = new List<ValidationResult>();
-
             // validate DTO
             ValidationHelper.ValidateDto(request);
 
