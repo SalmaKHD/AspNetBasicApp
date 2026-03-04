@@ -8,5 +8,6 @@ namespace ServiceContracts
     public interface ICountriesService
     {
         CountryResonse AddCountry(CountryAddRequest? response);
+        List<CountryResonse> GetCountries();
     }
 }

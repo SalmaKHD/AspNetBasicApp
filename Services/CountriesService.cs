@@ -34,6 +34,13 @@ namespace Services
 
             return country.toCountryResponse();
         }
+
+        public List<CountryResonse> GetCountries()
+        {
+            return _countries.Select(country => country.toCountryResponse()).ToList();
+
+            ;
+        }
     }
     #endregion
 }

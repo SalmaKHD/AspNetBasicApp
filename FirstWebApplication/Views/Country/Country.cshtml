@@ -1,0 +1,32 @@
+﻿@using ServiceContracts.DTO
+
+@model List<CountryResonse>
+
+<ul>
+    @foreach (CountryResonse countryResonse in Model)
+    {
+        <li>countryResonse.CountryName</li>
+    }
+
+    <div style="width: 100px; height: 2px; background-color: black;"></div>
+
+    <div>
+        <form action="~/country" method="post">
+
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" />
+            </div>
+            <button>Submit</button>
+
+            @* if(ViewBag?.Errors != null) {
+            <ul>
+                @foreach (string error in ViewBag.Errors)
+                {
+                    <li>@error</li>
+                }
+            </ul>
+            } *@
+        </form>
+    </div>
+</ul>

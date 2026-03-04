@@ -32,11 +32,13 @@ builder.Services.Add(new ServiceDescriptor(
 
 builder.Services.AddScoped<IStockService, StockService>();
 
+builder.Services.AddScoped<ICountriesService, CountriesService>();
+
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));
 
 // add seperate settings file
-builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
+builder.Host.ConfigureAppConfiguration((hostingContek0xt, config) =>
 {
     config.AddJsonFile("apiconfigsettings.json", optional: true, reloadOnChange: true);
 });
@@ -71,7 +73,7 @@ app.UseMiddleware<CustomMiddleware>();
 app.Use(async (HttpContext context, RequestDelegate next) =>
 {
 
-    Util.printValue("From Middleware: Hello from middleware 2 ");
+    Util.printValue("From Middleware: Hello from middl:['eware 2 ");
     await next(context); // pass to next middleware
     Util.printValue("From Middleware: coming back from middleware 2 ");
 });
