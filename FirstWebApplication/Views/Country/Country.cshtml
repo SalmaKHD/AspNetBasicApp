@@ -11,11 +11,13 @@
     <div style="width: 100px; height: 2px; background-color: black;"></div>
 
     <div>
-        <form action="~/country" method="post">
+        <form asp-controller="Country" asp-action="Countries" method="post">
 
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex; align-vitems: center; gap: 10px;">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" />
+                @* alternative way if model is present *@
+                @* <input type="text" asp-controller="Country" asp-action="Countries" /> *@
             </div>
             <button>Submit</button>
 
