@@ -180,4 +180,11 @@ app.MapGet("/salma/{lastname=Khodaei}/{age:int?}/{date-of-birth:months}", (HttpC
      */
 });
 
+// add logs
+app.Logger.LogDebug("LOGGING DEBUG...");
+app.Logger.LogInformation("LOGGING INFORMATION...");
+app.Logger.LogError("LOGGING ERROR...");
+app.Logger.LogCritical("LOGGING CRITICAL...");
+app.Logger.LogWarning("LOGGING WARNING...");
+
 app.Run();
