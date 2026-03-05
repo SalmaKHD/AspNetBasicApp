@@ -1,13 +1,14 @@
+using Entities;
 using FirstWebApplication;
 using FirstWebApplication.CustomMiddleware;
 using FirstWebApplication.MiddleWare;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions;
 using ServiceContracts;
 using Services;
 using System;
-using Microsoft.Extensions;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
@@ -57,6 +58,12 @@ builder.Services.AddRouting(options =>
 
 // add controllers
 builder.Services.AddControllers();
+
+// add db config
+builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
+{
+    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
+});
 
 var app = builder.Build(); // creates an instance of a web app
 
