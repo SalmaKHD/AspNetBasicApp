@@ -60,10 +60,10 @@ builder.Services.AddRouting(options =>
 builder.Services.AddControllers();
 
 // add db config
-builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
-{
-    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
-});
+//builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
+//{
+//    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
+//});
 
 var app = builder.Build(); // creates an instance of a web app
 
