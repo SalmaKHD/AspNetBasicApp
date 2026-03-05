@@ -65,9 +65,16 @@ builder.Services.AddControllers();
 //    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
 //});
 
+// add log providers
+builder.Host.ConfigureLogging(logProvider =>
+{
+    logProvider.ClearProviders();
+    logProvider.AddDebug(); // print in debug only
+});
+
 var app = builder.Build(); // creates an instance of a web app
 
-if(app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
