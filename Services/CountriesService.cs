@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Microsoft.Extensions.Logging;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using Services.Helpers;
@@ -12,10 +13,12 @@ namespace Services
     public class CountriesService : ICountriesService
     {
         private List<Country> _countries;
+        private ILogger<CountriesService> _logger;
 
-        public CountriesService()
+        public CountriesService(ILogger<CountriesService> logger)
         {
             _countries = new List<Country>();
+            _logger = logger;
         }
 
         #region AddCountry
@@ -37,6 +40,9 @@ namespace Services
 
         public bool DeleteCountry(CountryDeleteRequest? request)
         {
+            // add log
+            _logger.LogInformation($"deleting country with id {request.CountryID}");
+
             if (request == null)
             {
                 throw new ArgumentNullException(nameof(CountryDeleteRequest));
