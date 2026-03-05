@@ -41,7 +41,7 @@ namespace Services
         public bool DeleteCountry(CountryDeleteRequest? request)
         {
             // add log
-            _logger.LogInformation($"deleting country with id {request.CountryID}");
+            _logger.LogInformation($"Deleting country with id {request.CountryID}");
 
             if (request == null)
             {
