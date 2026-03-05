@@ -113,7 +113,7 @@ namespace FirstWebApplication.NewFolder4
             }
 
         Author must be at least 2 chars length
-        Book ID must be supplied
+        Book CountryID must be supplied
         Number in stock must be between 0 and 100
         year must be at least 2000
         */

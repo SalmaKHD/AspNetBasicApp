@@ -21,7 +21,7 @@ namespace Services
         #region AddCountry
         public CountryResonse AddCountry(CountryAddRequest? request)
         {
-            if(request == null)
+            if (request == null)
             {
                 throw new ArgumentNullException(nameof(CountryAddRequest));
             }
@@ -34,6 +34,21 @@ namespace Services
 
             return country.toCountryResponse();
         }
+
+        public bool DeleteCountry(CountryDeleteRequest? request)
+        {
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(CountryDeleteRequest));
+            }
+
+            // validate DTO
+            ValidationHelper.ValidateDto(request);
+            if (request.CountryID == null) return false;
+            int isDeleted = _countries.RemoveAll(coutry => coutry.CountryID == request?.CountryID);
+            return isDeleted != -1;
+        }
+
 
         public List<CountryResonse> GetCountries()
         {

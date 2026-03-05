@@ -1,34 +1,50 @@
 ﻿@using ServiceContracts.DTO
-
 @model List<CountryResonse>
 
-<ul>
-    @foreach (CountryResonse countryResonse in Model)
-    {
-        <li>countryResonse.CountryName</li>
-    }
+<div style="max-width: 500px; margin: 20px auto; font-family: Arial, sans-serif;">
 
-    <div style="width: 100px; height: 2px; background-color: black;"></div>
+    <h2 style="text-align: center; margin-bottom: 15px;">Countries</h2>
 
-    <div>
-        <form asp-controller="Country" asp-action="Countries" method="post">
+    <ul style="list-style: none; padding: 0; border: 1px solid #ccc; border-radius: 8px; overflow: hidden;">
+        @foreach (CountryResonse countryResonse in Model)
+        {
+            <li style="display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; border-bottom: 1px solid #eee; background-color: #fafafa;">
+                <span>@countryResonse.CountryName</span>
+                <form asp-controller="Country" asp-action="Delete" method="post" style="margin: 0;">
+                    <input type="hidden" name="CountryId" value="@countryResonse.CountryId" />
+                    <button type="submit" style="background-color: red; color: white; border: none; border-radius: 4px; padding: 5px 10px; cursor: pointer;">
+                        Delete
+                    </button>
+                </form>
+            </li>
+        }
+    </ul>
 
-            <div style="display: flex; align-vitems: center; gap: 10px;">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" />
-                @* alternative way if model is present *@
-                @* <input asp-for="Name" /> *@
+    <div style="height: 2px; background-color: black; margin: 20px 0;"></div>
+
+    <div style="border: 1px solid #ccc; border-radius: 8px; padding: 15px; background-color: #f9f9f9;">
+        <h3 style="margin-top: 0;">Add a Country</h3>
+
+        <form asp-controller="Country" asp-action="Add" method="post">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                <label for="Name" style="width: 60px;">Name:</label>
+                <input type="text" id="Name" name="Name" style="flex: 1; padding: 5px; border: 1px solid #ccc; border-radius: 4px;" />
             </div>
-            <button>Submit</button>
 
-            @* if(ViewBag?.Errors != null) {
-            <ul>
-                @foreach (string error in ViewBag.Errors)
-                {
-                    <li>@error</li>
-                }
-            </ul>
-            } *@
+            <button type="submit" style="background-color: green; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer;">
+                Submit
+            </button>
+
+            @if (ViewBag?.Errors != null)
+            {
+                <ul style="margin-top: 10px; color: red;">
+                    @foreach (string error in ViewBag.Errors)
+                    {
+                        <li>@error</li>
+                    }
+                </ul>
+            }
         </form>
     </div>
-</ul>
+
+</div>

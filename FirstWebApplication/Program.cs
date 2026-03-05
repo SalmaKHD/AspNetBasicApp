@@ -32,7 +32,11 @@ builder.Services.Add(new ServiceDescriptor(
 
 builder.Services.AddScoped<IStockService, StockService>();
 
-builder.Services.AddScoped<ICountriesService, CountriesService>();
+builder.Services.Add(new ServiceDescriptor(
+    typeof(ICountriesService),
+    typeof(CountriesService),
+    ServiceLifetime.Singleton)
+    );
 
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));

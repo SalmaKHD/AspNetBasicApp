@@ -19,12 +19,14 @@ namespace FirstWebApplication.Controllers
         public IActionResult Countries()
         {
             var countries = _countriesService.GetCountries();
+
             return View("Country", countries);
+
         }
 
-        [Route("/country")] // /"route" overrides [Route("[controller]")]
+        [Route("[action]")] // /"route" overrides [Route("[controller]")]
         [HttpPost]
-        public IActionResult AddCountry(CountryAddRequest country)
+        public IActionResult Add(CountryAddRequest country)
         {
             if (ModelState.IsValid)
             {
@@ -35,6 +37,23 @@ namespace FirstWebApplication.Controllers
                 v.Errors).Select(e => e.ErrorMessage).ToList();
             }
                 var countries = _countriesService.GetCountries();
+            return View("Country", countries);
+        }
+
+        [Route("[action]")] // /"route" overrides [Route("[controller]")]
+        [HttpPost]
+        public IActionResult Delete(CountryDeleteRequest country)
+        {
+            if (ModelState.IsValid)
+            {
+                _countriesService.DeleteCountry(country);
+            }
+            else
+            {
+                ViewBag.Errors = ModelState.Values.SelectMany(v =>
+                v.Errors).Select(e => e.ErrorMessage).ToList();
+            }
+            var countries = _countriesService.GetCountries();
             return View("Country", countries);
         }
     }

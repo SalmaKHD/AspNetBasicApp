@@ -7,7 +7,7 @@ namespace FirstWebApplication.Models
     {
         // add an attribute to request data field
         [Required(ErrorMessage = "{0} must be supplied")] // {0} represents the field name
-        [Display(Name = "Book ID")]
+        [Display(Name = "Book CountryID")]
         public int? BookId { get; set; }
 
         [StringLength(40, MinimumLength = 2, ErrorMessage = "{0} must be at least {2} chars length")] // {2} represents min length
