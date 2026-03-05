@@ -72,6 +72,13 @@ builder.Host.ConfigureLogging(logProvider =>
     logProvider.AddDebug(); // print in debug only
 });
 
+// add Http logging
+builder.Services.AddHttpLogging(options =>
+{
+    options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties |
+    Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
+});
+
 var app = builder.Build(); // creates an instance of a web app
 
 if (app.Environment.IsDevelopment())
