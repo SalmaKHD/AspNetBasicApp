@@ -2,7 +2,7 @@
 
 namespace FirstWebApplication.Filters.ActionFilters
 {
-    public class CountryControllerActionFilter: IActionFilter
+    public class CountryControllerActionFilter : IAsyncActionFilter
     {
 
         private readonly ILogger<CountryControllerActionFilter> _logger;
@@ -16,14 +16,13 @@ namespace FirstWebApplication.Filters.ActionFilters
             _value = value;
         }
 
-        public void OnActionExecuted(ActionExecutedContext context)
+        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
+            // onActionExecuting logic
+            await next();
+            // onActionExecuted logic
             // add header
             context.HttpContext.Response.Headers[_key] = _value;
-        }
-
-        public void OnActionExecuting(ActionExecutingContext context)
-        {
         }
     }
 }
