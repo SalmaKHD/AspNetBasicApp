@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Exceptions;
 using Microsoft.Extensions.Logging;
 using ServiceContracts;
 using ServiceContracts.DTO;
@@ -24,6 +25,8 @@ namespace Services
         #region AddCountry
         public CountryResonse AddCountry(CountryAddRequest? request)
         {
+            throw new CustomInvalidArgumentException();
+
             if (request == null)
             {
                 throw new ArgumentNullException(nameof(CountryAddRequest));

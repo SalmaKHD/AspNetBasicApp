@@ -1,8 +1,7 @@
 using Entities;
 using FirstWebApplication;
-using FirstWebApplication.CustomMiddleware;
 using FirstWebApplication.Filters.ActionFilters;
-using FirstWebApplication.MiddleWare;
+using FirstWebApplication.Middleware;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
 using Microsoft.AspNetCore.Builder;
@@ -90,6 +89,11 @@ var app = builder.Build(); // creates an instance of a web app
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandlingMiddleware();
 }
 
 // add controller mappings

@@ -1,4 +1,4 @@
-﻿namespace FirstWebApplication.CustomMiddleware
+﻿namespace FirstWebApplication.Middleware
 {
     public class CustomMiddleware: IMiddleware
     {
