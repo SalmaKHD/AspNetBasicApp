@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FirstWebApplication.Filters.ActionFilters;
+using Microsoft.AspNetCore.Mvc;
 using ServiceContracts;
 using ServiceContracts.DTO;
 
@@ -26,6 +27,7 @@ namespace FirstWebApplication.Controllers
 
         [Route("[action]")] // /"route" overrides [Route("[controller]")]
         [HttpPost]
+        [TypeFilter(typeof(AddCountryActionFilter))]
         public IActionResult Add(CountryAddRequest country)
         {
             if (ModelState.IsValid)
