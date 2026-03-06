@@ -43,6 +43,10 @@ namespace FirstWebApplication.Filters.ActionFilters
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
+            // short-circuiting: will bypass next filters and actions
+            //CountryController countryController = (CountryController)context.Controller;
+            //context.Result = countryController.View("response");
+
             // pass action arguments to action executed method
             context.HttpContext.Items["arguments"] = context.ActionArguments;
 

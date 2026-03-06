@@ -2,7 +2,7 @@
 
 namespace FirstWebApplication.Filters.ActionFilters
 {
-    public class CountryControllerActionFilter : IAsyncActionFilter
+    public class CountryControllerActionFilter: IAsyncActionFilter
     {
 
         private readonly ILogger<CountryControllerActionFilter> _logger;
