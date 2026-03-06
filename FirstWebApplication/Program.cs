@@ -18,7 +18,7 @@ builder.Services.AddControllersWithViews(options =>
 {
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<GlobalActionFilter>>();
 
-    options.Filters.Add(new GlobalActionFilter(logger, "Global-Filter-Key", "value"));
+    options.Filters.Add(new GlobalActionFilter(logger, "Global-Filter-Key", "value", 0));
 });
 
 // add services
