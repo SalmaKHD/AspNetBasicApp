@@ -8,7 +8,8 @@ namespace FirstWebApplication.Controllers
     [Route("[controller]")]
     [TypeFilter(typeof(CountryControllerActionFilter), Arguments = new object[] {
             "Controller-Filter-Key",
-            "value"}
+            "value"},
+        Order = 2
         )]
     public class CountryController : Controller
     {
@@ -33,7 +34,8 @@ namespace FirstWebApplication.Controllers
         [HttpPost]
         [TypeFilter(typeof(AddCountryActionFilter), Arguments = new object[] {
             "Action-Filter-Key",
-            "valur"}
+            "value"},
+            Order = 1
         )]
         public IActionResult Add(CountryAddRequest country)
         {
