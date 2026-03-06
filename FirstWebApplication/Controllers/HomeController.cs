@@ -163,5 +163,11 @@ namespace FirstWebApplication.NewFolder4
 
             return Content($"{keyValue} {keyValue2} {url} {secretId} {url2} {secretId2} {_config.Url} {_config.SecretId}");
         }
+
+        [Route("/Error")]
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
