@@ -27,18 +27,22 @@ namespace FirstWebApplication.Controllers
 
         [Route("[action]")] // /"route" overrides [Route("[controller]")]
         [HttpPost]
-        [TypeFilter(typeof(AddCountryActionFilter))]
+        [TypeFilter(typeof(AddCountryActionFilter), Arguments = new object[] {
+            "X-Custom-Key",
+            "Custom-Value"}
+        )]
         public IActionResult Add(CountryAddRequest country)
         {
             if (ModelState.IsValid)
             {
                 _countriesService.AddCountry(country);
-            } else
+            }
+            else
             {
                 ViewBag.Errors = ModelState.Values.SelectMany(v =>
                 v.Errors).Select(e => e.ErrorMessage).ToList();
             }
-                var countries = _countriesService.GetCountries();
+            var countries = _countriesService.GetCountries();
             return View("Country", countries);
         }
 

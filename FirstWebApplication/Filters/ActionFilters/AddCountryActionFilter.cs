@@ -8,10 +8,14 @@ namespace FirstWebApplication.Filters.ActionFilters
     public class AddCountryActionFilter : IActionFilter
     {
         private readonly ILogger<AddCountryActionFilter> _logger;
+        private readonly string _key;
+        private readonly string _value;
 
-        public AddCountryActionFilter(ILogger<AddCountryActionFilter> logger)
+        public AddCountryActionFilter(ILogger<AddCountryActionFilter> logger, string key, string value)
         {
             _logger = logger;
+            _key = key;
+            _value = value;
         }
 
         public void OnActionExecuted(ActionExecutedContext context)
@@ -32,6 +36,9 @@ namespace FirstWebApplication.Filters.ActionFilters
                     _logger.LogInformation($"Value of country action argument: {country?.Name}");
                 }
             }
+
+            // add as response header
+            context.HttpContext.Response.Headers[_key] = _value;
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
@@ -44,7 +51,7 @@ namespace FirstWebApplication.Filters.ActionFilters
             // read arequest arguments
             if(context.ActionArguments.ContainsKey("country"))
             {
-                var country = (CountryAddRequest) context.ActionArguments["country"];
+                var country = (CountryAddRequest?) context.ActionArguments["country"];
                 _logger.LogInformation($"Value of country action argument: {country?.Name}");
             }
         }
