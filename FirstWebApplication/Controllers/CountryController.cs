@@ -6,6 +6,10 @@ using ServiceContracts.DTO;
 namespace FirstWebApplication.Controllers
 {
     [Route("[controller]")]
+    [TypeFilter(typeof(CountryControllerActionFilter), Arguments = new object[] {
+            "Controller-Filter-Key",
+            "value"}
+        )]
     public class CountryController : Controller
     {
         private ICountriesService _countriesService;
@@ -28,8 +32,8 @@ namespace FirstWebApplication.Controllers
         [Route("[action]")] // /"route" overrides [Route("[controller]")]
         [HttpPost]
         [TypeFilter(typeof(AddCountryActionFilter), Arguments = new object[] {
-            "X-Custom-Key",
-            "Custom-Value"}
+            "Action-Filter-Key",
+            "valur"}
         )]
         public IActionResult Add(CountryAddRequest country)
         {

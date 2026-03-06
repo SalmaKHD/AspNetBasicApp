@@ -1,6 +1,7 @@
 using Entities;
 using FirstWebApplication;
 using FirstWebApplication.CustomMiddleware;
+using FirstWebApplication.Filters.ActionFilters;
 using FirstWebApplication.MiddleWare;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
@@ -13,7 +14,12 @@ using System;
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
 builder.Services.AddTransient<CustomMiddleware>();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<GlobalActionFilter>>();
+
+    options.Filters.Add(new GlobalActionFilter(logger, "Global-Filter-Key", "value"));
+});
 
 // add services
 builder.Services.Add(new ServiceDescriptor(
