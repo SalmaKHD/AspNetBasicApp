@@ -11,6 +11,7 @@ using Microsoft.Extensions;
 using ServiceContracts;
 using Services;
 using System;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
 // method 1 add a custom middleware
@@ -243,5 +244,44 @@ app.Logger.LogInformation("LOGGING INFORMATION...");
 app.Logger.LogError("LOGGING ERROR...");
 app.Logger.LogCritical("LOGGING CRITICAL...");
 app.Logger.LogWarning("LOGGING WARNING...");
+
+// work with minimal API
+
+var mapGroup = app.MapGroup("/api/minimal/country");
+
+List<Country> countries = new List<Country>
+{
+    new Country("Brazil"),
+    new Country("Canada")
+};
+
+mapGroup.MapGet("/", async (HttpContext context) =>
+{
+    await context.Response.WriteAsync(
+        JsonSerializer.Serialize(countries));
+});
+
+
+mapGroup.MapPost("/", async (HttpContext context, string name) =>
+{
+    countries.Add(new Country(name: name));
+
+    await context.Response.WriteAsync("Add successful");
+});
+
+mapGroup.MapGet("/{id:string}", async (HttpContext context, string id) =>
+{
+    Country country = countries.First(country => country.CountryID == Guid.Parse(id));
+    if (country != null)
+    {
+        await context.Response.WriteAsync(
+                    JsonSerializer.Serialize(countries));
+    }
+    else
+    {
+        await context.Response.WriteAsync("No country found");
+    }
+
+});
 
 app.Run();
