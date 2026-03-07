@@ -5,6 +5,8 @@ using FirstWebApplication.Middleware;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
 using ServiceContracts;
 using Services;
@@ -65,10 +67,10 @@ builder.Services.AddRouting(options =>
 builder.Services.AddControllers();
 
 // add db config
-//builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
-//{
-//    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
-//});
+builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
+{
+    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
+});
 
 // add log providers
 builder.Host.ConfigureLogging(logProvider =>
@@ -95,6 +97,9 @@ else
     app.UseExceptionHandlingMiddleware();
     app.UseExceptionHandler("/Error");
 }
+
+// force clients to use https
+app.UseHsts();
 
 // add controller mappings
 app.MapControllers();
