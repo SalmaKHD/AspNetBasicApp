@@ -67,10 +67,10 @@ builder.Services.AddRouting(options =>
 builder.Services.AddControllers();
 
 // add db config
-builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
-{
-    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
-});
+//builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
+//{
+//    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
+//});
 
 // add log providers
 builder.Host.ConfigureLogging(logProvider =>
@@ -84,6 +84,18 @@ builder.Services.AddHttpLogging(options =>
 {
     options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties |
     Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
+});
+
+// enable CORS policy for all requests
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policyBuilder =>
+    {
+        // only allow requests coming from this domain to access server
+        policyBuilder
+        .WithOrigins(builder.Configuration.GetSection("AllowedOrigins").Get<string[]>())
+        .WithHeaders("Authorization", "origin", "accept", "content-type"); // add allowed headers
+    });
 });
 
 var app = builder.Build(); // creates an instance of a web app
@@ -186,6 +198,10 @@ app.MapGet("/salma", async (HttpContext context) =>
 }); // when getting a request to root, return "Hello World!"
 
 app.UseRouting(); // enable routing middleware
+
+// add CORS
+app.UseCors();
+
 app.UseEndpoints(endpoints =>
 {
     // an endpoint
