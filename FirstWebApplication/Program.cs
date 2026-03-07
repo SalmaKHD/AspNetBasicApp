@@ -98,6 +98,18 @@ builder.Services.AddCors(options =>
     });
 });
 
+// add custom policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("4100Client", policyBuilder =>
+    {
+        // only allow requests coming from this domain to access server
+        policyBuilder
+        .WithOrigins(builder.Configuration.GetSection("AllowedOrigins").Get<string[]>())
+        .WithHeaders("Authorization", "origin", "accept", "content-type"); // add allowed headers
+    });
+});
+
 var app = builder.Build(); // creates an instance of a web app
 
 if (app.Environment.IsDevelopment())
