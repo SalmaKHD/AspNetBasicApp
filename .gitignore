@@ -13,3 +13,16 @@
 /Tests/obj
 /Exceptions/bin
 /Exceptions/obj
+/FirstWebApplication.UI/bin
+/FirstWebApplication.UI/obj
+/FirstWebApplication.ControllerTests/bin
+/FirstWebApplication.ControllerTests/obj
+/FirstWebApplication.Core/bin
+/FirstWebApplication.Core/obj
+/FirstWebApplication.Infrustructure/bin
+/FirstWebApplication.Infrustructure/obj
+/FirstWebApplication.ServiceTests/bin
+/FirstWebApplication.ServiceTests/obj
+/FirstWebApplication.IntegrationTests/bin
+/FirstWebApplication.IntegrationTests/obj
+

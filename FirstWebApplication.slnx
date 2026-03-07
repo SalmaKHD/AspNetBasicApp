@@ -2,6 +2,16 @@
   <Folder Name="/Solution Items/">
     <File Path=".editorconfig" />
   </Folder>
+  <Folder Name="/src/">
+    <Project Path="FirstApplication.UI/FirstWebApplication.UI.csproj" Id="7aff1489-4f3d-431f-8ce4-69ad8cf633e9" />
+    <Project Path="FirstWebApplication.Core/FirstWebApplication.Core.csproj" Id="93f85a66-9a03-4484-9979-5f670ff0f8f4" />
+    <Project Path="FirstWebApplication.Infrustructure/FirstWebApplication.Infrustructure.csproj" Id="53a83136-0752-4b96-8b5c-f80817e7d32d" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="FirstWebApplication.ControllerTests/FirstWebApplication.ControllerTests.csproj" Id="4bc4a603-8a79-4653-9501-1cfcce1619c6" />
+    <Project Path="FirstWebApplication.IntegrationTests/FirstWebApplication.IntegrationTests.csproj" Id="01cdb6a0-0379-42c7-b8a7-0490a17007e8" />
+    <Project Path="FirstWebApplication.ServiceTests/FirstWebApplication.ServiceTests.csproj" Id="338f679e-3932-44ca-92ae-df59bc01faee" />
+  </Folder>
   <Project Path="Common/Common.csproj" Id="5da1ad97-08cf-4e77-8093-28d291a43f15" />
   <Project Path="Entities/Entities.csproj" Id="da7013d5-0e46-4438-944d-d51412cd6fb2" />
   <Project Path="Exceptions/Exceptions.csproj" Id="bc94fd7a-f11e-4bcd-8d6a-e77f78aa19bd" />

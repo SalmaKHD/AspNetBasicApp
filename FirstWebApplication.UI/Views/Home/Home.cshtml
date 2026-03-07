@@ -1,0 +1,87 @@
+﻿@* razor code block
+@{
+
+} // for all types of building blocks such as if and for
+razor expressions
+@Expression
+@(Expression) 
+*@
+
+@model List<Book>
+
+@{
+    string appTitle = "ASP.NET Core Demo app";
+    ViewData["appTitle"] = "Home";
+    Book book = new Book();
+    string alertMessage = $"<script>alert('Someone here!')</script>";
+}
+
+<!DOCTYPE
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewData["appTitle"]</title>
+    @* no need to type case + returns null if not found + member access format *@
+    <title>@ViewBag.appTitleTwo</title>
+    <meta charset="utf-8" />
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>App</header>
+
+    @* for treating string as HTML code *@
+    @Html.Raw(alertMessage)
+    @{
+        book.Author = "Salma";
+        <div>Changing author name</div>
+    }
+    @foreach (Book book1 in Model) // strongly typed view
+    {
+        <text>Welcome @book1.Author</text>
+    }
+
+    @{
+        // apply partial tag helper (a c# class by default) and add a partial view to layout
+        var citiesViewData = new ViewDataDictionary(ViewData);
+        citiesViewData["listTitle"] = "Cities";
+        Cities cities = new Cities("Euorpe Cities");
+
+        <div>
+            <partial name="_ListPartialView" view-data="citiesViewData" model="cities"></partial>
+        </div>
+        @*  
+    * alternative ways, last one -> most performent
+
+    @await Html.PartialAsync("_ListPartialView")
+    @{
+        await Html.RenderPartialAsync("_ListPartialView");
+    }
+    }
+    *@
+    }
+
+    @* invoke a component -> async meaning the result will be returned once ready
+    alternative way of invoking component view
+    <vc:grid-view-componenet mainTitle"GridView" />
+    *@
+    @await Component.InvokeAsync("Grid", new
+    {
+        mainTitle = "Grid View"
+        })
+
+    <button id="load-cities-btn">Load Cities</button>
+
+    <div id="cities-list"></div>
+</body>
+
+@section footer_section {
+    <p>Contact Us at 092212242</p>
+    @* may contain code that is specific to this section only *@
+}
+@* add conditional button based n environment *@
+<environment include="Development">
+    <button>For Test in Development Only</button>
+</environment>
+</html>
+
+<script src="cities.js"></script>

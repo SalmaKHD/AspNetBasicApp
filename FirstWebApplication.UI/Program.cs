@@ -92,8 +92,8 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseExceptionHandlingMiddleware();
     app.UseExceptionHandler("/Error");
+    app.UseExceptionHandlingMiddleware();
 }
 
 // add controller mappings

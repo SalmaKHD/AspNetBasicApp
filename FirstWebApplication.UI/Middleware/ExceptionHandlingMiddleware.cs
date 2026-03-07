@@ -32,9 +32,6 @@ namespace FirstWebApplication.Middleware
                 // add http response
                 httpContext.Response.StatusCode = 500;
                 await httpContext.Response.WriteAsync("Error Occurred.");
-
-                // to forward to error page
-                throw;
             }
         }
     }

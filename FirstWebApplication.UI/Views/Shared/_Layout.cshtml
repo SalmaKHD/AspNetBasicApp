@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!DOCTYPE
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    @* will be substituted by value supplied in each view *@
+    <title>@ViewData["appTitle"]</title>
+</head>
+<body>
+    <div>
+        <a href="~/" style="padding: 6px 12px; background-color: cadetblue; color: white; border-radius: 4px; text-decoration: none; display: inline-block;">
+            HOME
+        </a>
+        @* a special function in the layout view
+            will be substituted with actual content for the actual view
+        *@
+        @RenderBody()
+    </div>
+
+    @* may be specified in other controller views *@
+    <footer>
+        @RenderSection("footer_section", false)
+    </footer>
+</body>
+</html>

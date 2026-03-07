@@ -1,9 +1,9 @@
 ﻿using Entities;
 using Exceptions;
+using FirstWebApplication.Core.Helpers;
 using Microsoft.Extensions.Logging;
 using ServiceContracts;
 using ServiceContracts.DTO;
-using Services.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -25,6 +25,8 @@ namespace Services
         #region AddCountry
         public CountryResonse AddCountry(CountryAddRequest? request)
         {
+            throw new CustomInvalidArgumentException();
+
             if (request == null)
             {
                 throw new ArgumentNullException(nameof(CountryAddRequest));
