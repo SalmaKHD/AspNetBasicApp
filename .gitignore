@@ -25,4 +25,5 @@
 /FirstWebApplication.ServiceTests/obj
 /FirstWebApplication.IntegrationTests/bin
 /FirstWebApplication.IntegrationTests/obj
-
+/FirstApplication.UI/bin
+/FirstApplication.UI/obj
