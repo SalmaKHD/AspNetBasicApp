@@ -20,5 +20,11 @@ namespace Entities
             CountryID = Guid.NewGuid();
             Name = name;
         }
+
+        public Country(string? name, Guid guid)
+        {
+            CountryID = guid;
+            Name = name;
+        }
     }
 }

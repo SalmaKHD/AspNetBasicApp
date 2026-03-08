@@ -5,6 +5,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+	  <CheckEolDeviations>false</CheckEolDeviations>
+	  <EnablePackageVulnerability>false</EnablePackageVulnerability>
   </PropertyGroup>
 
   <ItemGroup>

@@ -5,6 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>3d61bf4d-7527-4afa-b48b-371599340ba8</UserSecretsId>
+
+	  <CheckEolDeviations>false</CheckEolDeviations>
+	  <EnablePackageVulnerability>false</EnablePackageVulnerability>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,6 +34,10 @@
   </ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.3">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
 	</ItemGroup>
 

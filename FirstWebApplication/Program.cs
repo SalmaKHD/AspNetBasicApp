@@ -69,10 +69,10 @@ builder.Services.AddRouting(options =>
 builder.Services.AddControllers();
 
 // add db config
-//builder.Services.AddDbContext<CountriesDbContext>(OptionsBuilderConfigurationExtensions =>
-//{
-//    OptionsBuilderConfigurationExtensions.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]); // choose server to use
-//});
+builder.Services.AddDbContext<CountriesDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+});
 
 // add log providers
 builder.Host.ConfigureLogging(logProvider =>
