@@ -27,5 +27,7 @@ namespace Entities
             CountryID = guid;
             Name = name;
         }
+
+        public ICollection<Person>? Persons; // will return persons with this country, Include function required
     }
 }
