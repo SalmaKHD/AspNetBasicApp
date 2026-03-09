@@ -45,7 +45,7 @@ builder.Services.AddScoped<IStockService, StockService>();
 builder.Services.Add(new ServiceDescriptor(
     typeof(ICountriesService),
     typeof(CountriesService),
-    ServiceLifetime.Singleton)
+    ServiceLifetime.Scoped)
     );
 
 // add config options to IOC
@@ -69,6 +69,7 @@ builder.Services.AddRouting(options =>
 builder.Services.AddControllers();
 
 // add db config
+// scope: scoped by default
 builder.Services.AddDbContext<CountriesDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
@@ -248,6 +249,6 @@ app.Logger.LogWarning("LOGGING WARNING...");
 
 // work with minimal API
 
-var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
+//var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
 
 app.Run();

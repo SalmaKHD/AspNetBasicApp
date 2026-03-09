@@ -13,13 +13,20 @@ namespace Services
 {
     public class CountriesService : ICountriesService
     {
-        private List<Country> _countries;
+        private CountriesDbContext _db;
         private ILogger<CountriesService> _logger;
 
-        public CountriesService(ILogger<CountriesService> logger)
+        public CountriesService(CountriesDbContext countriesDbContext, ILogger<CountriesService> logger)
         {
-            _countries = new List<Country>();
+            _db = countriesDbContext;
             _logger = logger;
+        }
+
+        public List<CountryResonse> GetCountries()
+        {
+            // no need to call SaveChanges()
+            // get all eagerly first then execute Select on resultant list
+            return _db.sp_GetCountries().ToList().Select(country => country.toCountryResponse()).ToList();
         }
 
         #region AddCountry
@@ -34,7 +41,8 @@ namespace Services
             ValidationHelper.ValidateDto(request);
 
             Country country = request.toCountry();
-            _countries.Add(country);
+            _db.Coutries.Add(country);
+            _db.SaveChanges();
 
             return country.toCountryResponse();
         }
@@ -52,16 +60,9 @@ namespace Services
             // validate DTO
             ValidationHelper.ValidateDto(request);
             if (request.CountryID == null) return false;
-            int isDeleted = _countries.RemoveAll(coutry => coutry.CountryID == request?.CountryID);
-            return isDeleted != -1;
-        }
-
-
-        public List<CountryResonse> GetCountries()
-        {
-            return _countries.Select(country => country.toCountryResponse()).ToList();
-
-            ;
+            _db.Coutries.Remove(_db.Coutries.First(country => country.CountryID == request.CountryID));
+            _db.SaveChanges();
+            return true;
         }
     }
     #endregion

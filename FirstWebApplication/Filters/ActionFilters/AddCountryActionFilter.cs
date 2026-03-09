@@ -20,7 +20,7 @@ namespace FirstWebApplication.Filters.ActionFilters
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            _logger.LogInformation("Countries action executed");
+            _logger.LogInformation("Coutries action executed");
             // receive action arguments and pass to view
 
             IDictionary<string, object?>? parameters = (IDictionary<string, object?>?)context.HttpContext.Items["arguments"];
@@ -50,7 +50,7 @@ namespace FirstWebApplication.Filters.ActionFilters
             // pass action arguments to action executed method
             context.HttpContext.Items["arguments"] = context.ActionArguments;
 
-            _logger.LogInformation("Countries action executing");
+            _logger.LogInformation("Coutries action executing");
 
             // read arequest arguments
             if(context.ActionArguments.ContainsKey("country"))
