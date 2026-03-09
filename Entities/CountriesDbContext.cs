@@ -26,7 +26,7 @@ namespace Entities
 
         public List<Country> sp_GetCountries()
         {
-            return Coutries.FromSqlRaw("EXECUTE [dbo].[GetCountries]").ToList();
+            return Coutries.FromSqlRaw("EXECUTE [dbo].[GetCountriesFix]").ToList();
         }
     }
 }
