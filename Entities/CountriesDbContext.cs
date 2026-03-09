@@ -22,6 +22,23 @@ namespace Entities
             // add dummy data
             modelbuilder.Entity<Country>().HasData(new Country("Brazil", Guid.Parse("89d1e09d-e685-4f88-acdb-7df862831e8c")));
             modelbuilder.Entity<Country>().HasData(new Country("Canada", Guid.Parse("a2914ee4-c8f6-4b91-9e2b-dc6da114d0f9")));
+
+
+            //Fluent API
+            // change column properties
+            modelbuilder.Entity<Country>().Property(temp => temp.Name)
+                .HasColumnName("name")
+                .HasDefaultValue("");
+            //.HasColumnType("");
+
+            // create index
+            modelbuilder.Entity<Country>()
+                .HasIndex(temp => temp.CountryID) // add index
+                .IsUnique(); // add unique constraint
+
+            // add constraint
+            //modelbuilder.Entity<Country>()
+            //    .HasCheckConstraint("CONSTRAINT_NAME", "len([name]) = 20");
         }
 
         public List<Country> sp_GetCountries()

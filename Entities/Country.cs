@@ -8,6 +8,7 @@ namespace Entities
     public class Country
     {
         [Key]
+        [Required]
         public Guid CountryID { get; set; }
 
 
