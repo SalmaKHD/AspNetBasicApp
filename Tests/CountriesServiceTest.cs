@@ -14,6 +14,8 @@ using Services;
 using Xunit.Abstractions;
 using Moq;
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
+using AutoFixture;
+using FluentAssertions;
 
 namespace Tests
 {
@@ -22,9 +24,12 @@ namespace Tests
         private readonly ICountriesService _countryService;
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly ILogger<CountriesService> _logger;
+        private readonly IFixture _fixture;
 
         public CountriesServiceTest(ITestOutputHelper testOutputHelper, ILogger<CountriesService> logger)
         {
+            _fixture = new Fixture();
+
             var countriesInitialData = new List<Country>() { };
             // add EntityFrameworkCoreMock.Moq and test again
             //DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
@@ -54,16 +59,23 @@ namespace Tests
                 // execute async function
                 await _countryService.AddCountry(request);
             });
+
+            Func<Task> action = async () =>
+            {
+                await _countryService.AddCountry(request);
+            };
+
+            await action.Should().ThrowAsync<ArgumentNullException>();
         }
 
 
         [Fact]
         public async Task AddCountry_CorrectCountry()
         {
-            var request = new CountryAddRequest
-            {
-                Name = "Brazil"
-            };
+            // use Build if you need to customize property values
+            var request = _fixture.Build<CountryAddRequest>()
+                .With(temp => temp.Name, "Brazil")
+                .Create<CountryAddRequest>();
 
             var addResponse = await _countryService.AddCountry(request);
 
@@ -71,6 +83,9 @@ namespace Tests
             _testOutputHelper.WriteLine(request.ToString());
 
             Assert.True(addResponse.CountryName == request.Name);
+
+            // move to fluent api
+            addResponse.CountryName.Should().Be(request.Name);
         }
     }
 }
