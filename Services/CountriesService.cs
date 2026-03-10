@@ -1,6 +1,9 @@
-﻿using Entities;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
+using Entities;
 using Exceptions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
 using ServiceContracts;
 using ServiceContracts.DTO;
@@ -8,6 +11,7 @@ using Services.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Text;
 
 namespace Services
@@ -64,6 +68,37 @@ namespace Services
             _db.Coutries.Remove(_db.Coutries.First(country => country.CountryID == request.CountryID));
             await _db.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<MemoryStream> GetCountriesCsv()
+        {
+            var countries = await GetCountries();
+            MemoryStream stream = new MemoryStream();
+            StreamWriter writer = new StreamWriter(stream);
+
+            CsvConfiguration csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture);
+            CsvWriter csvWriter = new CsvWriter(writer, csvConfiguration);
+
+            // write content
+
+            // write custom fields
+            csvWriter.WriteField(nameof(CountryResonse.CountryName));
+            csvWriter.NextRecord();
+            csvWriter.WriteField("Salma");
+            csvWriter.NextRecord();
+
+            csvWriter.WriteHeader<CountryResonse>();
+            csvWriter.NextRecord();
+            await csvWriter.WriteRecordsAsync(countries);
+            csvWriter.NextRecord();
+            csvWriter.Flush(); // to add to memory stream
+
+            stream.Position = 0;
+            return stream;
+
+            // possible to write only some fields 
+
+
         }
     }
     #endregion

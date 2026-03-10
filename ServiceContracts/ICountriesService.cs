@@ -10,5 +10,6 @@ namespace ServiceContracts
         Task<CountryResonse> AddCountry(CountryAddRequest? response);
         Task<bool> DeleteCountry(CountryDeleteRequest? request);
         Task<List<CountryResonse>> GetCountries();
+        Task<MemoryStream> GetCountriesCsv();
     }
 }

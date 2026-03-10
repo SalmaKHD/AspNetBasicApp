@@ -89,5 +89,12 @@ namespace FirstWebApplication.Controllers
                 PageOrientation = Rotativa.AspNetCore.Options.Orientation.Landscape
             };
         }
+
+        [Route("csv")]
+       public async Task<IActionResult> CountriesCSV()
+        {
+            var memoryStream = await _countriesService.GetCountriesCsv();
+            return File(memoryStream, "application/octet-stream", "countries.csv");
+        }
     }
 }
