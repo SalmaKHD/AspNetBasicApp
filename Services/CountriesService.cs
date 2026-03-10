@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Exceptions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ServiceContracts;
 using ServiceContracts.DTO;
@@ -22,15 +23,15 @@ namespace Services
             _logger = logger;
         }
 
-        public List<CountryResonse> GetCountries()
+        public async Task<List<CountryResonse>> GetCountries()
         {
             // no need to call SaveChanges()
             // get all eagerly first then execute Select on resultant list
-            return _db.sp_GetCountries().ToList().Select(country => country.toCountryResponse()).ToList();
+            return await _db.Coutries.Select(country => country.toCountryResponse()).ToListAsync();
         }
 
         #region AddCountry
-        public CountryResonse AddCountry(CountryAddRequest? request)
+        public async Task<CountryResonse> AddCountry(CountryAddRequest? request)
         {
             if (request == null)
             {
@@ -42,12 +43,12 @@ namespace Services
 
             Country country = request.toCountry();
             _db.Coutries.Add(country);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
 
             return country.toCountryResponse();
         }
 
-        public bool DeleteCountry(CountryDeleteRequest? request)
+        public async Task<bool> DeleteCountry(CountryDeleteRequest? request)
         {
             // add log
             _logger.LogInformation($"Deleting country with id {request.CountryID}");
@@ -61,7 +62,7 @@ namespace Services
             ValidationHelper.ValidateDto(request);
             if (request.CountryID == null) return false;
             _db.Coutries.Remove(_db.Coutries.First(country => country.CountryID == request.CountryID));
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
             return true;
         }
     }

@@ -7,8 +7,8 @@ namespace ServiceContracts
 {
     public interface ICountriesService
     {
-        CountryResonse AddCountry(CountryAddRequest? response);
-        bool DeleteCountry(CountryDeleteRequest? request);
-        List<CountryResonse> GetCountries();
+        Task<CountryResonse> AddCountry(CountryAddRequest? response);
+        Task<bool> DeleteCountry(CountryDeleteRequest? request);
+        Task<List<CountryResonse>> GetCountries();
     }
 }

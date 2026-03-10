@@ -22,9 +22,9 @@ namespace FirstWebApplication.Controllers
 
         [Route("[action]")]
         [HttpGet]
-        public IActionResult Countries()
+        public async Task<IActionResult> Countries()
         {
-            var countries = _countriesService.GetCountries();
+            var countries = await _countriesService.GetCountries();
 
             return View("Country", countries);
 
@@ -37,35 +37,35 @@ namespace FirstWebApplication.Controllers
             "value"},
             Order = 1
         )]
-        public IActionResult Add(CountryAddRequest country)
+        public async Task<IActionResult> Add(CountryAddRequest country)
         {
             if (ModelState.IsValid)
             {
-                _countriesService.AddCountry(country);
+               await _countriesService.AddCountry(country);
             }
             else
             {
                 ViewBag.Errors = ModelState.Values.SelectMany(v =>
                 v.Errors).Select(e => e.ErrorMessage).ToList();
             }
-            var countries = _countriesService.GetCountries();
+            var countries = await _countriesService.GetCountries();
             return View("Country", countries);
         }
 
         [Route("[action]")] // /"route" overrides [Route("[controller]")]
         [HttpPost]
-        public IActionResult Delete(CountryDeleteRequest country)
+        public async Task<IActionResult> Delete(CountryDeleteRequest country)
         {
             if (ModelState.IsValid)
             {
-                _countriesService.DeleteCountry(country);
+                await _countriesService.DeleteCountry(country);
             }
             else
             {
                 ViewBag.Errors = ModelState.Values.SelectMany(v =>
                 v.Errors).Select(e => e.ErrorMessage).ToList();
             }
-            var countries = _countriesService.GetCountries();
+            var countries = await _countriesService.GetCountries();
             return View("Country", countries);
         }
     }

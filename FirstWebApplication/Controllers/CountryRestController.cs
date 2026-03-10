@@ -27,7 +27,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [HttpGet] // we may imply this by method name, but not mandatory -> GetCountry
-        public ActionResult Cities()
+        public async Task<ActionResult> Cities()
         {
             // automatially done when adding attribute constraints
             if(!ModelState.IsValid)
@@ -35,7 +35,7 @@ namespace FirstWebApplication.Controllers
                 return ValidationProblem(ModelState); // for validation errors
             }
 
-            var coutries = _countriesService.GetCountries();
+            var coutries = await _countriesService.GetCountries();
             if (coutries.IsNullOrEmpty())
             {
                 // for reporting any kind of problems, can be used for any type of exceptions also
