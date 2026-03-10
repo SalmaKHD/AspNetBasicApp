@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Entities
 {
-    public class CountriesDbContext : DbContext // db implementation
+    public class ApplicationDbContext : DbContext // db implementation
     {
-        public DbSet<Country> Coutries { get; set; }
-        public DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Country> Coutries { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
 
-        public CountriesDbContext(DbContextOptions<CountriesDbContext> options) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 

@@ -70,7 +70,7 @@ builder.Services.AddControllers();
 
 // add db config
 // scope: scoped by default
-builder.Services.AddDbContext<CountriesDbContext>(options =>
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
 });

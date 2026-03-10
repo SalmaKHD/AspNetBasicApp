@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Entities.Migrations
 {
-    [DbContext(typeof(CountriesDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20260309000703_Countries-Stored-Procedure")]
     partial class CountriesStoredProcedure
     {

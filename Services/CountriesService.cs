@@ -19,10 +19,10 @@ namespace Services
 {
     public class CountriesService : ICountriesService
     {
-        private CountriesDbContext _db;
+        private ApplicationDbContext _db;
         private ILogger<CountriesService> _logger;
 
-        public CountriesService(CountriesDbContext countriesDbContext, ILogger<CountriesService> logger)
+        public CountriesService(ApplicationDbContext countriesDbContext, ILogger<CountriesService> logger)
         {
             _db = countriesDbContext;
             _logger = logger;

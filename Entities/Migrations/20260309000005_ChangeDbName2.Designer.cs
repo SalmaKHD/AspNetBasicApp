@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Entities.Migrations
 {
-    [DbContext(typeof(CountriesDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20260309000005_ChangeDbName2")]
     partial class ChangeDbName2
     {
