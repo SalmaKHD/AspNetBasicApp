@@ -125,6 +125,9 @@ else
     app.UseExceptionHandler("/Error");
 }
 
+// add pdf config
+Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
+
 // force clients to use https
 app.UseHsts();
 

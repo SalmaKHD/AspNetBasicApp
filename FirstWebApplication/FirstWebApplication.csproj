@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <Folder Include="Views\Shared\NewFolder\" />
+    <Folder Include="wwwroot\Rotativa\" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -39,6 +40,7 @@
 		  <PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
+		<PackageReference Include="Rotativa.AspNetCore" Version="1.4.0" />
 	</ItemGroup>
 
   <ItemGroup>

@@ -1,7 +1,10 @@
-﻿using FirstWebApplication.Filters.ActionFilters;
+﻿using Entities;
+using FirstWebApplication.Filters.ActionFilters;
 using Microsoft.AspNetCore.Mvc;
+using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using System.Runtime.InteropServices;
 
 namespace FirstWebApplication.Controllers
 {
@@ -67,6 +70,24 @@ namespace FirstWebApplication.Controllers
             }
             var countries = await _countriesService.GetCountries();
             return View("Country", countries);
+        }
+
+        [Route("pdf")]
+        public async Task<IActionResult> CountriesPDF()
+        {
+            // Get a list of countries
+            var countries = await _countriesService.GetCountries();
+            return new ViewAsPdf("Country", countries, ViewData)
+            {
+                PageMargins = new Rotativa.AspNetCore.Options.Margins()
+                {
+                    Top = 20,
+                    Bottom = 20,
+                    Left = 20,
+                    Right = 20
+                },
+                PageOrientation = Rotativa.AspNetCore.Options.Orientation.Landscape
+            };
         }
     }
 }
