@@ -11,5 +11,6 @@ namespace ServiceContracts
         Task<bool> DeleteCountry(CountryDeleteRequest? request);
         Task<List<CountryResonse>> GetCountries();
         Task<MemoryStream> GetCountriesCsv();
+        Task<MemoryStream> GetCountriesExcel();
     }
 }

@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Text;
+using OfficeOpenXml;
 
 namespace Services
 {
@@ -97,8 +98,34 @@ namespace Services
             return stream;
 
             // possible to write only some fields 
+        }
 
+        public async Task<MemoryStream> GetCountriesExcel()
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            // to create excel content
+            using (ExcelPackage excelPackage = new ExcelPackage(memoryStream))
+            {
+                // add a worksheet in workbook
+                ExcelWorksheet workSheet = excelPackage.Workbook.Worksheets.Add("CountriesSheet");
 
+                workSheet.Cells["A1"].Value = "Country Name";
+
+                var countries = await GetCountries();
+                int currentRow = 2;
+                foreach(CountryResonse country in countries)
+                {
+                    // row number, column number
+                    workSheet.Cells[currentRow++, 1].Value = country.CountryName;
+                }
+
+                workSheet.Cells[$"A1:H{currentRow}"].AutoFitColumns(); // adjust size based on content
+
+                await excelPackage.SaveAsync();
+            }
+
+            memoryStream.Position = 0;
+            return memoryStream;
         }
     }
     #endregion

@@ -96,5 +96,12 @@ namespace FirstWebApplication.Controllers
             var memoryStream = await _countriesService.GetCountriesCsv();
             return File(memoryStream, "application/octet-stream", "countries.csv");
         }
+
+        [Route("excel")]
+        public async Task<IActionResult> CountriesExcel()
+        {
+            var memoryStream = await _countriesService.GetCountriesCsv();
+            return File(memoryStream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "countries.xlsx"); // mention content type
+        }
     }
 }
