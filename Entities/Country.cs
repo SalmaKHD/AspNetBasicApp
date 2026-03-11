@@ -28,6 +28,18 @@ namespace Entities
             Name = name;
         }
 
+        public override bool Equals(object? obj)
+        {
+            // safeguard type casting and null comparison
+            if (obj is not Country other)
+                return false;
+
+            // equality should rely on unique identifier (CountryID)
+            // optionally also compare Name if you'd like semantic equality
+            return CountryID.Equals(other.CountryID) &&
+                   string.Equals(Name, other.Name, StringComparison.OrdinalIgnoreCase);
+        }
+
         public ICollection<Person>? Persons; // will return persons with this country, Include function required
     }
 }

@@ -16,6 +16,7 @@ using Moq;
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using AutoFixture;
 using FluentAssertions;
+using RepositoryContracts;
 
 namespace Tests
 {
@@ -25,40 +26,48 @@ namespace Tests
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly ILogger<CountriesService> _logger;
         private readonly IFixture _fixture;
+        private readonly Mock<ICountriesRepository> _countriesRespoMock; // mock repository
+        private readonly ICountriesRepository _countriesRepository;
 
         public CountriesServiceTest(ITestOutputHelper testOutputHelper, ILogger<CountriesService> logger)
         {
             _fixture = new Fixture();
 
+            _countriesRespoMock = new Mock<ICountriesRepository>();
+            _countriesRepository = _countriesRespoMock.Object;
+
             var countriesInitialData = new List<Country>() { };
-            // add EntityFrameworkCoreMock.Moq and test again
+
+            _countryService = new CountriesService(_countriesRepository);
+            _testOutputHelper = testOutputHelper;
+
+            // add EntityFrameworkCoreMock.Moq and test again (for Fake testing)
             //DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
             //    new DbContextOptionsBuilder<ApplicationDbContext>().Options
             //    );
-
             //ApplicationDbContext dbContext = dbContextMock.Object;
-
             //dbContextMock.CreateDbSetMock(temp => temp.Countries, countriesInitialData);
-
-            //_countryService = new CountriesService(dbContext, logger);
-            //_testOutputHelper = testOutputHelper;
         }
 
         // for every possible input, create one test to ensure correct functionality
         [Fact]
-        public async Task AddCountry_NullCountry()
+        public async Task AddCountry_NullCountry_ArgumentNullException()
         {
+            // mock return value of the target method
+            _countriesRespoMock.Setup(temp => temp.AddCountry(It.IsAny<Country>()))
+                .ReturnsAsync(new Country("Brazil"));
+
             CountryAddRequest? request = null;
 
             // add log to test results
             _testOutputHelper.WriteLine(request.ToString());
 
-            // async method
-            await Assert.ThrowsAsync<ArgumentNullException>(async () => // async lambda
-            {
-                // execute async function
-                await _countryService.AddCountry(request);
-            });
+            // async method, for Assert method only
+            //await Assert.ThrowsAsync<ArgumentNullException>(async () => // async lambda
+            //{
+            //    // execute async function
+            //    await _countryService.AddCountry(request);
+            //});
 
             Func<Task> action = async () =>
             {
@@ -70,22 +79,28 @@ namespace Tests
 
 
         [Fact]
-        public async Task AddCountry_CorrectCountry()
+        public async Task AddCountry_CorrectCountry_Successful()
         {
+            // only a single method shuld be tested
+
             // use Build if you need to customize property values
             var request = _fixture.Build<CountryAddRequest>()
                 .With(temp => temp.Name, "Brazil")
                 .Create<CountryAddRequest>();
 
+            var country = request.toCountry();
+
+            _countriesRespoMock.Setup(temp => temp.AddCountry(It.IsAny<Country>()))
+            .ReturnsAsync(country);
+
             var addResponse = await _countryService.AddCountry(request);
+            var expected_response = country.toCountryResponse();
 
             // add log to test results
             _testOutputHelper.WriteLine(request.ToString());
 
-            Assert.True(addResponse.CountryName == request.Name);
-
             // move to fluent api
-            addResponse.CountryName.Should().Be(request.Name);
+            addResponse.Should().Be(expected_response);
         }
     }
 }
