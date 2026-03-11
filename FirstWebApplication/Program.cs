@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
 using Repositories;
 using RepositoryContracts;
+using Serilog;
 using ServiceContracts;
 using Services;
 using System;
@@ -85,10 +86,18 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 // add log providers
-builder.Host.ConfigureLogging(logProvider =>
+//builder.Host.ConfigureLogging(logProvider =>
+//{
+//    logProvider.ClearProviders();
+//    logProvider.AddDebug(); // print in debug only
+//});
+
+// configure serolog
+builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, LoggerConfiguration loggerConfiguration) =>
 {
-    logProvider.ClearProviders();
-    logProvider.AddDebug(); // print in debug only
+    loggerConfiguration
+    .ReadFrom.Configuration(context.Configuration) // serilog will access file and read config from it
+    .ReadFrom.Services(services); 
 });
 
 // add Http logging
