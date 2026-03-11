@@ -5,8 +5,8 @@ using System.Text;
 namespace Tests
 {
     // for tests
-    public class CustomWebApplicationFactory: WebApplicationFa
-    {
+    //public class CustomWebApplicationFactory: WebApplicationFactory
+    //{
 
-    }
+    //}
 }

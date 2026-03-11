@@ -10,7 +10,7 @@ namespace Tests
         [Fact]
         public void AddCountryView_ShouldReturnCountriesView()
         {
-               _client
+               //_client
         }
     }
 }
