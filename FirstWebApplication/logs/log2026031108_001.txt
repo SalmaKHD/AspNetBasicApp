@@ -1,0 +1,22 @@
+2026-03-11 08:13:40.944 -07:00 [DBG] LOGGING DEBUG...
+2026-03-11 08:13:40.958 -07:00 [INF] LOGGING INFORMATION...
+2026-03-11 08:13:40.959 -07:00 [ERR] LOGGING ERROR...
+2026-03-11 08:13:40.960 -07:00 [FTL] LOGGING CRITICAL...
+2026-03-11 08:13:40.961 -07:00 [WRN] LOGGING WARNING...
+2026-03-11 08:13:40.963 -07:00 [DBG] Hosting starting
+2026-03-11 08:13:41.630 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-11 08:13:41.634 -07:00 [INF] Hosting environment: Development
+2026-03-11 08:13:41.636 -07:00 [INF] Content root path: C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication
+2026-03-11 08:13:41.639 -07:00 [DBG] Hosting started
+2026-03-11 08:15:52.599 -07:00 [DBG] Connection id "0HNJVG4ASBK1A" accepted.
+2026-03-11 08:15:52.604 -07:00 [DBG] Connection id "0HNJVG4ASBK1A" started.
+2026-03-11 08:15:54.722 -07:00 [DBG] Connection id "0HNJVG4ASBK1A" completed keep alive response.
+2026-03-11 08:15:54.806 -07:00 [DBG] Connection id "0HNJVG4ASBK1B" accepted.
+2026-03-11 08:15:54.811 -07:00 [DBG] Connection id "0HNJVG4ASBK1B" started.
+2026-03-11 08:15:54.814 -07:00 [DBG] Connection id "0HNJVG4ASBK1A" completed keep alive response.
+2026-03-11 08:15:54.852 -07:00 [DBG] Connection id "0HNJVG4ASBK1B" completed keep alive response.
+2026-03-11 08:16:22.405 -07:00 [DBG] Connection id "0HNJVG4ASBK1B", Request id "0HNJVG4ASBK1B:00000002": started reading request body.
+2026-03-11 08:16:22.407 -07:00 [DBG] Connection id "0HNJVG4ASBK1B", Request id "0HNJVG4ASBK1B:00000002": done reading request body.
+2026-03-11 08:16:22.965 -07:00 [DBG] Connection id "0HNJVG4ASBK1B" completed keep alive response.
+2026-03-11 08:16:23.057 -07:00 [DBG] Connection id "0HNJVG4ASBK1A" completed keep alive response.
+2026-03-11 08:16:23.062 -07:00 [DBG] Connection id "0HNJVG4ASBK1B" completed keep alive response.

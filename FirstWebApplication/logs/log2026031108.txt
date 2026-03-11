@@ -1,0 +1,513 @@
+2026-03-11 08:13:40.741 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Country/Country.cshtml'.
+2026-03-11 08:13:40.799 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Home.cshtml'.
+2026-03-11 08:13:40.801 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Alll.cshtml'.
+2026-03-11 08:13:40.802 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Components/Grid/Default.cshtml'.
+2026-03-11 08:13:40.804 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2026-03-11 08:13:40.805 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-03-11 08:13:40.807 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ListPartialView.cshtml'.
+2026-03-11 08:13:40.808 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Users/Users.cshtml'.
+2026-03-11 08:13:40.809 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-03-11 08:13:40.811 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-03-11 08:13:40.829 -07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-03-11 08:13:41.006 -07:00 [INF] User profile is available. Using 'C:\Users\Salma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-11 08:13:41.025 -07:00 [DBG] Reading data from file 'C:\Users\Salma\AppData\Local\ASP.NET\DataProtection-Keys\key-17096b5d-10d7-41ff-b848-2c5f4252aeef.xml'.
+2026-03-11 08:13:41.044 -07:00 [DBG] Found key {17096b5d-10d7-41ff-b848-2c5f4252aeef}.
+2026-03-11 08:13:41.060 -07:00 [DBG] Considering key {17096b5d-10d7-41ff-b848-2c5f4252aeef} with expiration date 2026-05-27 23:35:54Z as default key.
+2026-03-11 08:13:41.063 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-11 08:13:41.068 -07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-03-11 08:13:41.072 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-11 08:13:41.077 -07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-03-11 08:13:41.080 -07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-03-11 08:13:41.082 -07:00 [DBG] Using key {17096b5d-10d7-41ff-b848-2c5f4252aeef} as the default key.
+2026-03-11 08:13:41.085 -07:00 [DBG] Key ring with default key {17096b5d-10d7-41ff-b848-2c5f4252aeef} was loaded during application startup.
+2026-03-11 08:13:41.092 -07:00 [DBG] Middleware loaded
+2026-03-11 08:13:41.097 -07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16523 B).
+2026-03-11 08:13:41.100 -07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-03-11 08:13:41.226 -07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-03-11 08:13:41.230 -07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-03-11 08:13:41.239 -07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-03-11 08:13:41.488 -07:00 [INF] Now listening on: https://localhost:7232
+2026-03-11 08:13:41.492 -07:00 [INF] Now listening on: http://localhost:5257
+2026-03-11 08:13:41.499 -07:00 [DBG] Loaded hosting startup assembly FirstWebApplication
+2026-03-11 08:13:41.501 -07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-03-11 08:13:41.506 -07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-03-11 08:13:41.508 -07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-03-11 08:13:41.528 -07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-11 08:13:41.540 -07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-11 08:15:52.706 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/country/countries - null null
+2026-03-11 08:15:52.842 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 08:15:52.852 -07:00 [DBG] The request path /country/countries does not match a supported file type
+2026-03-11 08:15:52.896 -07:00 [DBG] 1 candidate(s) found for the request path '/country/countries'
+2026-03-11 08:15:52.900 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.CountryController.Countries (FirstWebApplication)' with route pattern 'Country/Countries' is valid for the request path '/country/countries'
+2026-03-11 08:15:52.903 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.CountryController.Countries (FirstWebApplication)'
+2026-03-11 08:15:52.907 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.CountryController.Countries (FirstWebApplication)'
+2026-03-11 08:15:52.939 -07:00 [INF] Route matched with {action = "Countries", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Countries() on controller FirstWebApplication.Controllers.CountryController (FirstWebApplication).
+2026-03-11 08:15:52.944 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 08:15:52.946 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 08:15:52.948 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)","FirstWebApplication.Filters.ActionFilters.CountryControllerActionFilter"]
+2026-03-11 08:15:52.952 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 08:15:52.953 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 08:15:52.957 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.CountryController (FirstWebApplication)
+2026-03-11 08:15:53.123 -07:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-03-11 08:15:53.144 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.CountryController (FirstWebApplication)
+2026-03-11 08:15:53.592 -07:00 [DBG] Entity Framework Core 10.0.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.3' with options: EngineType=SqlServer 
+2026-03-11 08:15:53.609 -07:00 [DBG] Compiling query expression: 
+'DbSet<Country>()'
+2026-03-11 08:15:53.774 -07:00 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Country>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: Country.CountryID (Guid) Required PK Index AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Country.Name (string) ValueGenerated.OnAdd MaxLength(40), 1] }
+        SELECT c.CountryID, c.name
+        FROM Coutries AS c) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Projection Mapping:
+            EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: Country.CountryID (Guid) Required PK Index AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Country.Name (string) ValueGenerated.OnAdd MaxLength(40), 1] }
+        SELECT c.CountryID, c.name
+        FROM Coutries AS c, 
+        False, 
+        MultipleParameters
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Country entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Country instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Country);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Country.CountryID PK | Resolver: c => c.Dependencies.Model.FindEntityType("Entities.Country").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetGuid(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Country)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Entities.Country")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Entities.Country")]: 
+                        {
+                            return 
+                            {
+                                Country instance;
+                                instance = new Country(dataReader.IsDBNull(1) ? default(string) : dataReader.GetString(1));
+                                instance.<CountryID>k__BackingField = dataReader.GetGuid(0);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Entities.Country")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Country)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        return entity;
+    }, 
+    contextType: Entities.ApplicationDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-03-11 08:15:53.807 -07:00 [DBG] Creating DbConnection.
+2026-03-11 08:15:53.828 -07:00 [DBG] Created DbConnection. (19ms).
+2026-03-11 08:15:53.834 -07:00 [DBG] Opening connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:15:54.088 -07:00 [DBG] Opened connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:15:54.106 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-03-11 08:15:54.112 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2026-03-11 08:15:54.144 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (37ms).
+2026-03-11 08:15:54.157 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CountryID], [c].[name]
+FROM [Coutries] AS [c]
+2026-03-11 08:15:54.193 -07:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CountryID], [c].[name]
+FROM [Coutries] AS [c]
+2026-03-11 08:15:54.216 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.229 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.237 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.239 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.242 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.249 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.252 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.254 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.258 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.277 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.294 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.297 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.304 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.321 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:15:54.329 -07:00 [DBG] Closing data reader to 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:15:54.338 -07:00 [DBG] A data reader for 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 136ms reading results.
+2026-03-11 08:15:54.341 -07:00 [DBG] Closing connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:15:54.346 -07:00 [DBG] Closed connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' (4ms).
+2026-03-11 08:15:54.361 -07:00 [DBG] View lookup cache miss for view 'Country' in controller 'Country'.
+2026-03-11 08:15:54.367 -07:00 [INF] Executing ViewResult, running view Country.
+2026-03-11 08:15:54.370 -07:00 [DBG] The view path '/Views/Country/Country.cshtml' was found in 9.0846ms.
+2026-03-11 08:15:54.414 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.419 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.421 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.428 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.440 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.442 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.444 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.446 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.448 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.450 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.452 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.453 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.454 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.456 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.457 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.459 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.459 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.503 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.510 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.512 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.514 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.519 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.532 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.534 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.535 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.536 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.540 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.541 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.542 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.544 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.545 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.547 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.548 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.550 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.552 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.553 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.554 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.556 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.557 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.559 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.560 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.561 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.563 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.565 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.565 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.567 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.568 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.570 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.571 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.572 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.574 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.575 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.576 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:15:54.578 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:15:54.580 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:15:54.581 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.582 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Add (FirstWebApplication)"] for address (action=[Add],controller=[Country])
+2026-03-11 08:15:54.584 -07:00 [DBG] Successfully processed template Country/Add for FirstWebApplication.Controllers.CountryController.Add (FirstWebApplication) resulting in /Country/Add and 
+2026-03-11 08:15:54.585 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Add (FirstWebApplication)"] with result /Country/Add
+2026-03-11 08:15:54.587 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:15:54.655 -07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-11 08:15:54.683 -07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-11 08:15:54.694 -07:00 [INF] Executed ViewResult - view Country executed in 334.6915ms.
+2026-03-11 08:15:54.702 -07:00 [INF] Executed action FirstWebApplication.Controllers.CountryController.Countries (FirstWebApplication) in 1747.743ms
+2026-03-11 08:15:54.706 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.CountryController.Countries (FirstWebApplication)'
+2026-03-11 08:15:54.710 -07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-11 08:15:54.715 -07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-11 08:15:54.728 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2026-03-11 08:15:54.732 -07:00 [DBG] Disposing connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:15:54.739 -07:00 [DBG] Disposed connection to database '' on server '' (5ms).
+2026-03-11 08:15:54.742 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/country/countries - 200 null text/html; charset=utf-8 2051.7111ms
+2026-03-11 08:15:54.804 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 08:15:54.813 -07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-11 08:15:54.813 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_vs/browserLink - null null
+2026-03-11 08:15:54.819 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 14.7631ms
+2026-03-11 08:15:54.855 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.4875ms
+2026-03-11 08:16:22.335 -07:00 [INF] Request starting HTTP/1.1 POST http://localhost:5257/Country/Delete - application/x-www-form-urlencoded 229
+2026-03-11 08:16:22.341 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 08:16:22.343 -07:00 [DBG] POST requests are not supported
+2026-03-11 08:16:22.353 -07:00 [DBG] 1 candidate(s) found for the request path '/Country/Delete'
+2026-03-11 08:16:22.355 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)' with route pattern 'Country/Delete' is valid for the request path '/Country/Delete'
+2026-03-11 08:16:22.358 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)'
+2026-03-11 08:16:22.360 -07:00 [DBG] The request has an origin header: 'http://localhost:5257'.
+2026-03-11 08:16:22.361 -07:00 [INF] CORS policy execution successful.
+2026-03-11 08:16:22.364 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)'
+2026-03-11 08:16:22.378 -07:00 [INF] Route matched with {action = "Delete", controller = "Country"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(ServiceContracts.DTO.CountryDeleteRequest) on controller FirstWebApplication.Controllers.CountryController (FirstWebApplication).
+2026-03-11 08:16:22.383 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 08:16:22.385 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 08:16:22.388 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)","FirstWebApplication.Filters.ActionFilters.CountryControllerActionFilter"]
+2026-03-11 08:16:22.391 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 08:16:22.394 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 08:16:22.397 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.CountryController (FirstWebApplication)
+2026-03-11 08:16:22.399 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.CountryController (FirstWebApplication)
+2026-03-11 08:16:22.415 -07:00 [DBG] Attempting to bind parameter 'country' of type 'ServiceContracts.DTO.CountryDeleteRequest' ...
+2026-03-11 08:16:22.419 -07:00 [DBG] Attempting to bind parameter 'country' of type 'ServiceContracts.DTO.CountryDeleteRequest' using the name '' in request data ...
+2026-03-11 08:16:22.425 -07:00 [DBG] Attempting to bind property 'ServiceContracts.DTO.CountryDeleteRequest.CountryID' of type 'System.Nullable`1[System.Guid]' using the name 'CountryID' in request data ...
+2026-03-11 08:16:22.428 -07:00 [DBG] Done attempting to bind property 'ServiceContracts.DTO.CountryDeleteRequest.CountryID' of type 'System.Nullable`1[System.Guid]'.
+2026-03-11 08:16:22.433 -07:00 [DBG] Done attempting to bind parameter 'country' of type 'ServiceContracts.DTO.CountryDeleteRequest'.
+2026-03-11 08:16:22.434 -07:00 [DBG] Done attempting to bind parameter 'country' of type 'ServiceContracts.DTO.CountryDeleteRequest'.
+2026-03-11 08:16:22.436 -07:00 [DBG] Attempting to validate the bound parameter 'country' of type 'ServiceContracts.DTO.CountryDeleteRequest' ...
+2026-03-11 08:16:22.441 -07:00 [DBG] Done attempting to validate the bound parameter 'country' of type 'ServiceContracts.DTO.CountryDeleteRequest'.
+2026-03-11 08:16:22.445 -07:00 [INF] Deleting country with id f9ae349a-ddac-4c8f-a018-232278b61f39
+2026-03-11 08:16:22.491 -07:00 [DBG] Entity Framework Core 10.0.3 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.3' with options: EngineType=SqlServer 
+2026-03-11 08:16:22.504 -07:00 [DBG] Compiling query expression: 
+'DbSet<Country>()
+    .FirstOrDefault(c => c.CountryID == @id)'
+2026-03-11 08:16:22.549 -07:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Country>(
+    asyncEnumerable: SingleQueryingEnumerable.Create<Country>(
+        relationalQueryContext: (RelationalQueryContext)queryContext, 
+        relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: Country.CountryID (Guid) Required PK Index AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Country.Name (string) ValueGenerated.OnAdd MaxLength(40), 1] }
+            SELECT TOP(1) c.CountryID, c.name
+            FROM Coutries AS c
+            WHERE c.CountryID == @id) | Resolver: c => new RelationalCommandCache(
+            c.Dependencies.MemoryCache, 
+            c.RelationalDependencies.QuerySqlGeneratorFactory, 
+            c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+            Projection Mapping:
+                EmptyProjectionMember -> Dictionary<IPropertyBase, int> { [Property: Country.CountryID (Guid) Required PK Index AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Country.Name (string) ValueGenerated.OnAdd MaxLength(40), 1] }
+            SELECT TOP(1) c.CountryID, c.name
+            FROM Coutries AS c
+            WHERE c.CountryID == @id, 
+            False, 
+            MultipleParameters
+        )].GetRelationalCommandTemplate(parameters), 
+        readerColumns: null, 
+        shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+        {
+            Country entity;
+            entity = 
+            {
+                MaterializationContext materializationContext1;
+                IEntityType entityType1;
+                Country instance1;
+                InternalEntityEntry entry1;
+                bool hasNullKey1;
+                materializationContext1 = new MaterializationContext(
+                    [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                    queryContext.Context
+                );
+                instance1 = default(Country);
+                entry1 = queryContext.TryGetEntry(
+                    key: [LIFTABLE Constant: Key: Country.CountryID PK | Resolver: c => c.Dependencies.Model.FindEntityType("Entities.Country").FindPrimaryKey()], 
+                    keyValues: new object[]{ (object)dataReader.GetGuid(0) }, 
+                    throwOnNullKey: True, 
+                    hasNullKey: hasNullKey1);
+                !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+                {
+                    entityType1 = entry1.EntityType;
+                    return instance1 = (Country)entry1.Entity;
+                } : 
+                {
+                    ISnapshot shadowSnapshot1;
+                    shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                    entityType1 = [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("Entities.Country")];
+                    instance1 = switch (entityType1)
+                    {
+                        case [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("Entities.Country")]: 
+                            {
+                                return 
+                                {
+                                    Country instance;
+                                    instance = new Country(dataReader.IsDBNull(1) ? default(string) : dataReader.GetString(1));
+                                    instance.<CountryID>k__BackingField = dataReader.GetGuid(0);
+                                    (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                        context: materializationContext1.Context, 
+                                        entity: instance, 
+                                        queryTrackingBehavior: TrackAll, 
+                                        structuralType: [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("Entities.Country")]) : default(void);
+                                    return instance;
+                                }}
+                        default: 
+                            default(Country)
+                    }
+                    ;
+                    entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                        entityType: entityType1, 
+                        entity: instance1, 
+                        snapshot: shadowSnapshot1);
+                    return instance1;
+                } : default(void);
+                return instance1;
+            };
+            return entity;
+        }, 
+        contextType: Entities.ApplicationDbContext, 
+        standAloneStateManager: False, 
+        detailedErrorsEnabled: False, 
+        threadSafetyChecksEnabled: True), 
+    cancellationToken: queryContext.CancellationToken)'
+2026-03-11 08:16:22.560 -07:00 [DBG] Creating DbConnection.
+2026-03-11 08:16:22.563 -07:00 [DBG] Created DbConnection. (2ms).
+2026-03-11 08:16:22.566 -07:00 [DBG] Opening connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.569 -07:00 [DBG] Opened connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.571 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-03-11 08:16:22.572 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-03-11 08:16:22.576 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (4ms).
+2026-03-11 08:16:22.581 -07:00 [DBG] Executing DbCommand [Parameters=[@id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CountryID], [c].[name]
+FROM [Coutries] AS [c]
+WHERE [c].[CountryID] = @id
+2026-03-11 08:16:22.621 -07:00 [INF] Executed DbCommand (44ms) [Parameters=[@id='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [c].[CountryID], [c].[name]
+FROM [Coutries] AS [c]
+WHERE [c].[CountryID] = @id
+2026-03-11 08:16:22.625 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.628 -07:00 [DBG] Closing data reader to 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.633 -07:00 [DBG] A data reader for 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 8ms reading results.
+2026-03-11 08:16:22.638 -07:00 [DBG] Closing connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.640 -07:00 [DBG] Closed connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' (2ms).
+2026-03-11 08:16:22.656 -07:00 [DBG] An entity of type 'Country' tracked by 'ApplicationDbContext' changed state from '"Unchanged"' to '"Deleted"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.668 -07:00 [DBG] SaveChanges starting for 'ApplicationDbContext'.
+2026-03-11 08:16:22.672 -07:00 [DBG] DetectChanges starting for 'ApplicationDbContext'.
+2026-03-11 08:16:22.685 -07:00 [DBG] DetectChanges completed for 'ApplicationDbContext'.
+2026-03-11 08:16:22.738 -07:00 [DBG] Opening connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.740 -07:00 [DBG] Opened connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.745 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-03-11 08:16:22.746 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-03-11 08:16:22.748 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2026-03-11 08:16:22.750 -07:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Coutries]
+OUTPUT 1
+WHERE [CountryID] = @p0;
+2026-03-11 08:16:22.777 -07:00 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Coutries]
+OUTPUT 1
+WHERE [CountryID] = @p0;
+2026-03-11 08:16:22.786 -07:00 [DBG] Closing data reader to 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.788 -07:00 [DBG] A data reader for 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 5ms reading results.
+2026-03-11 08:16:22.792 -07:00 [DBG] Closing connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.794 -07:00 [DBG] Closed connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' (2ms).
+2026-03-11 08:16:22.801 -07:00 [DBG] An entity of type 'Country' tracked by 'ApplicationDbContext' changed state from '"Deleted"' to '"Detached"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.805 -07:00 [DBG] SaveChanges completed for 'ApplicationDbContext' with 1 entities written to the database.
+2026-03-11 08:16:22.808 -07:00 [DBG] Opening connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.810 -07:00 [DBG] Opened connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.811 -07:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-03-11 08:16:22.813 -07:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2026-03-11 08:16:22.815 -07:00 [DBG] Initialized DbCommand for 'ExecuteReader' (3ms).
+2026-03-11 08:16:22.816 -07:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CountryID], [c].[name]
+FROM [Coutries] AS [c]
+2026-03-11 08:16:22.819 -07:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[CountryID], [c].[name]
+FROM [Coutries] AS [c]
+2026-03-11 08:16:22.822 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.823 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.824 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.825 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.826 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.827 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.829 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.831 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.832 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.833 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.835 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.836 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.837 -07:00 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-03-11 08:16:22.838 -07:00 [DBG] Closing data reader to 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.839 -07:00 [DBG] A data reader for 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 17ms reading results.
+2026-03-11 08:16:22.841 -07:00 [DBG] Closing connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.842 -07:00 [DBG] Closed connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB' (1ms).
+2026-03-11 08:16:22.844 -07:00 [DBG] View lookup cache hit for view 'Country' in controller 'Country'.
+2026-03-11 08:16:22.846 -07:00 [INF] Executing ViewResult, running view Country.
+2026-03-11 08:16:22.848 -07:00 [DBG] The view path '/Views/Country/Country.cshtml' was found in 4.2153ms.
+2026-03-11 08:16:22.852 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.854 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.855 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.857 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.858 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.859 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.862 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.864 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.865 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.867 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.868 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.870 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.871 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.872 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.874 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.875 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.876 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.881 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.885 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.887 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.889 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.891 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.895 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.897 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.898 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.899 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.901 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.902 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.903 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.904 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.906 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.907 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.908 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.911 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.915 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.917 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.919 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.921 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.923 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.925 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.926 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.928 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.930 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.932 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.933 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.935 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.937 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.939 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.940 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] for address (action=[Delete],controller=[Country])
+2026-03-11 08:16:22.942 -07:00 [DBG] Successfully processed template Country/Delete for FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) resulting in /Country/Delete and 
+2026-03-11 08:16:22.944 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)"] with result /Country/Delete
+2026-03-11 08:16:22.946 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.947 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.CountryController.Add (FirstWebApplication)"] for address (action=[Add],controller=[Country])
+2026-03-11 08:16:22.949 -07:00 [DBG] Successfully processed template Country/Add for FirstWebApplication.Controllers.CountryController.Add (FirstWebApplication) resulting in /Country/Add and 
+2026-03-11 08:16:22.951 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.CountryController.Add (FirstWebApplication)"] with result /Country/Add
+2026-03-11 08:16:22.953 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 08:16:22.955 -07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-11 08:16:22.957 -07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-11 08:16:22.958 -07:00 [INF] Executed ViewResult - view Country executed in 115.1384ms.
+2026-03-11 08:16:22.960 -07:00 [INF] Executed action FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication) in 564.0138ms
+2026-03-11 08:16:22.962 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.CountryController.Delete (FirstWebApplication)'
+2026-03-11 08:16:22.964 -07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-11 08:16:22.965 -07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-11 08:16:22.967 -07:00 [DBG] 'ApplicationDbContext' disposed.
+2026-03-11 08:16:22.969 -07:00 [DBG] Disposing connection to database 'CountriesDatabase' on server '(localdb)\MSSQLLocalDB'.
+2026-03-11 08:16:22.971 -07:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2026-03-11 08:16:22.975 -07:00 [INF] Request finished HTTP/1.1 POST http://localhost:5257/Country/Delete - 200 null text/html; charset=utf-8 639.6198ms
+2026-03-11 08:16:22.991 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_vs/browserLink - null null
+2026-03-11 08:16:22.991 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 08:16:23.017 -07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-11 08:16:23.059 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 67.647ms
+2026-03-11 08:16:23.068 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_vs/browserLink - 200 null text/javascript; charset=UTF-8 77.3336ms
