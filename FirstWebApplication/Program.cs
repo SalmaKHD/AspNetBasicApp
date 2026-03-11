@@ -264,3 +264,5 @@ app.Logger.LogWarning("LOGGING WARNING...");
 //var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
 
 app.Run();
+
+public partial class Program { }
