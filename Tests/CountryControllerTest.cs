@@ -41,12 +41,15 @@ namespace Tests
             IActionResult result = await countryController.Countries();
 
             // check component type
-            ViewResult viewResult = Assert.IsType<ViewResult>(result);
+            ViewResult viewResult = Assert.IsType<ViewResult>(result); // the type specfied when returning obj from function
 
             // check model data type
             viewResult.ViewData.Model.Should().BeAssignableTo<IEnumerable<CountryResonse>>();
             // check model
             viewResult.ViewData.Model.Should().Be(response_list);
+
+            // example of adding error to state for test
+            countryController.ModelState.AddModelError("Name", "Name cannot be balnk.");
         }
     }
 }
