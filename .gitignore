@@ -27,3 +27,7 @@
 /FirstWebApplication.IntegrationTests/obj
 /FirstApplication.UI/bin
 /FirstApplication.UI/obj
+/Repositories/bin
+/Repositories/obj
+/RepositoryContracts/bin
+/RepositoryContracts/obj

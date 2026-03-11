@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
+using Repositories;
+using RepositoryContracts;
 using ServiceContracts;
 using Services;
 using System;
@@ -47,6 +49,13 @@ builder.Services.Add(new ServiceDescriptor(
     typeof(CountriesService),
     ServiceLifetime.Scoped)
     );
+
+builder.Services.Add(new ServiceDescriptor(
+    typeof(ICountriesRepository),
+    typeof(CountriesRepository),
+    ServiceLifetime.Scoped)
+    );
+
 
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));

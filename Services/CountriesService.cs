@@ -14,17 +14,18 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Text;
 using OfficeOpenXml;
+using RepositoryContracts;
 
 namespace Services
 {
     public class CountriesService : ICountriesService
     {
-        private ApplicationDbContext _db;
+        private ICountriesRepository _countriesReository;
         private ILogger<CountriesService> _logger;
 
-        public CountriesService(ApplicationDbContext countriesDbContext, ILogger<CountriesService> logger)
+        public CountriesService(ICountriesRepository countryRepository, ILogger<CountriesService> logger)
         {
-            _db = countriesDbContext;
+            _countriesReository = countryRepository;
             _logger = logger;
         }
 
@@ -32,7 +33,7 @@ namespace Services
         {
             // no need to call SaveChanges()
             // get all eagerly first then execute Select on resultant list
-            return await _db.Coutries.Select(country => country.toCountryResponse()).ToListAsync();
+            return (await _countriesReository.GetAllCountries()).Select(country => country.toCountryResponse()).ToList();
         }
 
         #region AddCountry
@@ -47,8 +48,7 @@ namespace Services
             ValidationHelper.ValidateDto(request);
 
             Country country = request.toCountry();
-            _db.Coutries.Add(country);
-            await _db.SaveChangesAsync();
+            await _countriesReository.AddCountry(country);
 
             return country.toCountryResponse();
         }
@@ -66,8 +66,7 @@ namespace Services
             // validate DTO
             ValidationHelper.ValidateDto(request);
             if (request.CountryID == null) return false;
-            _db.Coutries.Remove(_db.Coutries.First(country => country.CountryID == request.CountryID));
-            await _db.SaveChangesAsync();
+            await _countriesReository.DeleteCountry(request.CountryID ?? Guid.Empty);
             return true;
         }
 
@@ -113,7 +112,7 @@ namespace Services
 
                 var countries = await GetCountries();
                 int currentRow = 2;
-                foreach(CountryResonse country in countries)
+                foreach (CountryResonse country in countries)
                 {
                     // row number, column number
                     workSheet.Cells[currentRow++, 1].Value = country.CountryName;
