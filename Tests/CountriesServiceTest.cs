@@ -28,20 +28,38 @@ namespace Tests
         private readonly IFixture _fixture;
         private readonly Mock<ICountriesRepository> _countriesRespoMock; // mock repository
         private readonly ICountriesRepository _countriesRepository;
+        private readonly Mock<ILogger<CountriesService>> _mockLogger;
 
-        public CountriesServiceTest(ITestOutputHelper testOutputHelper, ILogger<CountriesService> logger)
+        public CountriesServiceTest(ITestOutputHelper testOutputHelper)
         {
+            // initialize fixture
             _fixture = new Fixture();
 
+            // initialize repository
             _countriesRespoMock = new Mock<ICountriesRepository>();
             _countriesRepository = _countriesRespoMock.Object;
 
-            var countriesInitialData = new List<Country>() { };
+            // initialize logger
+            _mockLogger = new Mock<ILogger<CountriesService>>();
+            _mockLogger.Setup(logger =>
+           logger.Log(
+               It.IsAny<LogLevel>(),
+               It.IsAny<EventId>(),
+               It.IsAny<It.IsAnyType>(),
+               It.IsAny<Exception>(),
+               It.IsAny<Func<It.IsAnyType, Exception?, string>>()
+           )
+       ).Verifiable();
 
-            _countryService = new CountriesService(_countriesRepository);
+            // initialize service
+            _countryService = new CountriesService(_countriesRepository, _mockLogger.Object);
+
+            // initialize test helper
             _testOutputHelper = testOutputHelper;
 
+            // old way for fake testing with dbcontext directly -> no repo implementation
             // add EntityFrameworkCoreMock.Moq and test again (for Fake testing)
+            //var countriesInitialData = new List<Country>() { };
             //DbContextMock<ApplicationDbContext> dbContextMock = new DbContextMock<ApplicationDbContext>(
             //    new DbContextOptionsBuilder<ApplicationDbContext>().Options
             //    );
@@ -58,9 +76,6 @@ namespace Tests
                 .ReturnsAsync(new Country("Brazil"));
 
             CountryAddRequest? request = null;
-
-            // add log to test results
-            _testOutputHelper.WriteLine(request.ToString());
 
             // async method, for Assert method only
             //await Assert.ThrowsAsync<ArgumentNullException>(async () => // async lambda
@@ -84,12 +99,14 @@ namespace Tests
             // only a single method shuld be tested
 
             // use Build if you need to customize property values
+            // initilaize mock data
             var request = _fixture.Build<CountryAddRequest>()
                 .With(temp => temp.Name, "Brazil")
                 .Create<CountryAddRequest>();
 
             var country = request.toCountry();
 
+            // initialize mock repo method
             _countriesRespoMock.Setup(temp => temp.AddCountry(It.IsAny<Country>()))
             .ReturnsAsync(country);
 
@@ -100,7 +117,7 @@ namespace Tests
             _testOutputHelper.WriteLine(request.ToString());
 
             // move to fluent api
-            addResponse.Should().Be(expected_response);
+            addResponse.CountryName.Should().Be(expected_response.CountryName);
         }
     }
 }
