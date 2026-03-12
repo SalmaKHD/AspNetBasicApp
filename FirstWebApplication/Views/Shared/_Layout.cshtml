@@ -4,7 +4,7 @@
 @{
 }
 
-<!DOCTYPE
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     @* will be substituted by value supplied in each view *@
@@ -12,12 +12,26 @@
 </head>
 <body>
     <div>
-        <a href="~/" style="padding: 6px 12px; background-color: cadetblue; color: white; border-radius: 4px; text-decoration: none; display: inline-block;">
+        <a href="~/" style="padding:6px 12px; background-color:cadetblue; color:white;
+                            border-radius:4px; text-decoration:none; display:inline-block;">
             HOME
         </a>
+
+        <!-- Added Buttons -->
+        <a asp-controller="Accounts" asp-action="Register"
+           style="padding:6px 12px; background-color:#007bff; color:white;
+                  border-radius:4px; text-decoration:none; margin-left:10px; display:inline-block;">
+            Register
+        </a>
+
+        <a asp-controller="Accounts" asp-action="Login"
+           style="padding:6px 12px; background-color:#28a745; color:white;
+                  border-radius:4px; text-decoration:none; margin-left:10px; display:inline-block;">
+            Sign In
+        </a>
+
         @* a special function in the layout view
-            will be substituted with actual content for the actual view
-        *@
+            will be substituted with actual content for the actual view *@
         @RenderBody()
     </div>
 
