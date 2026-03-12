@@ -5,9 +5,7 @@ using System.Text;
 
 namespace Entities.IdentityEntities
 {
-    // ApplicationUser: convension
-    public class ApplicationUser : IdentityUser<Guid>
+    public class ApplicationRole: IdentityRole<Guid>
     {
-        public string? PersonName { get; set; }
     }
 }

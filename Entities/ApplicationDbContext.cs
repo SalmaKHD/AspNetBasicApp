@@ -1,11 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Entities.IdentityEntities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Entities
 {
-    public class ApplicationDbContext : DbContext // db implementation
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid> // db implementation
     {
         public virtual DbSet<Country> Coutries { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
