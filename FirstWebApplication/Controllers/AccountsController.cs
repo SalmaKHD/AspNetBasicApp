@@ -11,10 +11,12 @@ namespace FirstWebApplication.Controllers
     public class AccountsController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountsController(UserManager<ApplicationUser> userManager)
+        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [HttpGet]
@@ -38,6 +40,8 @@ namespace FirstWebApplication.Controllers
                 IdentityResult result = await _userManager.CreateAsync(user, register.Password);
                 if (result.Succeeded)
                 {
+                    // creates a cookie and send as part of the response
+                    await _signInManager.SignInAsync(user, isPersistent: true); // cookie persistant or not upon session
                     return RedirectToAction(nameof(HomeController.Index), "Home");
                 }
                 else
