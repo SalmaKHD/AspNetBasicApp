@@ -38,18 +38,18 @@
         @* if authentication cookie is available *@
         @if (User.Identity?.IsAuthenticated ?? false)
         {
-            <a asp-controller="Accounts" asp-action="Register"
-               style="padding:6px 12px; background-color:#007bff; color:white;
-                              border-radius:4px; text-decoration:none; margin-left:10px; display:inline-block;"
-               class="@(currentController == "Accounts" && currentAction == "Register" ? "disabled-button" : "")">
-                Register
-            </a>
+            <ul>
+                <li>
+                    @* predefined model *@
+                    @User.Identity?.Name
+                </li>
+            </ul>
 
-            <a asp-controller="Accounts" asp-action="Login"
+            <a asp-controller="Accounts" asp-action="Logout"
                style="padding:6px 12px; background-color:#28a745; color:white;
-                              border-radius:4px; text-decoration:none; margin-left:10px; display:inline-block;"
-               class="@(currentController == "Accounts" && currentAction == "Login" ? "disabled-button" : "")">
-                Sign In
+                          border-radius:4px; text-decoration:none; margin-left:10px; display:inline-block;"
+               class="@(currentController == "Accounts" && currentAction == "Logout" ? "disabled-button" : "")">
+                Logout
             </a>
         }
         else
