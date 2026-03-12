@@ -246,6 +246,9 @@ app.MapGet("/salma", async (HttpContext context) =>
     await context.Response.WriteAsync("Hello Salma");
 }); // when getting a request to root, return "Hello World!"
 
+// add authentication middleware -> to check whether the user is logged in or not, based on cookie
+app.UseAuthentication(); // must come before useRouting to add auth details, sequence of middleware matters
+
 app.UseRouting(); // enable routing middleware
 
 // add CORS

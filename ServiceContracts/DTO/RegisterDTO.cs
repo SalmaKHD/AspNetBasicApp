@@ -24,6 +24,7 @@ namespace ServiceContracts.DTO
 
         [Required(ErrorMessage = "confirm password cannot be empty")]
         [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "Passwords must match")]
         public string ConfirmPassword { get; set; }
     }
 }
