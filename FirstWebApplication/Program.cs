@@ -1,4 +1,5 @@
 using Entities;
+using Entities.IdentityEntities;
 using FirstWebApplication;
 using FirstWebApplication.Filters.ActionFilters;
 using FirstWebApplication.MapGroups;
@@ -6,6 +7,8 @@ using FirstWebApplication.Middleware;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
@@ -97,7 +100,7 @@ builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, 
 {
     loggerConfiguration
     .ReadFrom.Configuration(context.Configuration) // serilog will access file and read config from it
-    .ReadFrom.Services(services); 
+    .ReadFrom.Services(services);
 });
 
 // add Http logging
@@ -130,6 +133,16 @@ builder.Services.AddCors(options =>
         .WithHeaders("Authorization", "origin", "accept", "content-type"); // add allowed headers
     });
 });
+
+// add identity service to ioc
+// create application user table + application role table + use application db context
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    // for working with authentication
+    .AddDefaultTokenProviders()
+    // configure repository layer
+    .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
+    .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
 
 var app = builder.Build(); // creates an instance of a web app
 

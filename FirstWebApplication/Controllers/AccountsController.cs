@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using ServiceContracts.DTO;
 
 namespace FirstWebApplication.Controllers
@@ -6,6 +8,10 @@ namespace FirstWebApplication.Controllers
     [Route("[controller]/[action]")]
     public class AccountsController : Controller
     {
+        private readonly UserManager<ApplicationDbContext> _userManager;
+
+        public 
+
         [HttpGet]
         public IActionResult Register()
         {
