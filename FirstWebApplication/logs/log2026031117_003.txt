@@ -1,0 +1,201 @@
+2026-03-11 17:46:51.069 -07:00 [DBG] LOGGING DEBUG...
+2026-03-11 17:46:51.096 -07:00 [INF] LOGGING INFORMATION...
+2026-03-11 17:46:51.100 -07:00 [ERR] LOGGING ERROR...
+2026-03-11 17:46:51.106 -07:00 [FTL] LOGGING CRITICAL...
+2026-03-11 17:46:51.108 -07:00 [WRN] LOGGING WARNING...
+2026-03-11 17:46:51.112 -07:00 [DBG] Hosting starting
+2026-03-11 17:46:52.477 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-11 17:46:52.482 -07:00 [INF] Hosting environment: Development
+2026-03-11 17:46:52.486 -07:00 [INF] Content root path: C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication
+2026-03-11 17:46:52.493 -07:00 [DBG] Hosting started
+2026-03-11 17:47:13.401 -07:00 [DBG] Connection id "0HNJVQ3JBI14P" accepted.
+2026-03-11 17:47:13.408 -07:00 [DBG] Connection id "0HNJVQ3JBI14P" started.
+2026-03-11 17:48:12.422 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Accounts/Register.cshtml'.
+2026-03-11 17:48:12.531 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Country/Country.cshtml'.
+2026-03-11 17:48:12.537 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Home.cshtml'.
+2026-03-11 17:48:12.539 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Alll.cshtml'.
+2026-03-11 17:48:12.541 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Components/Grid/Default.cshtml'.
+2026-03-11 17:48:12.542 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2026-03-11 17:48:12.544 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-03-11 17:48:12.546 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ListPartialView.cshtml'.
+2026-03-11 17:48:12.548 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Users/Users.cshtml'.
+2026-03-11 17:48:12.550 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-03-11 17:48:12.552 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-03-11 17:48:12.586 -07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-03-11 17:48:12.940 -07:00 [INF] User profile is available. Using 'C:\Users\Salma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-11 17:48:12.983 -07:00 [DBG] Reading data from file 'C:\Users\Salma\AppData\Local\ASP.NET\DataProtection-Keys\key-17096b5d-10d7-41ff-b848-2c5f4252aeef.xml'.
+2026-03-11 17:48:13.010 -07:00 [DBG] Found key {17096b5d-10d7-41ff-b848-2c5f4252aeef}.
+2026-03-11 17:48:13.041 -07:00 [DBG] Considering key {17096b5d-10d7-41ff-b848-2c5f4252aeef} with expiration date 2026-05-27 23:35:54Z as default key.
+2026-03-11 17:48:13.052 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-11 17:48:13.063 -07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-03-11 17:48:13.069 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-11 17:48:13.080 -07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-03-11 17:48:13.087 -07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-03-11 17:48:13.093 -07:00 [DBG] Using key {17096b5d-10d7-41ff-b848-2c5f4252aeef} as the default key.
+2026-03-11 17:48:13.099 -07:00 [DBG] Key ring with default key {17096b5d-10d7-41ff-b848-2c5f4252aeef} was loaded during application startup.
+2026-03-11 17:48:13.124 -07:00 [DBG] Middleware loaded
+2026-03-11 17:48:13.135 -07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16523 B).
+2026-03-11 17:48:13.139 -07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-03-11 17:48:13.368 -07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-03-11 17:48:13.376 -07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-03-11 17:48:13.399 -07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-03-11 17:48:13.721 -07:00 [INF] Now listening on: https://localhost:7232
+2026-03-11 17:48:13.725 -07:00 [INF] Now listening on: http://localhost:5257
+2026-03-11 17:48:13.727 -07:00 [DBG] Loaded hosting startup assembly FirstWebApplication
+2026-03-11 17:48:13.729 -07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-03-11 17:48:13.730 -07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-03-11 17:48:13.732 -07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-03-11 17:48:13.753 -07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-11 17:48:13.786 -07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-11 17:48:18.508 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/accounts/register - null null
+2026-03-11 17:48:18.905 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 17:48:18.916 -07:00 [DBG] The request path /accounts/register does not match a supported file type
+2026-03-11 17:48:19.056 -07:00 [DBG] 1 candidate(s) found for the request path '/accounts/register'
+2026-03-11 17:48:19.068 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)' with route pattern 'Accounts/Register' is valid for the request path '/accounts/register'
+2026-03-11 17:48:19.076 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:19.091 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:19.159 -07:00 [INF] Route matched with {action = "Register", controller = "Accounts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication).
+2026-03-11 17:48:19.183 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 17:48:19.190 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:19.197 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)"]
+2026-03-11 17:48:19.206 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 17:48:19.210 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:19.221 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:19.229 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:19.266 -07:00 [DBG] View lookup cache miss for view 'Register' in controller 'Accounts'.
+2026-03-11 17:48:19.300 -07:00 [INF] Executing ViewResult, running view Register.
+2026-03-11 17:48:19.317 -07:00 [DBG] The view path '/Views/Accounts/Register.cshtml' was found in 49.2779ms.
+2026-03-11 17:48:19.909 -07:00 [DBG] No endpoints found for address (action=[Register],controller=[Account])
+2026-03-11 17:48:19.953 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 17:48:20.080 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Account])
+2026-03-11 17:48:20.168 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] for address (action=[Register],controller=[Accounts])
+2026-03-11 17:48:20.189 -07:00 [DBG] Successfully processed template Accounts/Register for FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) resulting in /Accounts/Register and 
+2026-03-11 17:48:20.220 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] with result /Accounts/Register
+2026-03-11 17:48:20.241 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Accounts])
+2026-03-11 17:48:20.262 -07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-11 17:48:20.310 -07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-11 17:48:20.355 -07:00 [INF] Executed ViewResult - view Register executed in 1094.8605ms.
+2026-03-11 17:48:20.364 -07:00 [INF] Executed action FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) in 1150.3901ms
+2026-03-11 17:48:20.370 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:20.374 -07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-11 17:48:20.387 -07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-11 17:48:20.403 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/accounts/register - 200 null text/html; charset=utf-8 1930.6414ms
+2026-03-11 17:48:20.976 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 17:48:20.998 -07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-11 17:48:21.006 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 29.6849ms
+2026-03-11 17:48:21.020 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_vs/browserLink - null null
+2026-03-11 17:48:21.155 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_vs/browserLink - 200 null text/javascript; charset=UTF-8 135.2952ms
+2026-03-11 17:48:24.556 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/Accounts/Register - null null
+2026-03-11 17:48:24.576 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 17:48:24.578 -07:00 [DBG] The request path /Accounts/Register does not match a supported file type
+2026-03-11 17:48:24.585 -07:00 [DBG] 1 candidate(s) found for the request path '/Accounts/Register'
+2026-03-11 17:48:24.593 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)' with route pattern 'Accounts/Register' is valid for the request path '/Accounts/Register'
+2026-03-11 17:48:24.598 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:24.605 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:24.618 -07:00 [INF] Route matched with {action = "Register", controller = "Accounts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication).
+2026-03-11 17:48:24.622 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 17:48:24.626 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:24.633 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)"]
+2026-03-11 17:48:24.640 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 17:48:24.646 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:24.656 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:24.665 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:24.675 -07:00 [DBG] View lookup cache hit for view 'Register' in controller 'Accounts'.
+2026-03-11 17:48:24.685 -07:00 [INF] Executing ViewResult, running view Register.
+2026-03-11 17:48:24.688 -07:00 [DBG] The view path '/Views/Accounts/Register.cshtml' was found in 13.7363ms.
+2026-03-11 17:48:24.704 -07:00 [DBG] No endpoints found for address (action=[Register],controller=[Account])
+2026-03-11 17:48:24.712 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 17:48:24.719 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Account])
+2026-03-11 17:48:24.734 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] for address (action=[Register],controller=[Accounts])
+2026-03-11 17:48:24.744 -07:00 [DBG] Successfully processed template Accounts/Register for FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) resulting in /Accounts/Register and 
+2026-03-11 17:48:24.750 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] with result /Accounts/Register
+2026-03-11 17:48:24.768 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Accounts])
+2026-03-11 17:48:24.778 -07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-11 17:48:24.780 -07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-11 17:48:24.783 -07:00 [INF] Executed ViewResult - view Register executed in 108.3547ms.
+2026-03-11 17:48:24.795 -07:00 [INF] Executed action FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) in 138.7343ms
+2026-03-11 17:48:24.806 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:24.818 -07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-11 17:48:24.821 -07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-11 17:48:24.836 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/Accounts/Register - 200 null text/html; charset=utf-8 280.2555ms
+2026-03-11 17:48:24.968 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_vs/browserLink - null null
+2026-03-11 17:48:25.009 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 17:48:25.019 -07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-11 17:48:25.027 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 17.8452ms
+2026-03-11 17:48:25.060 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_vs/browserLink - 200 null text/javascript; charset=UTF-8 92.1434ms
+2026-03-11 17:48:26.224 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/Accounts/Register - null null
+2026-03-11 17:48:26.238 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 17:48:26.241 -07:00 [DBG] The request path /Accounts/Register does not match a supported file type
+2026-03-11 17:48:26.245 -07:00 [DBG] 1 candidate(s) found for the request path '/Accounts/Register'
+2026-03-11 17:48:26.249 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)' with route pattern 'Accounts/Register' is valid for the request path '/Accounts/Register'
+2026-03-11 17:48:26.255 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:26.258 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:26.260 -07:00 [INF] Route matched with {action = "Register", controller = "Accounts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication).
+2026-03-11 17:48:26.264 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 17:48:26.266 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:26.277 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)"]
+2026-03-11 17:48:26.289 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 17:48:26.296 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:26.305 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:26.308 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:26.318 -07:00 [DBG] View lookup cache hit for view 'Register' in controller 'Accounts'.
+2026-03-11 17:48:26.343 -07:00 [INF] Executing ViewResult, running view Register.
+2026-03-11 17:48:26.350 -07:00 [DBG] The view path '/Views/Accounts/Register.cshtml' was found in 31.8291ms.
+2026-03-11 17:48:26.357 -07:00 [DBG] No endpoints found for address (action=[Register],controller=[Account])
+2026-03-11 17:48:26.359 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 17:48:26.366 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Account])
+2026-03-11 17:48:26.368 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] for address (action=[Register],controller=[Accounts])
+2026-03-11 17:48:26.372 -07:00 [DBG] Successfully processed template Accounts/Register for FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) resulting in /Accounts/Register and 
+2026-03-11 17:48:26.375 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] with result /Accounts/Register
+2026-03-11 17:48:26.382 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Accounts])
+2026-03-11 17:48:26.384 -07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-11 17:48:26.385 -07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-11 17:48:26.387 -07:00 [INF] Executed ViewResult - view Register executed in 69.0334ms.
+2026-03-11 17:48:26.391 -07:00 [INF] Executed action FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) in 85.7995ms
+2026-03-11 17:48:26.398 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:26.406 -07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-11 17:48:26.421 -07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-11 17:48:26.448 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/Accounts/Register - 200 null text/html; charset=utf-8 223.7143ms
+2026-03-11 17:48:26.593 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_vs/browserLink - null null
+2026-03-11 17:48:26.602 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 17:48:26.614 -07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-11 17:48:26.622 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 19.8699ms
+2026-03-11 17:48:26.620 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_vs/browserLink - 200 null text/javascript; charset=UTF-8 27.0949ms
+2026-03-11 17:48:29.457 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/Accounts/Register - null null
+2026-03-11 17:48:29.485 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 17:48:29.494 -07:00 [DBG] The request path /Accounts/Register does not match a supported file type
+2026-03-11 17:48:29.506 -07:00 [DBG] 1 candidate(s) found for the request path '/Accounts/Register'
+2026-03-11 17:48:29.517 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)' with route pattern 'Accounts/Register' is valid for the request path '/Accounts/Register'
+2026-03-11 17:48:29.529 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:29.535 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:29.540 -07:00 [INF] Route matched with {action = "Register", controller = "Accounts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication).
+2026-03-11 17:48:29.556 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 17:48:29.571 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:29.597 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)"]
+2026-03-11 17:48:29.626 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 17:48:29.647 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:48:29.676 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:29.688 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:48:29.703 -07:00 [DBG] View lookup cache hit for view 'Register' in controller 'Accounts'.
+2026-03-11 17:48:29.722 -07:00 [INF] Executing ViewResult, running view Register.
+2026-03-11 17:48:29.740 -07:00 [DBG] The view path '/Views/Accounts/Register.cshtml' was found in 37.0253ms.
+2026-03-11 17:48:29.754 -07:00 [DBG] No endpoints found for address (action=[Register],controller=[Account])
+2026-03-11 17:48:29.764 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 17:48:29.775 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Account])
+2026-03-11 17:48:29.784 -07:00 [DBG] Found the endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] for address (action=[Register],controller=[Accounts])
+2026-03-11 17:48:29.801 -07:00 [DBG] Successfully processed template Accounts/Register for FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) resulting in /Accounts/Register and 
+2026-03-11 17:48:29.833 -07:00 [DBG] Link generation succeeded for endpoints ["FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)","FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)"] with result /Accounts/Register
+2026-03-11 17:48:29.849 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Accounts])
+2026-03-11 17:48:29.862 -07:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-11 17:48:29.867 -07:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-11 17:48:29.875 -07:00 [INF] Executed ViewResult - view Register executed in 171.7565ms.
+2026-03-11 17:48:29.887 -07:00 [INF] Executed action FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) in 211.6394ms
+2026-03-11 17:48:29.898 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:48:29.910 -07:00 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-11 17:48:29.917 -07:00 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-11 17:48:29.927 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/Accounts/Register - 200 null text/html; charset=utf-8 468.9101ms
+2026-03-11 17:48:29.973 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_vs/browserLink - null null
+2026-03-11 17:48:29.974 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-11 17:48:30.009 -07:00 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-11 17:48:30.014 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.0088ms
+2026-03-11 17:48:30.033 -07:00 [INF] Request finished HTTP/1.1 GET http://localhost:5257/_framework/aspnetcore-browser-refresh.js - 200 16523 application/javascript; charset=utf-8 58.9808ms

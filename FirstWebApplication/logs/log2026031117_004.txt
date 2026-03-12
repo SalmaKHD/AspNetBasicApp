@@ -1,0 +1,26 @@
+2026-03-11 17:48:12.827 -07:00 [DBG] LOGGING DEBUG...
+2026-03-11 17:48:12.853 -07:00 [INF] LOGGING INFORMATION...
+2026-03-11 17:48:12.860 -07:00 [ERR] LOGGING ERROR...
+2026-03-11 17:48:12.863 -07:00 [FTL] LOGGING CRITICAL...
+2026-03-11 17:48:12.865 -07:00 [WRN] LOGGING WARNING...
+2026-03-11 17:48:12.869 -07:00 [DBG] Hosting starting
+2026-03-11 17:48:13.892 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-11 17:48:13.896 -07:00 [INF] Hosting environment: Development
+2026-03-11 17:48:13.901 -07:00 [INF] Content root path: C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication
+2026-03-11 17:48:13.905 -07:00 [DBG] Hosting started
+2026-03-11 17:48:18.343 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" accepted.
+2026-03-11 17:48:18.352 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" started.
+2026-03-11 17:48:20.394 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:21.000 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:21.151 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:24.828 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:24.973 -07:00 [DBG] Connection id "0HNJVQ46MSM2P" accepted.
+2026-03-11 17:48:24.995 -07:00 [DBG] Connection id "0HNJVQ46MSM2P" started.
+2026-03-11 17:48:25.024 -07:00 [DBG] Connection id "0HNJVQ46MSM2P" completed keep alive response.
+2026-03-11 17:48:25.053 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:26.434 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:26.616 -07:00 [DBG] Connection id "0HNJVQ46MSM2P" completed keep alive response.
+2026-03-11 17:48:26.617 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:29.921 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.
+2026-03-11 17:48:30.005 -07:00 [DBG] Connection id "0HNJVQ46MSM2P" completed keep alive response.
+2026-03-11 17:48:30.020 -07:00 [DBG] Connection id "0HNJVQ46MSM2O" completed keep alive response.

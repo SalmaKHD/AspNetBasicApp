@@ -1,0 +1,106 @@
+2026-03-11 17:34:49.214 -07:00 [DBG] LOGGING DEBUG...
+2026-03-11 17:34:49.231 -07:00 [INF] LOGGING INFORMATION...
+2026-03-11 17:34:49.233 -07:00 [ERR] LOGGING ERROR...
+2026-03-11 17:34:49.236 -07:00 [FTL] LOGGING CRITICAL...
+2026-03-11 17:34:49.240 -07:00 [WRN] LOGGING WARNING...
+2026-03-11 17:34:49.244 -07:00 [DBG] Hosting starting
+2026-03-11 17:34:50.429 -07:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-11 17:34:50.440 -07:00 [INF] Hosting environment: Development
+2026-03-11 17:34:50.443 -07:00 [INF] Content root path: C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication
+2026-03-11 17:34:50.447 -07:00 [DBG] Hosting started
+2026-03-11 17:35:02.745 -07:00 [DBG] Connection id "0HNJVPSPJF4RP" accepted.
+2026-03-11 17:35:02.751 -07:00 [DBG] Connection id "0HNJVPSPJF4RP" started.
+2026-03-11 17:37:46.785 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Accounts/Register.cshtml'.
+2026-03-11 17:37:46.890 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Country/Country.cshtml'.
+2026-03-11 17:37:46.894 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Home.cshtml'.
+2026-03-11 17:37:46.897 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Alll.cshtml'.
+2026-03-11 17:37:46.900 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Components/Grid/Default.cshtml'.
+2026-03-11 17:37:46.902 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/Error.cshtml'.
+2026-03-11 17:37:46.903 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-03-11 17:37:46.905 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_ListPartialView.cshtml'.
+2026-03-11 17:37:46.907 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/Users/Users.cshtml'.
+2026-03-11 17:37:46.909 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-03-11 17:37:46.911 -07:00 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-03-11 17:37:46.938 -07:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-03-11 17:37:47.171 -07:00 [INF] User profile is available. Using 'C:\Users\Salma\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-11 17:37:47.214 -07:00 [DBG] Reading data from file 'C:\Users\Salma\AppData\Local\ASP.NET\DataProtection-Keys\key-17096b5d-10d7-41ff-b848-2c5f4252aeef.xml'.
+2026-03-11 17:37:47.249 -07:00 [DBG] Found key {17096b5d-10d7-41ff-b848-2c5f4252aeef}.
+2026-03-11 17:37:47.277 -07:00 [DBG] Considering key {17096b5d-10d7-41ff-b848-2c5f4252aeef} with expiration date 2026-05-27 23:35:54Z as default key.
+2026-03-11 17:37:47.286 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-11 17:37:47.296 -07:00 [DBG] Decrypting secret element using Windows DPAPI.
+2026-03-11 17:37:47.300 -07:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-11 17:37:47.309 -07:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-03-11 17:37:47.318 -07:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-03-11 17:37:47.328 -07:00 [DBG] Using key {17096b5d-10d7-41ff-b848-2c5f4252aeef} as the default key.
+2026-03-11 17:37:47.334 -07:00 [DBG] Key ring with default key {17096b5d-10d7-41ff-b848-2c5f4252aeef} was loaded during application startup.
+2026-03-11 17:37:47.362 -07:00 [DBG] Middleware loaded
+2026-03-11 17:37:47.376 -07:00 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16523 B).
+2026-03-11 17:37:47.380 -07:00 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-03-11 17:37:47.684 -07:00 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-03-11 17:37:47.699 -07:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-03-11 17:37:47.730 -07:00 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-03-11 17:37:48.059 -07:00 [INF] Now listening on: https://localhost:7232
+2026-03-11 17:37:48.065 -07:00 [INF] Now listening on: http://localhost:5257
+2026-03-11 17:37:48.068 -07:00 [DBG] Loaded hosting startup assembly FirstWebApplication
+2026-03-11 17:37:48.071 -07:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-03-11 17:37:48.074 -07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-03-11 17:37:48.076 -07:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-03-11 17:37:48.101 -07:00 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-11 17:37:48.120 -07:00 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-11 17:38:07.727 -07:00 [INF] Request starting HTTP/1.1 GET http://localhost:5257/accounts/register - null null
+2026-03-11 17:38:08.113 -07:00 [DBG] The request is insecure. Skipping HSTS header.
+2026-03-11 17:38:08.121 -07:00 [DBG] The request path /accounts/register does not match a supported file type
+2026-03-11 17:38:08.259 -07:00 [DBG] 1 candidate(s) found for the request path '/accounts/register'
+2026-03-11 17:38:08.266 -07:00 [DBG] Endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)' with route pattern 'Accounts/Register' is valid for the request path '/accounts/register'
+2026-03-11 17:38:08.271 -07:00 [DBG] Request matched endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:38:08.283 -07:00 [INF] Executing endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:38:08.342 -07:00 [INF] Route matched with {action = "Register", controller = "Accounts"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication).
+2026-03-11 17:38:08.361 -07:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-11 17:38:08.364 -07:00 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:38:08.368 -07:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","FirstWebApplication.Filters.ActionFilters.GlobalActionFilter (Order: 0)"]
+2026-03-11 17:38:08.375 -07:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-11 17:38:08.378 -07:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-11 17:38:08.400 -07:00 [DBG] Executing controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:38:08.411 -07:00 [DBG] Executed controller factory for controller FirstWebApplication.Controllers.AccountsController (FirstWebApplication)
+2026-03-11 17:38:08.436 -07:00 [DBG] View lookup cache miss for view 'Register' in controller 'Accounts'.
+2026-03-11 17:38:08.457 -07:00 [INF] Executing ViewResult, running view Register.
+2026-03-11 17:38:08.473 -07:00 [DBG] The view path '/Views/Accounts/Register.cshtml' was found in 26.611ms.
+2026-03-11 17:38:08.811 -07:00 [DBG] No endpoints found for address (action=[Register],controller=[Account])
+2026-03-11 17:38:08.850 -07:00 [DBG] An antiforgery cookie token was reused.
+2026-03-11 17:38:08.979 -07:00 [DBG] No endpoints found for address (action=[Login],controller=[Account])
+2026-03-11 17:38:09.061 -07:00 [INF] Executed action FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication) in 669.0592ms
+2026-03-11 17:38:09.072 -07:00 [INF] Executed endpoint 'FirstWebApplication.Controllers.AccountsController.Register (FirstWebApplication)'
+2026-03-11 17:38:09.831 -07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The following sections have been defined but have not been rendered by the page at '/Views/Shared/_Layout.cshtml': 'Scripts'. To ignore an unrendered section call IgnoreSection("sectionName").
+   at Microsoft.AspNetCore.Mvc.Razor.RazorPage.EnsureRenderedBodyOrSections()
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderLayoutAsync(ViewContext context, ViewBufferTextWriter bodyWriter)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Program.<>c.<<<Main>$>b__0_16>d.MoveNext() in C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication\Program.cs:line 183
+--- End of stack trace from previous location ---
+   at FirstWebApplication.Middleware.Middleware.Invoke(HttpContext httpContext) in C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication\Middleware\Middleware.cs:line 20
+   at FirstWebApplication.Middleware.CustomMiddleWareConfig.<>c.<<ConfigureCustomMiddlewares>b__0_0>d.MoveNext() in C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication\Middleware\CustomMiddleware.cs:line 21
+--- End of stack trace from previous location ---
+   at Program.<>c.<<<Main>$>b__0_8>d.MoveNext() in C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication\Program.cs:line 165
+--- End of stack trace from previous location ---
+   at FirstWebApplication.Middleware.CustomMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Users\Salma\Desktop\Desktop\GitHub\Software-Development\Backend\Asp-Net-Core\FirstWebApplication\FirstWebApplication\Middleware\CustomMiddleware.cs:line 8
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
