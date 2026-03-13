@@ -72,7 +72,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginDTO login)
+        public async Task<IActionResult> Login(LoginDTO login, string? returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -80,6 +80,12 @@ namespace FirstWebApplication.Controllers
                 var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, isPersistent: true, lockoutOnFailure: true);
                 if (!result.Succeeded)
                 {
+                    if(!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        // redirection happens only to the same domain
+                        return LocalRedirect(returnUrl);
+                    }
+
                     ModelState.AddModelError("Login", "User does not exist");
                     return View(login);
                 }
