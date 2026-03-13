@@ -6,6 +6,7 @@ using FirstWebApplication.MapGroups;
 using FirstWebApplication.Middleware;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -144,6 +145,20 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
     .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
 
+builder.Services.AddAuthorization(options =>
+{
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+    // enforces authorization except for login register
+    .RequireAuthenticatedUser()
+    .Build();
+});
+
+// where to redirect when cookie is not set
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Accounts/Login";
+});
+
 var app = builder.Build(); // creates an instance of a web app
 
 if (app.Environment.IsDevelopment())
@@ -161,6 +176,11 @@ Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePa
 
 // force clients to use https
 app.UseHsts();
+
+
+// add authentication middleware -> to check whether the user is logged in or not, based on cookie
+app.UseAuthentication(); // must come before useRouting to add auth details, sequence of middleware matters
+app.UseAuthorization();
 
 // add controller mappings
 app.MapControllers();
@@ -245,9 +265,6 @@ app.MapGet("/salma", async (HttpContext context) =>
 
     await context.Response.WriteAsync("Hello Salma");
 }); // when getting a request to root, return "Hello World!"
-
-// add authentication middleware -> to check whether the user is logged in or not, based on cookie
-app.UseAuthentication(); // must come before useRouting to add auth details, sequence of middleware matters
 
 app.UseRouting(); // enable routing middleware
 

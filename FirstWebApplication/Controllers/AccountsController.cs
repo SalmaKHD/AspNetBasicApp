@@ -1,6 +1,7 @@
 ﻿using Entities;
 using Entities.IdentityEntities;
 using FirstWebApplication.NewFolder4;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Win32;
@@ -9,6 +10,8 @@ using ServiceContracts.DTO;
 namespace FirstWebApplication.Controllers
 {
     [Route("[controller]/[action]")]
+    // accessable without login
+    [AllowAnonymous]
     public class AccountsController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;

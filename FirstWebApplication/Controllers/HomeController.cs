@@ -1,6 +1,7 @@
 ﻿using FirstWebApplication.Binders;
 using FirstWebApplication.Models;
 using FirstWebApplication.Properties;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
@@ -34,6 +35,8 @@ namespace FirstWebApplication.NewFolder4
         // add attribute routing
         [Route("/")]
         [Route("home")]
+        // allow access to guests
+        [AllowAnonymous]
         public ContentResult Index()
         {
             // there are shortcut methods for all types
