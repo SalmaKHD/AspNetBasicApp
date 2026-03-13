@@ -305,6 +305,13 @@ app.Logger.LogWarning("LOGGING WARNING...");
 
 //var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
 
+// add conventional routing -> defining attribute routing: will override this
+app.UseEndpoints(endpoints =>
+{ 
+    // we may add constraints to conventional routing also
+    endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
+});
+
 app.Run();
 
 public partial class Program { }
