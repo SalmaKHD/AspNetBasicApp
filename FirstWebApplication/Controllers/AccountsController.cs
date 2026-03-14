@@ -33,6 +33,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [HttpPost]
+        [Authorize("NotAuthorized")]
         public async Task<IActionResult> Register(RegisterDTO register)
         {
             if (!ModelState.IsValid)

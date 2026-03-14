@@ -151,6 +151,15 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 //    // enforces authorization except for login register
 //    .RequireAuthenticatedUser()
 //    .Build();
+
+
+//    options.AddPolicy("NotAuthorized", policy =>
+//    {
+//        policy.RequireAssertion(context =>
+//        {
+//            return !context.User.Identity.IsAuthenticated;
+//        });
+//    });
 //});
 
 //// where to redirect when cookie is not set
