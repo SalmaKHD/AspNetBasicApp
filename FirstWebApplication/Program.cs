@@ -186,6 +186,8 @@ Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePa
 // force clients to use https
 app.UseHsts();
 
+// allow HTTPS, for requests
+app.UseHttpsRedirection();
 
 // add authentication middleware -> to check whether the user is logged in or not, based on cookie
 app.UseAuthentication(); // must come before useRouting to add auth details, sequence of middleware matters
