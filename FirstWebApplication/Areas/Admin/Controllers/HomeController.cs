@@ -12,6 +12,9 @@ using ServiceContracts.Models;
 
 namespace FirstWebApplication.Areas.Admin.Controllers
 {
+    [Controller]
+    [Area("Admin")]
+    [Authorize(Roles ="Admin")] // this page will be available for admins only
     public class HomeController: Controller
     {
         public IActionResult Index()

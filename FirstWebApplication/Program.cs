@@ -317,7 +317,7 @@ app.UseEndpoints(endpoints =>
 {
     // we may add constraints to conventional routing also
     endpoints.MapControllerRoute(
-        name: "areas", 
+        name: "areas",
         pattern: "{area:exists}/{controller}/{action}"
         );
 });
