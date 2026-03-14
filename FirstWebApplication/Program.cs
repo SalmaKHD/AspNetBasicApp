@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
@@ -29,6 +30,9 @@ builder.Services.AddControllersWithViews(options =>
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<GlobalActionFilter>>();
 
     options.Filters.Add(new GlobalActionFilter(logger, "Global-Filter-Key", "value", 0));
+
+    // add post request global forgery token config
+    options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
 });
 
 // add services
