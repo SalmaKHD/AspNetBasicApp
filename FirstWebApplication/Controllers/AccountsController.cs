@@ -96,6 +96,17 @@ namespace FirstWebApplication.Controllers
                 var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, isPersistent: true, lockoutOnFailure: true);
                 if (!result.Succeeded)
                 {
+                    var user = await _userManager.FindByEmailAsync(login.UserName);
+                    if (user != null)
+                    {
+                        if(await _userManager.IsInRoleAsync(user!, UserTypeOptions.Admin.ToString())) {
+                            return RedirectToAction("Index", "Home", new
+                            {
+                                area = "Admin" // redirect to admin area
+                            });
+                        }
+                    }
+
                     if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {
                         // redirection happens only to the same domain

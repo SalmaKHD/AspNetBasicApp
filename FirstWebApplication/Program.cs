@@ -312,6 +312,16 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
 });
 
+// add admin area controller
+app.UseEndpoints(endpoints =>
+{
+    // we may add constraints to conventional routing also
+    endpoints.MapControllerRoute(
+        name: "areas", 
+        pattern: "{area:exists}/{controller}/{action}"
+        );
+});
+
 app.Run();
 
 public partial class Program { }
