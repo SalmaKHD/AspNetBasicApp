@@ -145,19 +145,19 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
     .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
 
-builder.Services.AddAuthorization(options =>
-{
-    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-    // enforces authorization except for login register
-    .RequireAuthenticatedUser()
-    .Build();
-});
+//builder.Services.AddAuthorization(options =>
+//{
+//    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+//    // enforces authorization except for login register
+//    .RequireAuthenticatedUser()
+//    .Build();
+//});
 
-// where to redirect when cookie is not set
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.LoginPath = "/Accounts/Login";
-});
+//// where to redirect when cookie is not set
+//builder.Services.ConfigureApplicationCookie(options =>
+//{
+//    options.LoginPath = "/Accounts/Login";
+//});
 
 var app = builder.Build(); // creates an instance of a web app
 

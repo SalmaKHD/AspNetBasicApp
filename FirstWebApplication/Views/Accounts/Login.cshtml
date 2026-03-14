@@ -26,7 +26,8 @@
     </div>
 }
 
-<form asp-action="Login" asp-controller="Accounts" method="post" class="needs-validation" novalidate asp-route-ReturnUrl="@returnUrl">
+@* asp-route-ReturnUrl="@returnUrl" *@
+<form asp-action="Login" asp-controller="Accounts" method="post" class="needs-validation" novalidate>
     <div class="form-group mb-3">
         <label asp-for="UserName" class="form-label">Email</label>
         <input asp-for="UserName" class="form-control" placeholder="Enter your email address" />

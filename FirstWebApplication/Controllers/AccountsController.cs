@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Win32;
 using ServiceContracts.DTO;
+using ServiceContracts.Models;
 
 namespace FirstWebApplication.Controllers
 {
@@ -16,11 +17,13 @@ namespace FirstWebApplication.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
 
-        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         [HttpGet]
@@ -32,37 +35,50 @@ namespace FirstWebApplication.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDTO register)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                ApplicationUser user = new ApplicationUser()
-                {
-                    Email = register.Email,
-                    PhoneNumber = register.Phone,
-                    UserName = register.Email,
-                    PersonName = register.PersonName
-                };
-                IdentityResult result = await _userManager.CreateAsync(user, register.Password);
-                if (result.Succeeded)
-                {
-                    // creates a cookie and send as part of the response
-                    await _signInManager.SignInAsync(user, isPersistent: true); // cookie persistant or not upon session
-                    return RedirectToAction(nameof(HomeController.Index), "Home");
-                }
-                else
-                {
-                    foreach (IdentityError error in result.Errors)
-                    {
-                        ModelState.AddModelError("Register", error.Description);
-                    }
-                    return View(register);
-                }
-            }
-            else
-            {
-                ViewBag.Errors = ModelState.Values.SelectMany(temp => temp.Errors).Select(temp => temp.ErrorMessage);
+                ViewBag.Errors = ModelState.Values.SelectMany(e => e.Errors).Select(e => e.ErrorMessage);
                 return View(register);
             }
+
+            var user = new ApplicationUser
+            {
+                Email = register.Email,
+                PhoneNumber = register.Phone,
+                UserName = register.Email,
+                PersonName = register.PersonName
+            };
+
+            var createResult = await _userManager.CreateAsync(user, register.Password);
+
+            if (!createResult.Succeeded)
+            {
+                foreach (var error in createResult.Errors)
+                    ModelState.AddModelError("Register", error.Description);
+                return View(register);
+            }
+
+            // Determine selected role
+            var selectedRole = register.UserType == ServiceContracts.Models.UserTypeOptions.Admin
+                ? UserTypeOptions.Admin.ToString()
+                : UserTypeOptions.User.ToString();
+
+            // Ensure role exists
+            var roleExists = await _roleManager.RoleExistsAsync(selectedRole);
+            if (!roleExists)
+            {
+                await _roleManager.CreateAsync(new ApplicationRole { Name = selectedRole });
+            }
+
+            // Add user to the role
+            await _userManager.AddToRoleAsync(user, selectedRole);
+
+            // Sign them in
+            await _signInManager.SignInAsync(user, isPersistent: true);
+
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
+
 
 
         [HttpGet]
@@ -80,7 +96,7 @@ namespace FirstWebApplication.Controllers
                 var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, isPersistent: true, lockoutOnFailure: true);
                 if (!result.Succeeded)
                 {
-                    if(!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
                     {
                         // redirection happens only to the same domain
                         return LocalRedirect(returnUrl);
