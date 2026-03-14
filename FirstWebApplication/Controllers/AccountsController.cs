@@ -34,6 +34,7 @@ namespace FirstWebApplication.Controllers
 
         [HttpPost]
         [Authorize("NotAuthorized")]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterDTO register)
         {
             if (!ModelState.IsValid)
