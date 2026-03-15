@@ -40,7 +40,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [HttpPost]
-        [Authorize("NotAuthorized")]
+        //[Authorize("NotAuthorized")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterDTO register)
         {
@@ -57,6 +57,12 @@ namespace FirstWebApplication.Controllers
                 UserName = register.Email,
                 PersonName = register.PersonName
             };
+
+            // create jwt token
+            var token = _jwtService.CreateJwtToken(user);
+            _logger.LogDebug($"jwt token is: {token}");
+            user.Refresh = token.RefreshToken;
+            user.RefreshTokenExpirationDateTime = token.RefreshTokenExpirationDateTime;
 
             var createResult = await _userManager.CreateAsync(user, register.Password);
 
@@ -85,10 +91,6 @@ namespace FirstWebApplication.Controllers
             // Sign them in
             await _signInManager.SignInAsync(user, isPersistent: true);
 
-            // create jwt token
-            var token = _jwtService.CreateJwtToken(user);
-            _logger.LogDebug($"jwt token is: {token}");
-
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
@@ -115,7 +117,11 @@ namespace FirstWebApplication.Controllers
                     {
                         // create jwt token
                         var token = _jwtService.CreateJwtToken(user);
+                        user.Refresh = token.RefreshToken;
+                        user.RefreshTokenExpirationDateTime = token.RefreshTokenExpirationDateTime;
                         _logger.LogDebug($"jwt token is: {token}");
+
+                        await _userManager.UpdateAsync(user);
 
                         if (await _userManager.IsInRoleAsync(user!, UserTypeOptions.Admin.ToString()))
                         {
