@@ -20,14 +20,17 @@ namespace FirstWebApplication.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IJwtService _jwtService;
+        private readonly ILogger<AccountsController> _logger;
 
         public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager,
-            IJwtService jwtService)
+            IJwtService jwtService,
+            ILogger<AccountsController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _jwtService = jwtService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -83,8 +86,8 @@ namespace FirstWebApplication.Controllers
             await _signInManager.SignInAsync(user, isPersistent: true);
 
             // create jwt token
-            _jwtService.CreateJwtToken(user);
-            
+            var token = _jwtService.CreateJwtToken(user);
+            _logger.LogDebug($"jwt token is: {token}");
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
@@ -104,12 +107,18 @@ namespace FirstWebApplication.Controllers
             {
                 // creates and gives back cookie automatically
                 var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, isPersistent: true, lockoutOnFailure: true);
-                if (!result.Succeeded)
+                if (result.Succeeded)
                 {
+
                     var user = await _userManager.FindByEmailAsync(login.UserName);
                     if (user != null)
                     {
-                        if(await _userManager.IsInRoleAsync(user!, UserTypeOptions.Admin.ToString())) {
+                        // create jwt token
+                        var token = _jwtService.CreateJwtToken(user);
+                        _logger.LogDebug($"jwt token is: {token}");
+
+                        if (await _userManager.IsInRoleAsync(user!, UserTypeOptions.Admin.ToString()))
+                        {
                             return RedirectToAction("Index", "Home", new
                             {
                                 area = "Admin" // redirect to admin area

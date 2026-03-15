@@ -6,14 +6,18 @@ using FirstWebApplication.MapGroups;
 using FirstWebApplication.Middleware;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
+using Microsoft.IdentityModel.Tokens;
 using Repositories;
 using RepositoryContracts;
 using Serilog;
@@ -33,6 +37,10 @@ builder.Services.AddControllersWithViews(options =>
 
     // add post request global forgery token config
     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+
+    // add authorization to all endpoints with jwt
+    var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+    options.Filters.Add(new AuthorizeFilter(policy));
 });
 
 // add services
@@ -54,7 +62,8 @@ builder.Services.Add(new ServiceDescriptor(
 // add jwt service
 builder.Services.Add(new ServiceDescriptor(
     typeof(IJwtService),
-    typeof(JwtService))
+    typeof(JwtService),
+    ServiceLifetime.Scoped)
     );
 
 builder.Services.AddScoped<IStockService, StockService>();
@@ -70,7 +79,6 @@ builder.Services.Add(new ServiceDescriptor(
     typeof(CountriesRepository),
     ServiceLifetime.Scoped)
     );
-
 
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));
@@ -177,6 +185,28 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 //{
 //    options.LoginPath = "/Accounts/Login";
 //});
+
+// add JWT checking service
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    // if first one fails, fall back to cookie authentication
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+    // configure what must be checked
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+        {
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+        };
+    });
 
 var app = builder.Build(); // creates an instance of a web app
 
@@ -328,7 +358,7 @@ app.Logger.LogWarning("LOGGING WARNING...");
 
 // add conventional routing -> defining attribute routing: will override this
 app.UseEndpoints(endpoints =>
-{ 
+{
     // we may add constraints to conventional routing also
     endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
 });

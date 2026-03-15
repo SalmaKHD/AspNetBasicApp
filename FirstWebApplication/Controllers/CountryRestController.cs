@@ -36,7 +36,7 @@ namespace FirstWebApplication.Controllers
             }
 
             var coutries = await _countriesService.GetCountries();
-            if (coutries.IsNullOrEmpty())
+            if (coutries.Count == 0)
             {
                 // for reporting any kind of problems, can be used for any type of exceptions also
                 return Problem(detail: "No countries found", statusCode: 404, title: "Cities");
