@@ -51,6 +51,12 @@ builder.Services.Add(new ServiceDescriptor(
  * builder.Services.AddTransient<IUsersService, UsersService>();
  */
 
+// add jwt service
+builder.Services.Add(new ServiceDescriptor(
+    typeof(IJwtService),
+    typeof(JwtService))
+    );
+
 builder.Services.AddScoped<IStockService, StockService>();
 
 builder.Services.Add(new ServiceDescriptor(

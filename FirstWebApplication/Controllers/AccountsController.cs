@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Win32;
+using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Models;
 
@@ -18,12 +19,15 @@ namespace FirstWebApplication.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
+        private readonly IJwtService _jwtService;
 
-        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+        public AccountsController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager,
+            IJwtService jwtService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _jwtService = jwtService;
         }
 
         [HttpGet]
@@ -77,6 +81,10 @@ namespace FirstWebApplication.Controllers
 
             // Sign them in
             await _signInManager.SignInAsync(user, isPersistent: true);
+
+            // create jwt token
+            _jwtService.CreateJwtToken(user);
+            
 
             return RedirectToAction(nameof(HomeController.Index), "Home");
         }
