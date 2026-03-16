@@ -28,6 +28,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="bin\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="logs\" />
     <Folder Include="NewFolder\" />

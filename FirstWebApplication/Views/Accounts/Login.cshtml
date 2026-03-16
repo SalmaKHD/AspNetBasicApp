@@ -1,16 +1,5 @@
 ﻿@model LoginDTO
 
-@{
-    ViewData["Title"] = "Login";
-
-    var returnUrl = Context.Request.Query["ReturnUrl"].ToString();
-    // If ReturnUrl points back to /Accounts/Login, ignore it to prevent recursion
-    if (returnUrl?.Contains("/Accounts/Login") == true)
-    {
-        returnUrl = "/";
-    }
-}
-
 <h2 class="mb-3">Login</h2>
 
 <!-- Display general errors passed through ViewBag.Errors -->
@@ -26,8 +15,7 @@
     </div>
 }
 
-@* asp-route-ReturnUrl="@returnUrl" *@
-<form asp-action="Login" asp-controller="Accounts" method="post" class="needs-validation" novalidate>
+<form asp-action="Login" asp-controller="Accounts" method="post" class="needs-validation" asp-route-ReturnUrl="@Context.Request.Query["ReturnUrl"]" novalidate>
     <div class="form-group mb-3">
         <label asp-for="UserName" class="form-label">Email</label>
         <input asp-for="UserName" class="form-control" placeholder="Enter your email address" />

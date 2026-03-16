@@ -45,7 +45,6 @@ namespace FirstWebApplication.Controllers
         }
 
         [HttpPost]
-        //[Authorize("NotAuthorized")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterDTO register)
         {
@@ -158,7 +157,7 @@ namespace FirstWebApplication.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         public async Task<IActionResult> Logout()
         {
             // deletes user cookie

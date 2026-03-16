@@ -177,28 +177,29 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
     .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
     .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
 
-//builder.Services.AddAuthorization(options =>
-//{
-//    options.FallbackPolicy = new AuthorizationPolicyBuilder()
-//    // enforces authorization except for login register
-//    .RequireAuthenticatedUser()
-//    .Build();
+builder.Services.AddAuthorization(options =>
+{
 
+    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+    // enforces authorization except for login register
+    .RequireAuthenticatedUser()
+    .Build();
 
-//    options.AddPolicy("NotAuthorized", policy =>
-//    {
-//        policy.RequireAssertion(context =>
-//        {
-//            return !context.User.Identity.IsAuthenticated;
-//        });
-//    });
-//});
+    // add a specific policy for certain endpoints
+    options.AddPolicy("NotAuthorized", policy =>
+    {
+        policy.RequireAssertion(context =>
+        {
+            return !context.User.Identity.IsAuthenticated;
+        });
+    });
+});
 
-//// where to redirect when cookie is not set
-//builder.Services.ConfigureApplicationCookie(options =>
-//{
-//    options.LoginPath = "/Accounts/Login";
-//});
+//where to redirect when cookie is not set
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Accounts/Login";
+});
 
 // add JWT checking service
 //builder.Services.AddAuthentication(options =>
@@ -252,6 +253,8 @@ app.UseHsts();
 
 // allow HTTPS, for requests
 app.UseHttpsRedirection();
+
+app.UseRouting(); // enable routing middleware
 
 // add authentication middleware -> to check whether the user is logged in or not, based on cookie
 app.UseAuthentication(); // must come before useRouting to add auth details, sequence of middleware matters
@@ -340,8 +343,6 @@ app.MapGet("/salma", async (HttpContext context) =>
 
     await context.Response.WriteAsync("Hello Salma");
 }); // when getting a request to root, return "Hello World!"
-
-app.UseRouting(); // enable routing middleware
 
 // add CORS
 app.UseCors();
