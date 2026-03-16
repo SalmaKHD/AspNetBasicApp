@@ -8,6 +8,7 @@ using Microsoft.Win32;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Models;
+using System.Security.Claims;
 
 namespace FirstWebApplication.Controllers
 {
@@ -153,11 +154,44 @@ namespace FirstWebApplication.Controllers
             }
         }
 
+        [HttpPost]
         public async Task<IActionResult> Logout()
         {
             // deletes user cookie
             await _signInManager.SignOutAsync();
             return RedirectToAction(nameof(HomeController.Index), "Home");
+        }
+
+        [HttpPost("generate-new-jwt-token")]
+        public async Task<IActionResult> GenerateNewAccessToken(TokenModel tokenModel)
+        {
+            if (tokenModel == null)
+                return BadRequest("Invalid token");
+
+            ClaimsPrincipal? principle = _jwtService.GetPrincipalFromJwtToken(tokenModel.Token);
+            if(principle == null)
+            {
+                return BadRequest("Invalid jwt access token");
+            }
+
+            string? email = principle.FindFirstValue(ClaimTypes.Email);
+
+            ApplicationUser? user = await _userManager.FindByNameAsync(email);
+            
+            if(user == null || user.Refresh != tokenModel.RefreshToken ||
+                user.RefreshTokenExpirationDateTime <= DateTime.Now)
+            {
+                return BadRequest("Invalid refresh token");
+            }
+
+            AuthenticationResponse authenticationResponse = _jwtService.CreateJwtToken(user);
+
+            user.Refresh = authenticationResponse.RefreshToken;
+            user.RefreshTokenExpirationDateTime = authenticationResponse.RefreshTokenExpirationDateTime;
+
+            await _userManager.UpdateAsync(user);
+
+            return Ok(authenticationResponse);
         }
     }
 }

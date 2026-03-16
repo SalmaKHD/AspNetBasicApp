@@ -1,6 +1,7 @@
 ﻿using Entities.IdentityEntities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using OfficeOpenXml.ConditionalFormatting.Contracts;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using System;
@@ -35,7 +36,8 @@ namespace Services
                 new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
                 // additional details
                 new Claim(ClaimTypes.NameIdentifier, user.Email ?? ""),
-                new Claim(ClaimTypes.Name, user.PersonName ?? "")
+                new Claim(ClaimTypes.Name, user.PersonName ?? ""),
+                new Claim(ClaimTypes.Email, user.Email ?? "")
             };
 
             // create secret key
@@ -77,6 +79,39 @@ namespace Services
             randomNumberGenerator.GetBytes(bytes);
             return Convert.ToBase64String(bytes);
 
+        }
+
+        public ClaimsPrincipal? GetPrincipalFromJwtToken(string? token)
+        {
+            // extract data from token
+            var tokenValidationParameters = new TokenValidationParameters()
+            {
+                ValidateAudience = true,
+                ValidAudience = _configuration["Jwt:Audience"],
+                ValidateIssuer = true,
+                ValidIssuer = _configuration["Jwt:Issuer"],
+
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"])),
+                ValidateLifetime = true
+            };
+
+            JwtSecurityTokenHandler jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+
+            // validate according to parameters
+            ClaimsPrincipal principle = jwtSecurityTokenHandler.ValidateToken(token,
+                tokenValidationParameters, out SecurityToken securityToken);
+
+            if(securityToken is not JwtSecurityToken jwtSecurityToken || 
+                !jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256,
+                StringComparison.InvariantCultureIgnoreCase)
+
+                )
+            {
+                throw new SecurityTokenException("Invalid token");
+            }
+            return principle;
+             // make sure token is valid
         }
     }
 }
