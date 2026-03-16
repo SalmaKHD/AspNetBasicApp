@@ -34,6 +34,10 @@ namespace FirstWebApplication.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// To register user
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Register()
         {

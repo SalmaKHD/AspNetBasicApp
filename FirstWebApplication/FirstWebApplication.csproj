@@ -8,6 +8,8 @@
 
 	  <CheckEolDeviations>false</CheckEolDeviations>
 	  <EnablePackageVulnerability>false</EnablePackageVulnerability>
+	  <GenerateDocumentationFile>True</GenerateDocumentationFile>
+	  <DocumentationFile>api.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
