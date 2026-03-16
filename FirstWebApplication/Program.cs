@@ -41,6 +41,12 @@ builder.Services.AddControllersWithViews(options =>
     // add authorization to all endpoints with jwt
     var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
     options.Filters.Add(new AuthorizeFilter(policy));
+
+    // add content type filter
+    // can be added in global level, controller level or action level
+    options.Filters.Add(new ProducesAttribute("application/json")); // default type of all return types
+    options.Filters.Add(new ConsumesAttribute("application/json")); // default type of all return types
+
 });
 
 // add services
@@ -210,7 +216,10 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 
 // add SSwagger config
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
+});
 
 var app = builder.Build(); // creates an instance of a web app
 
