@@ -17,6 +17,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [Route("users")]
+        [HttpGet]
         public IActionResult Index([FromServices] IUsersService usersServiceFromMethod)
         {
             // create a child scope inside request -> will be destructed after using block

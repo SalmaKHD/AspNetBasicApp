@@ -12,6 +12,7 @@
     "https-Development": {
       "commandName": "Project", // Casteral server
       "launchBrowser": false,
+      "launchUrl": "swagger", // default endpoint that will be used to launch app
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

@@ -35,6 +35,7 @@ namespace FirstWebApplication.NewFolder4
         // add attribute routing
         [Route("/")]
         [Route("home")]
+        [HttpGet]
         // allow access to guests
         [AllowAnonymous]
         public ContentResult Index()
@@ -44,12 +45,14 @@ namespace FirstWebApplication.NewFolder4
         }
 
         [Route("about-user/{id:int}")]
+        [HttpGet]
         public string AboutUser()
         {
             return $"this is user with id {ControllerContext.HttpContext.Request.RouteValues["id"]}";
         }
 
         [Route("get-image")]
+        [HttpGet]
         public VirtualFileResult ImageDownload()
         {
             return File("/sample.jpg", "image/jpeg"); // File is a shortcut for new VirtualFileResult()
@@ -57,6 +60,7 @@ namespace FirstWebApplication.NewFolder4
 
         // alternative return type: can return more than one type
         [Route("get-image/{id:int}")]
+        [HttpGet]
         public IActionResult ImageDownloadWithId() // represents an action
         {
             if (Convert.ToInt32(ControllerContext.HttpContext.Request.RouteValues["id"]) == 1)
@@ -122,12 +126,14 @@ namespace FirstWebApplication.NewFolder4
         */
 
         [Route("custom-binder")]
+        [HttpPost]
         public IActionResult customBinder([ModelBinder(BinderType = typeof(BookBinder))] Book? book)
         {
             return Content("using custom binder");
         }
 
         [Route("get-view")]
+        [HttpGet]
         public IActionResult Home()
         {
             ViewData["appTitle"] = "Asp.Net Core"; // a dictionary that is available automatically in controllers and views
@@ -140,6 +146,7 @@ namespace FirstWebApplication.NewFolder4
         }
 
         [Route("cities-list")]
+        [HttpGet]
         public IActionResult LoadCitiesList()
         {
             return ViewComponent("Grid", new
@@ -149,6 +156,7 @@ namespace FirstWebApplication.NewFolder4
         }
 
         [Route("config")]
+        [HttpGet]
         public IActionResult Config()
         {
             string keyValue = _configuration.GetValue<string>("MyKey", "");
@@ -168,6 +176,7 @@ namespace FirstWebApplication.NewFolder4
         }
 
         [Route("Error")]
+        [HttpGet]
         public IActionResult Error()
         {
             return View();

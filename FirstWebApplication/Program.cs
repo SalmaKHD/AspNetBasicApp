@@ -208,7 +208,14 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
 //        };
 //    });
 
+// add SSwagger config
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build(); // creates an instance of a web app
+
+app.UseSwagger(); // creates endpoint for swagger json
+app.UseSwaggerUI(); // creates UI for your endpoints
 
 if (app.Environment.IsDevelopment())
 {

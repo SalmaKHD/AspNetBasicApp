@@ -73,6 +73,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [Route("pdf")]
+        [HttpGet]
         public async Task<IActionResult> CountriesPDF()
         {
             // Get a list of countries
@@ -91,6 +92,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [Route("csv")]
+        [HttpGet]
        public async Task<IActionResult> CountriesCSV()
         {
             var memoryStream = await _countriesService.GetCountriesCsv();
@@ -98,6 +100,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [Route("excel")]
+        [HttpGet]
         public async Task<IActionResult> CountriesExcel()
         {
             var memoryStream = await _countriesService.GetCountriesCsv();

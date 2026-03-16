@@ -13,6 +13,7 @@ namespace FirstWebApplication.Controllers
         }
 
         [Route("stock-market/{symbol}")]
+        [HttpGet]
         public async Task<IActionResult> Stock(string? symbol)
         {
             var result = await _httpService.GetStockPrices(symbol ?? "");
