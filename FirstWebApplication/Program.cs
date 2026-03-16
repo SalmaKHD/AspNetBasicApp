@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions;
@@ -44,8 +45,8 @@ builder.Services.AddControllersWithViews(options =>
 
     // add content type filter
     // can be added in global level, controller level or action level
-    options.Filters.Add(new ProducesAttribute("application/json")); // default type of all return types
-    options.Filters.Add(new ConsumesAttribute("application/json")); // default type of all return types
+    //options.Filters.Add(new ProducesAttribute("application/json")); // default type of all return types
+    //options.Filters.Add(new ConsumesAttribute("application/json")); // default type of all return types
 
 });
 
@@ -105,6 +106,13 @@ builder.Services.AddRouting(options =>
 
 // add controllers
 builder.Services.AddControllers();
+
+// add api versioning
+builder.Services.AddApiVersioning(config =>
+{
+    // read version number from apiVersion constraint in url
+    config.ApiVersionReader = new UrlSegmentApiVersionReader();
+});
 
 // add db config
 // scope: scoped by default
@@ -369,8 +377,7 @@ app.Logger.LogCritical("LOGGING CRITICAL...");
 app.Logger.LogWarning("LOGGING WARNING...");
 
 // work with minimal API
-
-//var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
+var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
 
 // add conventional routing -> defining attribute routing: will override this
 app.UseEndpoints(endpoints =>
