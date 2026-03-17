@@ -6,30 +6,26 @@ using FirstWebApplication.MapGroups;
 using FirstWebApplication.Middleware;
 using FirstWebApplication.MonthCustomConstraint;
 using FirstWebApplication.Properties;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Migrations.Operations;
-using Microsoft.Extensions;
-using Microsoft.IdentityModel.Tokens;
 using Repositories;
 using RepositoryContracts;
 using Serilog;
 using ServiceContracts;
 using Services;
-using System;
-using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args); // creates a builder that confgures initial set up for a web app
+
+#region Middleware
 // method 1 add a custom middleware
 builder.Services.AddTransient<CustomMiddleware>();
+#endregion
+
 builder.Services.AddControllersWithViews(options =>
 {
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<GlobalActionFilter>>();
@@ -266,6 +262,7 @@ app.MapControllers();
 // add static files middleware
 app.UseStaticFiles();
 
+#region Middleware
 app.UseMiddleware<CustomMiddleware>();
 
 // method 2 add a custom middleware
@@ -307,7 +304,47 @@ app.UseWhen(context => context.Request.Method == "GET",
 
 //    await context.Response.WriteAsync(" Hello from middleware 6 ");
 //});
+#endregion
 
+// add CORS
+app.UseCors();
+
+app.UseEndpoints(endpoints =>
+{
+    // an endpoint
+    endpoints.MapGet("/hello", (HttpContext context) =>
+    context.Response.WriteAsync("Hello Salma")
+    );
+});
+
+// add logs
+app.Logger.LogDebug("LOGGING DEBUG...");
+app.Logger.LogInformation("LOGGING INFORMATION...");
+app.Logger.LogError("LOGGING ERROR...");
+app.Logger.LogCritical("LOGGING CRITICAL...");
+app.Logger.LogWarning("LOGGING WARNING...");
+
+// work with minimal API
+var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
+
+// add conventional routing -> defining attribute routing: will override this
+app.UseEndpoints(endpoints =>
+{
+    // we may add constraints to conventional routing also
+    endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
+});
+
+// add admin area controller
+app.UseEndpoints(endpoints =>
+{
+    // we may add constraints to conventional routing also
+    endpoints.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller}/{action}"
+        );
+});
+
+#region MinimalApi
 app.MapGet("/salma", async (HttpContext context) =>
 {
     // add a status code to response
@@ -344,17 +381,6 @@ app.MapGet("/salma", async (HttpContext context) =>
     await context.Response.WriteAsync("Hello Salma");
 }); // when getting a request to root, return "Hello World!"
 
-// add CORS
-app.UseCors();
-
-app.UseEndpoints(endpoints =>
-{
-    // an endpoint
-    endpoints.MapGet("/hello", (HttpContext context) =>
-    context.Response.WriteAsync("Hello Salma")
-    );
-});
-
 // add a route parameter
 // add a default value for route param, add an optional param, add param constraint
 app.MapGet("/salma/{lastname=Khodaei}/{age:int?}/{date-of-birth:months}", (HttpContext context) =>
@@ -369,33 +395,7 @@ app.MapGet("/salma/{lastname=Khodaei}/{age:int?}/{date-of-birth:months}", (HttpC
      * Hello Salma khodaei
      */
 });
-
-// add logs
-app.Logger.LogDebug("LOGGING DEBUG...");
-app.Logger.LogInformation("LOGGING INFORMATION...");
-app.Logger.LogError("LOGGING ERROR...");
-app.Logger.LogCritical("LOGGING CRITICAL...");
-app.Logger.LogWarning("LOGGING WARNING...");
-
-// work with minimal API
-var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
-
-// add conventional routing -> defining attribute routing: will override this
-app.UseEndpoints(endpoints =>
-{
-    // we may add constraints to conventional routing also
-    endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
-});
-
-// add admin area controller
-app.UseEndpoints(endpoints =>
-{
-    // we may add constraints to conventional routing also
-    endpoints.MapControllerRoute(
-        name: "areas",
-        pattern: "{area:exists}/{controller}/{action}"
-        );
-});
+#endregion
 
 app.Run();
 
