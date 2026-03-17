@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FirstApplication.UI\FirstWebApplication.UI.csproj" />
-    <ProjectReference Include="..\FirstWebApplication.Core\FirstWebApplication.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
