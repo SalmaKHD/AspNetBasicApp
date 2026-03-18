@@ -84,8 +84,6 @@ namespace Services
             // write custom fields
             csvWriter.WriteField(nameof(CountryResonse.CountryName));
             csvWriter.NextRecord();
-            csvWriter.WriteField("Salma");
-            csvWriter.NextRecord();
 
             csvWriter.WriteHeader<CountryResonse>();
             csvWriter.NextRecord();
