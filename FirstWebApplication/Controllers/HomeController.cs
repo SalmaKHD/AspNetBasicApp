@@ -12,6 +12,10 @@ using System.Collections.Generic;
 
 namespace FirstWebApplication.NewFolder4
 {
+
+    /// <summary>
+    /// For learning basic building blocks of controllers in .Net
+    /// </summary>
     [Controller]
     public class HomeController : Controller
     {

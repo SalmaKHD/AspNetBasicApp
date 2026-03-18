@@ -29,10 +29,16 @@
 </head>
 <body>
     <div>
-        <a href="~/" style="padding:6px 12px; background-color:cadetblue; color:white;
-                            border-radius:4px; text-decoration:none; display:inline-block;">
-            HOME
+        <a asp-controller="Country" asp-action="Countries" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:linear-gradient(135deg,cadetblue 0%,teal 100%);color:white;border-radius:8px;text-decoration:none;font-family:'Segoe UI',Tahoma,sans-serif;font-weight:600;font-size:18px;letter-spacing:0.5px;box-shadow:0 3px 6px rgba(0,0,0,0.2);">
+            🌍 <span>Country Manager</span>
         </a>
+        <style>
+            a[asp-controller="Home"]:hover { /* Adjust selector if needed */
+                transform: scale(1.05);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+            }
+        </style>
+
 
         <!-- Added Buttons -->
         @* if authentication cookie is available *@

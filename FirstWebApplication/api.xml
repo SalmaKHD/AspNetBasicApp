@@ -10,6 +10,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:FirstWebApplication.NewFolder4.HomeController">
+            <summary>
+            For learning basic building blocks of controllers in .Net
+            </summary>
+        </member>
         <member name="M:FirstWebApplication.NewFolder4.HomeController.customBinder(FirstWebApplication.Models.Book)">
                      * example output
                      * {
