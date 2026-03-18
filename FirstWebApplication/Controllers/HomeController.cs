@@ -41,7 +41,6 @@ namespace FirstWebApplication.NewFolder4
         [Route("home")]
         [HttpGet]
         // allow access to guests
-        [AllowAnonymous]
         public ContentResult Index()
         {
             // there are shortcut methods for all types
