@@ -26,6 +26,8 @@ var builder = WebApplication.CreateBuilder(args); // creates a builder that conf
 builder.Services.AddTransient<CustomMiddleware>();
 #endregion
 
+#region ControllerConfig
+// add controller support with views
 builder.Services.AddControllersWithViews(options =>
 {
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<GlobalActionFilter>>();
@@ -46,7 +48,24 @@ builder.Services.AddControllersWithViews(options =>
 
 });
 
-// add services
+// add a custom constraint
+builder.Services.AddRouting(options =>
+{
+    options.ConstraintMap.Add("months", typeof(MonthCustomConstraint));
+});
+
+// add controllers
+builder.Services.AddControllers();
+
+// add api versioning
+builder.Services.AddApiVersioning(config =>
+{
+    // read version number from apiVersion constraint in url
+    config.ApiVersionReader = new UrlSegmentApiVersionReader();
+});
+#endregion
+
+#region AddServices
 builder.Services.Add(new ServiceDescriptor(
     typeof(IUsersService),
     typeof(UsersService),
@@ -82,7 +101,9 @@ builder.Services.Add(new ServiceDescriptor(
     typeof(CountriesRepository),
     ServiceLifetime.Scoped)
     );
+#endregion
 
+#region AddConfigConfig
 // add config options to IOC
 builder.Services.Configure<ApiConfigOptions>(builder.Configuration.GetSection("ApiConfig"));
 
@@ -91,24 +112,11 @@ builder.Host.ConfigureAppConfiguration((hostingContek0xt, config) =>
 {
     config.AddJsonFile("apiconfigsettings.json", optional: true, reloadOnChange: true);
 });
+#endregion
+
+#region GeneralConfig
 // add HttpClient service
 builder.Services.AddHttpClient();
-
-// add a custom constraint
-builder.Services.AddRouting(options =>
-{
-    options.ConstraintMap.Add("months", typeof(MonthCustomConstraint));
-});
-
-// add controllers
-builder.Services.AddControllers();
-
-// add api versioning
-builder.Services.AddApiVersioning(config =>
-{
-    // read version number from apiVersion constraint in url
-    config.ApiVersionReader = new UrlSegmentApiVersionReader();
-});
 
 // add db config
 // scope: scoped by default
@@ -123,7 +131,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 //    logProvider.ClearProviders();
 //    logProvider.AddDebug(); // print in debug only
 //});
+#endregion
 
+#region Logging
 // configure serolog
 builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider services, LoggerConfiguration loggerConfiguration) =>
 {
@@ -138,7 +148,9 @@ builder.Services.AddHttpLogging(options =>
     options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties |
     Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
 });
+#endregion
 
+#region Security
 // enable CORS policy for all requests
 builder.Services.AddCors(options =>
 {
@@ -218,19 +230,26 @@ builder.Services.ConfigureApplicationCookie(options =>
 //            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
 //        };
 //    });
+#endregion
 
-// add SSwagger config
+#region Documentation
+// add Swagger config
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
-options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
 });
+#endregion
+
 
 var app = builder.Build(); // creates an instance of a web app
 
+#region Documentation
 app.UseSwagger(); // creates endpoint for swagger json
 app.UseSwaggerUI(); // creates UI for your endpoints
+#endregion
 
+#region ErrorHandling
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -240,27 +259,60 @@ else
     app.UseExceptionHandlingMiddleware();
     app.UseExceptionHandler("/Error");
 }
+#endregion
 
-// add pdf config
-Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
+#region ControllerConfig
+app.UseRouting(); // enable routing middleware
 
+#region Security
 // force clients to use https
 app.UseHsts();
 
 // allow HTTPS, for requests
 app.UseHttpsRedirection();
 
-app.UseRouting(); // enable routing middleware
-
 // add authentication middleware -> to check whether the user is logged in or not, based on cookie
 app.UseAuthentication(); // must come before useRouting to add auth details, sequence of middleware matters
 app.UseAuthorization();
+#endregion
 
 // add controller mappings
 app.MapControllers();
 
 // add static files middleware
 app.UseStaticFiles();
+
+// add conventional routing -> defining attribute routing: will override this
+app.UseEndpoints(endpoints =>
+{
+    // we may add constraints to conventional routing also
+    endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
+});
+
+// add admin area controller
+app.UseEndpoints(endpoints =>
+{
+    // we may add constraints to conventional routing also
+    endpoints.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller}/{action}"
+        );
+});
+#endregion
+
+#region generalConfig
+// add pdf config
+Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
+#endregion
+
+#region LoggingConfig
+// add logs
+app.Logger.LogDebug("LOGGING DEBUG...");
+app.Logger.LogInformation("LOGGING INFORMATION...");
+app.Logger.LogError("LOGGING ERROR...");
+app.Logger.LogCritical("LOGGING CRITICAL...");
+app.Logger.LogWarning("LOGGING WARNING...");
+#endregion
 
 #region Middleware
 app.UseMiddleware<CustomMiddleware>();
@@ -306,8 +358,9 @@ app.UseWhen(context => context.Request.Method == "GET",
 //});
 #endregion
 
-// add CORS
-app.UseCors();
+#region MinimalApi
+// work with minimal API
+var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
 
 app.UseEndpoints(endpoints =>
 {
@@ -317,34 +370,6 @@ app.UseEndpoints(endpoints =>
     );
 });
 
-// add logs
-app.Logger.LogDebug("LOGGING DEBUG...");
-app.Logger.LogInformation("LOGGING INFORMATION...");
-app.Logger.LogError("LOGGING ERROR...");
-app.Logger.LogCritical("LOGGING CRITICAL...");
-app.Logger.LogWarning("LOGGING WARNING...");
-
-// work with minimal API
-var mapGroup = app.MapGroup("/api/minimal/country").CountriesApi();
-
-// add conventional routing -> defining attribute routing: will override this
-app.UseEndpoints(endpoints =>
-{
-    // we may add constraints to conventional routing also
-    endpoints.MapControllerRoute(name: "default", pattern: "{controller}/{action}");
-});
-
-// add admin area controller
-app.UseEndpoints(endpoints =>
-{
-    // we may add constraints to conventional routing also
-    endpoints.MapControllerRoute(
-        name: "areas",
-        pattern: "{area:exists}/{controller}/{action}"
-        );
-});
-
-#region MinimalApi
 app.MapGet("/salma", async (HttpContext context) =>
 {
     // add a status code to response
