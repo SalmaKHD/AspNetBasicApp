@@ -35,20 +35,29 @@ A curated selection of modern .NET technologies and best practices:
 
 # Minimal API
 - Get Request
-https://localhost:7232/api/minimal/country	
-[{"CountryID":"d2485c0c-139c-48ba-9422-3ac1eee6c641","Name":"Brazil"},{"CountryID":"4f4b4608-0478-4c8a-83ce-ed4877e756a1","Name":"Canada"}]
+
+      // Request
+      https://localhost:7232/api/minimal/country	
+      // Response
+      [{"CountryID":"d2485c0c-139c-48ba-9422-3ac1eee6c641","Name":"Brazil"},{"CountryID":"4f4b4608-0478-4c8a-83ce-ed4877e756a1","Name":"Canada"}]
 
 - Add Request
-https://localhost:7232/api/minimal/country
-HttpBody:
-{
-    "name": "Thiland"
-}
-"Add successful"
+
+        // Request
+        https://localhost:7232/api/minimal/country
+        HttpBody:
+        {
+            "name": "Thiland"
+        }
+        // Response
+        "Add successful"
 
 - Get Request by ID
-https://localhost:7232/api/minimal/country/644cd6c4-79c6-44c8-bdf0-d21e780bee40
-{
-    "countryID": "644cd6c4-79c6-44c8-bdf0-d21e780bee40",
-    "name": "Thiland"
-}
+
+        // Request
+        https://localhost:7232/api/minimal/country/644cd6c4-79c6-44c8-bdf0-d21e780bee40
+        // Response
+        {
+            "countryID": "644cd6c4-79c6-44c8-bdf0-d21e780bee40",
+            "name": "Thiland"
+        }
